@@ -53,7 +53,7 @@ h1, h2, h3, p {
   padding: 40px 50px; /* Increased padding for a bigger header */
   background-color: #36454F;
   color: #008080;
-  font-family: 'Duke Charming Regular', serif;
+  font-family: 'Ahsing Regular', serif;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -63,12 +63,14 @@ h1, h2, h3, p {
 
 /* Header title styles */
 .header h1 {
+  font-family: 'Duke Charming Regular', serif;
   margin-bottom: 20px; /* Adjust this value to increase the gap */
   flex-basis: 100%; /* Ensure h1 takes full width */
 }
 
 /* Navigation styles */
 .header nav ul {
+  font-family: 'Ahsing Regular', serif;
   list-style: none;
   display: flex;
   gap: 50px; /* Increased gap between individual list items */
@@ -78,6 +80,7 @@ h1, h2, h3, p {
 
 /* Navigation link items */
 .header nav ul li a {
+  font-family: 'Ahsing Regular', serif;
   text-decoration: none;
   color: #008080;
   font-size: 1rem;
