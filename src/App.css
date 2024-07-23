@@ -49,7 +49,7 @@ h1, h2, h3, p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 30px 50px; /* Increased padding for a bigger header */
   background-color: #36454F;
   color: #008080;
   font-family: 'Ahsing Regular', serif;
@@ -88,7 +88,7 @@ h1, h2, h3, p {
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
-    padding: 10px 20px;
+    padding: 20px 30px; /* Adjusted padding for mobile */
   }
 
   .header nav ul {
