@@ -118,47 +118,32 @@ h1, h2, h3, p {
   background: #008080;
   margin: 30px 0; /* More margin for better separation */
 }
-
-/* Hero section styles */
 .hero {
   display: flex;
-  flex-direction: row; /* Keep items side by side */
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between; /* Distribute space evenly */
+  justify-content: space-between;
   padding: 40px;
   background-color: #36454F;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  transition: max-height 0.5s ease, padding 0.5s ease; /* Smooth transition for max-height and padding */
+  transition: max-height 0.5s ease, padding 0.5s ease;
   overflow: hidden;
-  max-height: 600px; /* Increased max height */
+  max-height: 600px;
 }
 
+/* Background overlay */
 .hero::before {
   content: "";
   position: absolute;
-  top: 10%;
-  left: -50px; /* Position it at the edge */
-  width: 100px;
-  height: 100px;
-  background-color: rgba(0, 128, 128, 0.5); /* Semi-transparent circle */
-  border-radius: 50%;
-  z-index: 0; /* Ensure it is behind the content */
-}
-
-/* Circle in a random place */
-.hero::after {
-  content: "";
-  position: absolute;
-  bottom: 20%;
-  right: 10%;
-  width: 150px;
-  height: 150px;
-  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent circle */
-  border-radius: 50%;
-  z-index: 0; /* Ensure it is behind the content */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(54, 69, 79, 0.8);
+  z-index: 1;
 }
 
 /* Ensures content is above the overlay */
@@ -167,13 +152,58 @@ h1, h2, h3, p {
   z-index: 2;
 }
 
+/* Decorative circles */
+.hero .circle-1 {
+  position: absolute;
+  top: 10%;
+  left: -50px;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0, 128, 128, 0.5);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.hero .circle-2 {
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.hero .circle-3 {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(255, 165, 0, 0.3);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.hero .circle-4 {
+  position: absolute;
+  top: 30%;
+  right: 30%;
+  width: 120px;
+  height: 120px;
+  background-color: rgba(128, 0, 128, 0.4);
+  border-radius: 50%;
+  z-index: 0;
+}
+
 /* Hero image styles */
 .hero-image {
-  flex-shrink: 0; /* Prevents image from shrinking */
+  flex-shrink: 0;
   margin-right: 20px;
-  opacity: 0; /* Start with the image invisible */
-  animation: fadeIn 2s forwards; /* Apply fade-in animation */
-  border-radius: 50%; /* Make the image circular */
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  border-radius: 50%;
 }
 
 .hero-image img {
@@ -181,12 +211,12 @@ h1, h2, h3, p {
   width: 100%;
   height: auto;
   border: 5px ridge #36454F;
-  border-radius: 50%; /* Make the image circular */
-  transition: transform 0.3s; /* Add transition for hover effect */
+  border-radius: 50%;
+  transition: transform 0.3s;
 }
 
 .hero-image img:hover {
-  transform: scale(1.05); /* Slightly enlarge image on hover */
+  transform: scale(1.05);
 }
 
 /* Hero text styles */
@@ -194,7 +224,7 @@ h1, h2, h3, p {
   text-align: center;
   padding: 20px;
   font-family: 'Duke Charming Regular', serif;
-  color: #FFFFFF; /* White text for better contrast */
+  color: #FFFFFF;
   flex: 1;
 }
 
@@ -219,7 +249,7 @@ h1, h2, h3, p {
   .hero {
     flex-direction: column;
     padding: 20px;
-    max-height: 800px; /* Increased max height for mobile */
+    max-height: 800px;
   }
 
   .hero-image {
@@ -233,13 +263,13 @@ h1, h2, h3, p {
   }
 
   .social-icons {
-    margin-top: 30px; /* Increased margin for better visibility on mobile */
+    margin-top: 30px;
   }
 }
 
 @keyframes fadeIn {
   to {
-    opacity: 1; /* Fade in to fully visible */
+    opacity: 1;
   }
 }
 
