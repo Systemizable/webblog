@@ -1,19 +1,42 @@
-/* Define the fade-in animation */
-@keyframes fadeInPage {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+@font-face {
+  font-family: 'Ahsing Regular';
+  src: url('./fonts/Ahsing-Regular.otf') format('opentype');
 }
 
-/* Apply the fade-in animation to the body */
+@font-face {
+  font-family: 'Duke Charming Regular';
+  src: url('./fonts/Duke Charming DEMO.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Architype Renner Medium Bold';
+  src: url('./fonts/ArchitypeRenner-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Architype Renner Medium';
+  src: url('./fonts/ArchitypeRenner-Regular.otf') format('opentype');
+}
+
 body {
-  animation: fadeInPage 2s ease-in-out;
+  margin: 0;
+  background-color: #36454F;
+  color: #008080;
+  font-family: 'Ahsing Regular', serif;
+  animation: fadeInPage 2s ease-in-out; /* Apply the fade-in animation to the entire page */
 }
 
-/* Other styles */
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+}
 
 /* Reset some default styles for better control */
 * {
@@ -35,13 +58,20 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+/* Header title styles */
+.header h1 {
+  margin-bottom: 20px; /* Adjust this value to increase the gap */
+  flex-basis: 100%; /* Ensure h1 takes full width */
 }
 
 /* Navigation styles */
 .header nav ul {
   list-style: none;
   display: flex;
-  gap: 40px;
+  gap: 50px; /* Increased gap between individual list items */
   margin: 0;
   padding: 0;
 }
@@ -69,10 +99,22 @@ body {
     padding: 30px 30px; /* Adjusted padding for mobile */
   }
 
+  .header h1 {
+    margin-bottom: 20px; /* Adjust this value to increase the gap on mobile as well */
+  }
+
   .header nav ul {
     flex-direction: column;
-    gap: 10px;
+    gap: 20px; /* Increased gap between individual list items for mobile */
   }
+}
+
+/* Separator */
+.separator {
+  border: 0;
+  height: 2px; /* Thicker separator */
+  background: #008080;
+  margin: 30px 0; /* More margin for better separation */
 }
 
 /* Hero section styles */
@@ -115,7 +157,7 @@ body {
   flex-shrink: 0; /* Prevents image from shrinking */
   margin-right: 20px;
   opacity: 0; /* Start with the image invisible */
-  animation: fadeInPage 2s forwards; /* Apply fade-in animation */
+  animation: fadeIn 2s forwards; /* Apply fade-in animation */
   border-radius: 50%; /* Make the image circular */
 }
 
@@ -180,12 +222,19 @@ body {
   }
 }
 
-/* Separator */
-.separator {
-  border: 0;
-  height: 1px;
-  background: #008080; /* Change this color to your desired color */
-  margin: 20px 0;
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* Fade in to fully visible */
+  }
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* About Section */
@@ -194,7 +243,7 @@ body {
   background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
   color: #008080;
-  scroll-margin-top: 200px; /* Adjust this value to match the height of your header */
+  scroll-margin-top: 300px; /* Adjust this value to match the height of your header */
 }
 
 .about h2 {
@@ -237,7 +286,7 @@ body {
   background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
   color: #008080;
-  scroll-margin-top: 200px;
+  scroll-margin-top: 300px;
 }
 
 .blog h2 {
@@ -274,7 +323,7 @@ body {
   background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
   color: #008080;
-  scroll-margin-top: 200px;
+  scroll-margin-top: 300px;
 }
 
 .education-text {
@@ -319,7 +368,7 @@ body {
   background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
   color: #008080;
-  scroll-margin-top: 200px;
+  scroll-margin-top: 300px;
 }
 
 .projects h2 {
@@ -360,7 +409,7 @@ body {
   background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
   color: #008080;
-  scroll-margin-top: 200px;
+  scroll-margin-top: 300px;
 }
 
 .skills h2 {
