@@ -70,7 +70,7 @@ h1, h2, h3, p {
 .header nav ul {
   list-style: none;
   display: flex;
-  gap: 40px; /* Increased gap between individual list items */
+  gap: 50px; /* Increased gap between individual list items */
   margin: 0;
   padding: 0;
 }
