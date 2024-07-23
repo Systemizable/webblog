@@ -97,7 +97,6 @@ h1, h2, h3, p {
   }
 }
 
-/* Hero Section */
 .hero {
   display: flex;
   flex-direction: row; /* Keep items side by side */
@@ -111,7 +110,7 @@ h1, h2, h3, p {
   position: relative;
   transition: max-height 0.5s ease, padding 0.5s ease; /* Smooth transition for max-height and padding */
   overflow: hidden;
-  max-height: 400px; /* Default max height */
+  max-height: 600px; /* Increased max height */
 }
 
 /* Background overlay */
@@ -181,6 +180,7 @@ h1, h2, h3, p {
   .hero {
     flex-direction: column;
     padding: 20px;
+    max-height: 800px; /* Increased max height for mobile */
   }
 
   .hero-image {
@@ -192,6 +192,35 @@ h1, h2, h3, p {
     text-align: center;
     padding: 10px;
   }
+
+  .social-icons {
+    margin-top: 30px; /* Increased margin for better visibility on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .hero-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .hero-text {
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+/* Separator */
+.separator {
+  border: 0;
+  height: 1px;
+  background: #008080; /* Change this color to your desired color */
+  margin: 20px 0;
 }
 
 /* About Section */
@@ -353,6 +382,10 @@ h1, h2, h3, p {
   .projects-content {
     font-size: 1.2rem;
   }
+
+  .projects-content ul {
+    margin-left: 15px;
+  }
 }
 
 /* Skills Section */
@@ -401,7 +434,7 @@ h1, h2, h3, p {
   padding: 20px;
   text-align: center;
   background-color: #36454F;
-  color: #008080;
+  color: #ffffff;
   font-family: 'Ahsing Regular', serif;
 }
 
