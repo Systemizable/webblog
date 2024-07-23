@@ -37,7 +37,6 @@ h1, h2, h3, p {
   text-align: center;
 }
 
-/* Header */
 /* Reset some default styles for better control */
 * {
   margin: 0;
@@ -50,7 +49,7 @@ h1, h2, h3, p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px 50px; /* Increased padding for a bigger header */
+  padding: 30px 50px; /* Increased padding for a bigger header */
   background-color: #36454F;
   color: #008080;
   font-family: 'Ahsing Regular', serif;
@@ -58,13 +57,6 @@ h1, h2, h3, p {
   position: sticky;
   top: 0;
   z-index: 1000;
-}
-
-/* Header title */
-.header h1 {
-  font-size: 2.5rem;
-  color: #008080;
-  margin: 0;
 }
 
 /* Navigation styles */
@@ -105,27 +97,68 @@ h1, h2, h3, p {
   }
 }
 
-/* Hero Section */
 .hero {
   display: flex;
-  flex-direction: column;
-  padding: 60px 20px; /* Adjusted padding for more visibility */
+  flex-direction: row; /* Keep items side by side */
+  align-items: center;
+  justify-content: space-between; /* Distribute space evenly */
+  padding: 40px;
   background-color: #36454F;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: max-height 0.5s ease, padding 0.5s ease; /* Smooth transition for max-height and padding */
+  overflow: hidden;
+  max-height: 600px; /* Increased max height */
 }
 
-.hero-text {
-  flex: 1;
-  padding: 20px;
-  color: #008080;
-  font-family: 'Duke Charming Regular', serif;
+/* Background overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(54, 69, 79, 0.8); /* Add opacity for a modern overlay effect */
+  z-index: 1;
+}
+
+/* Ensures content is above the overlay */
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero image styles */
+.hero-image {
+  flex-shrink: 0; /* Prevents image from shrinking */
+  margin-right: 20px;
 }
 
 .hero-image img {
+  max-width: 300px;
   width: 100%;
   height: auto;
+  border: 5px ridge #36454F;
+  border-radius: 10px;
+  transition: transform 0.3s; /* Add transition for hover effect */
 }
 
-/* Social icons */
+.hero-image img:hover {
+  transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+/* Hero text styles */
+.hero-text {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Duke Charming Regular', serif;
+  color: #FFFFFF; /* White text for better contrast */
+  flex: 1;
+}
+
 .social-icons {
   display: flex;
   justify-content: center;
@@ -143,13 +176,53 @@ h1, h2, h3, p {
   color: #1f136e;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 20px;
+    max-height: 800px; /* Increased max height for mobile */
+  }
+
+  .hero-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .hero-text {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .social-icons {
+    margin-top: 30px; /* Increased margin for better visibility on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .hero-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .hero-text {
+    text-align: center;
+    padding: 10px;
+  }
+}
+
 /* Separator */
 .separator {
   border: 0;
   height: 1px;
-  background: #1f136e; /* Adjusted color */
+  background: #008080; /* Change this color to your desired color */
   margin: 20px 0;
 }
+
 /* About Section */
 .about {
   padding: 40px;
@@ -194,7 +267,7 @@ h1, h2, h3, p {
 
 /* Blog Section */
 .blog {
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 40px;
   background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
@@ -240,7 +313,6 @@ h1, h2, h3, p {
 }
 
 .education-text {
-  font-size: 2rem;
   text-align: center;
   margin-bottom: 20px;
   font-family: 'Duke Charming Regular', serif;
@@ -278,7 +350,6 @@ h1, h2, h3, p {
 
 /* Projects Section */
 .projects {
-  font-size: 2rem;
   padding: 40px;
   background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
@@ -320,7 +391,6 @@ h1, h2, h3, p {
 
 /* Skills Section */
 .skills {
-  font-size: 2rem;
   padding: 40px;
   background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
