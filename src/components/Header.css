@@ -19,7 +19,7 @@
 .header nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     margin: 0;
     padding: 0;
 }
@@ -27,6 +27,7 @@
 .header nav ul li a {
     text-decoration: none;
     color: #008080;
+    gap: 30px;
     font-size: 1rem;
     padding: 10px 15px;
     border-radius: 5px;
@@ -36,11 +37,11 @@
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
-        padding: 10px 20px;
+        padding: 40px 40px;
     }
 
     .header nav ul {
         flex-direction: column;
-        gap: 20px;
+        gap: 40px;
     }
 }

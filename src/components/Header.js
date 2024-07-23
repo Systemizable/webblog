@@ -5,10 +5,6 @@ const Header = () => (
     <header className="header">
         <div className="header-content">
             <h1>Joseph Sfeir</h1>
-            <p className="subheading">aspiring programmer</p>
-            <p className="subheading">engaged public speaker</p>
-            <p className="subheading">avid learner</p>
-            <p className="subheading">fierce competitor</p>
         </div>
         <nav className="nav-links">
             <ul>

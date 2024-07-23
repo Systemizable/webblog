@@ -57,13 +57,20 @@ h1, h2, h3, p {
   position: sticky;
   top: 0;
   z-index: 1000;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+/* Header title styles */
+.header h1 {
+  margin-bottom: 20px; /* Adjust this value to increase the gap */
+  flex-basis: 100%; /* Ensure h1 takes full width */
 }
 
 /* Navigation styles */
 .header nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 40px; /* Increased gap between individual list items */
   margin: 0;
   padding: 0;
 }
@@ -91,9 +98,13 @@ h1, h2, h3, p {
     padding: 30px 30px; /* Adjusted padding for mobile */
   }
 
+  .header h1 {
+    margin-bottom: 20px; /* Adjust this value to increase the gap on mobile as well */
+  }
+
   .header nav ul {
     flex-direction: column;
-    gap: 10px;
+    gap: 20px; /* Increased gap between individual list items for mobile */
   }
 }
 
