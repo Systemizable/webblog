@@ -63,7 +63,6 @@ h1, h2, h3, p {
 
 /* Header title styles */
 .header h1 {
-  font-family: 'Duke Charming Regular', serif;
   margin-bottom: 20px; /* Adjust this value to increase the gap */
   flex-basis: 100%; /* Ensure h1 takes full width */
 }
@@ -137,16 +136,29 @@ h1, h2, h3, p {
   max-height: 600px; /* Increased max height */
 }
 
-/* Background overlay */
 .hero::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(54, 69, 79, 0.8); /* Add opacity for a modern overlay effect */
-  z-index: 1;
+  top: 10%;
+  left: -50px; /* Position it at the edge */
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0, 128, 128, 0.5); /* Semi-transparent circle */
+  border-radius: 50%;
+  z-index: 0; /* Ensure it is behind the content */
+}
+
+/* Circle in a random place */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent circle */
+  border-radius: 50%;
+  z-index: 0; /* Ensure it is behind the content */
 }
 
 /* Ensures content is above the overlay */
