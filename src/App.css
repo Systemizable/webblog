@@ -48,7 +48,7 @@ h1, h2, h3, p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 50px; /* Increased padding for a bigger header */
+  padding: 30px 30px; /* Increased padding for a bigger header */
   background-color: #36454F;
   color: #008080;
   font-family: 'Ahsing Regular', serif;
@@ -72,7 +72,7 @@ h1, h2, h3, p {
   font-family: 'Ahsing Regular', serif;
   list-style: none;
   display: flex;
-  gap: 80px; /* Increased gap between individual list items */
+  gap: 60px; /* Increased gap between individual list items */
   margin: 0;
   padding: 0;
 }
@@ -108,7 +108,7 @@ h1, h2, h3, p {
 
   .header nav ul {
     flex-direction: column;
-    gap: 20px; /* Increased gap between individual list items for mobile */
+    gap: 30px; /* Increased gap between individual list items for mobile */
   }
 }
 /* Separator */
