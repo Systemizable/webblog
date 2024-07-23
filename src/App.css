@@ -61,8 +61,10 @@ h1, h2, h3, p {
 
 /* Header title styles */
 .header h1 {
-  margin-bottom: 20px; /* Adjust this value to increase the gap */
+  margin-bottom: 30px; /* Adjust this value to increase the gap */
   flex-basis: 100%; /* Ensure h1 takes full width */
+  border-bottom: 2px solid #008080;
+  border-radius: 5px;
 }
 
 /* Navigation styles */
@@ -80,11 +82,12 @@ h1, h2, h3, p {
   font-family: 'Ahsing Regular', serif;
   text-decoration: none;
   color: #008080;
-  font-size: 1rem;
+  font-size: 1.25rem;
   padding: 10px 15px;
   border-radius: 5px;
   border-bottom: 2px solid #008080; /* Underline by default */
   transition: color 0.3s, background-color 0.3s, transform 0.3s, border-bottom 0.3s; /* Add transition for underline */
+
 }
 
 /* Navigation link hover effect */
@@ -230,13 +233,13 @@ h1, h2, h3, p {
   max-width: 300px;
   width: 100%;
   height: auto;
-  border: 5px ridge #36454F;
+  border: 10px ridge #36454F;
   border-radius: 50%; /* Make the image circular */
   transition: transform 0.3s; /* Add transition for hover effect */
 }
 
 .hero-image img:hover {
-  transform: scale(1.05); /* Slightly enlarge image on hover */
+  transform: scale(1.1); /* Slightly enlarge image on hover */
 }
 
 /* Hero text styles */
@@ -263,6 +266,8 @@ h1, h2, h3, p {
 
 .social-icons a:hover {
   color: #1f136e;
+  transform: scale(1.4);
+  transition: transform 0.3s;
 }
 
 @media (max-width: 768px) {
