@@ -1,0 +1,25 @@
+/* Education Section */
+.education {
+    padding: 40px;
+    background-color: #e0e0e0;
+    font-family: 'Duke Charming Regular', serif;
+    color: #008080;
+    scroll-margin-top: 200px;
+}
+
+.education-text {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Duke Charming Regular', serif;
+}
+
+.education-images {
+    display: flex;
+    justify-content: space-around;
+}
+
+.education-images img {
+    width: 45%;
+    height: auto;
+    border-radius: 8px;
+}
