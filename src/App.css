@@ -20,7 +20,7 @@
 
 body {
   margin: 0;
-  background-color: #36454F; /* Change background color to match sections */
+  background-color: #36454F;
   color: #008080;
   font-family: 'Ahsing Regular', serif;
 }
@@ -49,7 +49,7 @@ h1, h2, h3, p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 50px; /* Increased padding for a bigger header */
+  padding: 40px 50px; /* Increased padding for a bigger header */
   background-color: #36454F;
   color: #008080;
   font-family: 'Ahsing Regular', serif;
@@ -80,15 +80,15 @@ h1, h2, h3, p {
 
 /* Navigation link hover effect */
 .header nav ul li a:hover {
-  color: #008080; /* Gold color for hover effect */
-  background-color: #1f136e; /* Purple background on hover */
+  color: #008080;
+  background-color: #1f136e;
   transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
-    padding: 20px 30px; /* Adjusted padding for mobile */
+    padding: 30px 30px; /* Adjusted padding for mobile */
   }
 
   .header nav ul {
@@ -97,20 +97,28 @@ h1, h2, h3, p {
   }
 }
 
+/* Separator */
+.separator {
+  border: 0;
+  height: 2px; /* Thicker separator */
+  background: #008080;
+  margin: 30px 0; /* More margin for better separation */
+}
+
 .hero {
   display: flex;
-  flex-direction: row; /* Keep items side by side */
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between; /* Distribute space evenly */
+  justify-content: space-between;
   padding: 40px;
   background-color: #36454F;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  transition: max-height 0.5s ease, padding 0.5s ease; /* Smooth transition for max-height and padding */
+  transition: max-height 0.5s ease, padding 0.5s ease;
   overflow: hidden;
-  max-height: 600px; /* Increased max height */
+  max-height: 600px;
 }
 
 /* Background overlay */
@@ -121,7 +129,7 @@ h1, h2, h3, p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(54, 69, 79, 0.8); /* Add opacity for a modern overlay effect */
+  background-color: rgba(54, 69, 79, 0.8);
   z-index: 1;
 }
 
@@ -133,7 +141,7 @@ h1, h2, h3, p {
 
 /* Hero image styles */
 .hero-image {
-  flex-shrink: 0; /* Prevents image from shrinking */
+  flex-shrink: 0;
   margin-right: 20px;
 }
 
@@ -143,11 +151,11 @@ h1, h2, h3, p {
   height: auto;
   border: 5px ridge #36454F;
   border-radius: 10px;
-  transition: transform 0.3s; /* Add transition for hover effect */
+  transition: transform 0.3s;
 }
 
 .hero-image img:hover {
-  transform: scale(1.05); /* Slightly enlarge image on hover */
+  transform: scale(1.05);
 }
 
 /* Hero text styles */
@@ -155,7 +163,7 @@ h1, h2, h3, p {
   text-align: center;
   padding: 20px;
   font-family: 'Duke Charming Regular', serif;
-  color: #FFFFFF; /* White text for better contrast */
+  color: #FFFFFF;
   flex: 1;
 }
 
@@ -180,7 +188,7 @@ h1, h2, h3, p {
   .hero {
     flex-direction: column;
     padding: 20px;
-    max-height: 800px; /* Increased max height for mobile */
+    max-height: 800px;
   }
 
   .hero-image {
@@ -194,33 +202,8 @@ h1, h2, h3, p {
   }
 
   .social-icons {
-    margin-top: 30px; /* Increased margin for better visibility on mobile */
+    margin-top: 30px;
   }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .hero-image {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-
-  .hero-text {
-    text-align: center;
-    padding: 10px;
-  }
-}
-
-/* Separator */
-.separator {
-  border: 0;
-  height: 1px;
-  background: #008080; /* Change this color to your desired color */
-  margin: 20px 0;
 }
 
 /* About Section */
@@ -229,7 +212,7 @@ h1, h2, h3, p {
   background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
   color: #008080;
-  scroll-margin-top: 200px; /* Adjust this value to match the height of your header */
+  scroll-margin-top: 300px; /* Adjust this value to match the height of your header */
 }
 
 .about h2 {
@@ -272,7 +255,7 @@ h1, h2, h3, p {
   background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
   color: #008080;
-  scroll-margin-top: 200px;
+  scroll-margin-top: 300px;
 }
 
 .blog h2 {
@@ -309,7 +292,7 @@ h1, h2, h3, p {
   background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
   color: #008080;
-  scroll-margin-top: 200px;
+  scroll-margin-top: 300px;
 }
 
 .education-text {
@@ -354,7 +337,7 @@ h1, h2, h3, p {
   background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
   color: #008080;
-  scroll-margin-top: 200px;
+  scroll-margin-top: 300px;
 }
 
 .projects h2 {
@@ -395,7 +378,7 @@ h1, h2, h3, p {
   background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
   color: #008080;
-  scroll-margin-top: 200px;
+  scroll-margin-top: 300px;
 }
 
 .skills h2 {
