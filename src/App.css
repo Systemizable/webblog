@@ -239,7 +239,7 @@ h1, h2, h3, p {
 /* Blog Section */
 .blog {
   padding: 40px;
-  background-color: #f4f4f4;
+  background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
   color: #008080;
   scroll-margin-top: 200px;
@@ -276,7 +276,7 @@ h1, h2, h3, p {
 /* Education Section */
 .education {
   padding: 40px;
-  background-color: #e0e0e0;
+  background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
   color: #008080;
   scroll-margin-top: 200px;
@@ -321,7 +321,7 @@ h1, h2, h3, p {
 /* Projects Section */
 .projects {
   padding: 40px;
-  background-color: #e0e0e0;
+  background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
   color: #008080;
   scroll-margin-top: 200px;
@@ -358,7 +358,7 @@ h1, h2, h3, p {
 /* Skills Section */
 .skills {
   padding: 40px;
-  background-color: #f4f4f4;
+  background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
   color: #008080;
   scroll-margin-top: 200px;
@@ -400,8 +400,8 @@ h1, h2, h3, p {
 .footer {
   padding: 20px;
   text-align: center;
-  background-color: #333;
-  color: #fff;
+  background-color: #36454F;
+  color: #008080;
   font-family: 'Ahsing Regular', serif;
 }
 
