@@ -1,4 +1,3 @@
-/* About Section */
 .about {
     padding: 40px;
     background-color: #36454F;
@@ -21,3 +20,18 @@
 .about-me p {
     margin-bottom: 10px;
 }
+
+@media (max-width: 768px) {
+    .about {
+        padding: 20px;
+    }
+
+    .about h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-me {
+        font-size: 1.2rem;
+    }
+}
+

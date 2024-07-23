@@ -1,11 +1,3 @@
-/* Reset some default styles for better control */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Hero section styles */
 .hero {
     display: flex;
     flex-direction: row; /* Keep items side by side */
@@ -22,7 +14,6 @@
     max-height: 400px; /* Default max height */
 }
 
-/* Background overlay */
 .hero::before {
     content: "";
     position: absolute;
@@ -34,13 +25,11 @@
     z-index: 1;
 }
 
-/* Ensures content is above the overlay */
 .hero > * {
     position: relative;
     z-index: 2;
 }
 
-/* Hero image styles */
 .hero-image {
     flex-shrink: 0; /* Prevents image from shrinking */
     margin-right: 20px;
@@ -59,7 +48,6 @@
     transform: scale(1.05); /* Slightly enlarge image on hover */
 }
 
-/* Hero text styles */
 .hero-text {
     text-align: center;
     padding: 20px;
@@ -83,4 +71,20 @@
 
 .social-icons a:hover {
     color: #1f136e;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 20px;
+        max-height: none;
+    }
+
+    .hero-image {
+        margin: 0 0 20px 0;
+    }
+
+    .hero-text {
+        padding: 10px;
+    }
 }
