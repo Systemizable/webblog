@@ -71,7 +71,7 @@ h1, h2, h3, p {
   font-family: 'Ahsing Regular', serif;
   list-style: none;
   display: flex;
-  gap: 50px; /* Increased gap between individual list items */
+  gap: 80px; /* Increased gap between individual list items */
   margin: 0;
   padding: 0;
 }
