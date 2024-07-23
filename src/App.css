@@ -44,7 +44,6 @@ h1, h2, h3, p {
   padding: 0;
   box-sizing: border-box;
 }
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -91,7 +90,6 @@ h1, h2, h3, p {
 /* Navigation link hover effect */
 .header nav ul li a:hover {
   color: #008080;
-  background-color: #1f136e;
   transform: scale(1.1);
 }
 
