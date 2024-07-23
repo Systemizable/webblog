@@ -45,7 +45,6 @@ h1, h2, h3, p {
   box-sizing: border-box;
 }
 
-/* Header styles */
 .header {
   display: flex;
   justify-content: space-between;
@@ -85,7 +84,8 @@ h1, h2, h3, p {
   font-size: 1rem;
   padding: 10px 15px;
   border-radius: 5px;
-  transition: color 0.3s, background-color 0.3s, transform 0.3s;
+  border-bottom: 2px solid #008080; /* Underline by default */
+  transition: color 0.3s, background-color 0.3s, transform 0.3s, border-bottom 0.3s; /* Add transition for underline */
 }
 
 /* Navigation link hover effect */
@@ -110,7 +110,6 @@ h1, h2, h3, p {
     gap: 20px; /* Increased gap between individual list items for mobile */
   }
 }
-
 /* Separator */
 .separator {
   border: 0;
@@ -199,6 +198,7 @@ h1, h2, h3, p {
   height: 70px;
   background-color: rgba(25, 109, 71, 0.5); /* Semi-transparent circle */
 }
+
 
 /* Circle on the top right of the picture */
 .hero .circle-top-right {
