@@ -61,12 +61,7 @@ h1, h2, h3, p {
   flex-wrap: wrap; /* Allow items to wrap to the next line */
 }
 
-.header-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+/* Header title styles */
 .header h1 {
   border-bottom: 3px solid #adadac; /* Underline similar to navigation */
   border-radius: 6px;
@@ -77,20 +72,7 @@ h1, h2, h3, p {
   white-space: nowrap; /* Prevent the h1 text from wrapping */
 }
 
-.subheadings {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.subheading {
-  margin: 0;
-  padding: 5px 0;
-  border-radius: 6px;
-  font-size: 1rem; /* Adjust font size as needed */
-  white-space: nowrap;
-}
-
+/* Navigation styles */
 .header nav ul {
   font-family: 'Ahsing Regular', serif;
   list-style: none;
@@ -102,6 +84,7 @@ h1, h2, h3, p {
   z-index: 2; /* Ensure the content is above the pseudo-elements */
 }
 
+/* Navigation link items */
 .header nav ul li a {
   font-family: 'Ahsing Regular', serif;
   text-decoration: none;
@@ -113,6 +96,7 @@ h1, h2, h3, p {
   transition: color 0.3s, background-color 0.3s, transform 0.3s, border-bottom 0.3s; /* Add transition for underline */
 }
 
+/* Navigation link hover effect */
 .header nav ul li a:hover {
   color: #36454F;
   transform: scale(1.1);
@@ -121,50 +105,24 @@ h1, h2, h3, p {
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
-    padding: 15px 20px;
-  }
-
-  .header-content {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 15px 20px; /* Reduced padding for mobile */
   }
 
   .header h1 {
-    font-size: 1.5rem;
+    margin-bottom: 0px; /* Reduced bottom margin */
+    margin-top: 3px; /* Added top margin */
+    font-size: 1.5rem; /* Smaller font size for mobile */
   }
 
-  .subheadings {
-    position: absolute;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .subheading-constant-learner {
-    transform: rotate(-90deg);
-    transform-origin: left center;
-    left: 0;
-  }
-
-  .subheading-avid-programmer {
-    transform: rotate(90deg);
-    transform-origin: right center;
-    right: 0;
-  }
-
-  .nav-links ul {
+  .header nav ul {
     flex-direction: column;
-    align-items: flex-start;
-    margin-top: 20px;
+    margin-top: 5px;
+    gap: 20px; /* Increased gap between individual list items for mobile */
   }
 
-  .nav-links ul li a {
-    font-size: 1rem;
-    padding: 8px 10px;
+  .header nav ul li a {
+    font-size: 1rem; /* Smaller font size for mobile */
+    padding: 8px 10px; /* Adjusted padding for mobile */
   }
 }
 
