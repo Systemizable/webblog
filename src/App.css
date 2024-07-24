@@ -60,6 +60,26 @@ h1, h2, h3, p {
   flex-wrap: wrap; /* Allow items to wrap to the next line */
 }
 
+.header::before,
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px; /* Width of the vertical line */
+  background-color: #008080; /* Color of the vertical line */
+}
+
+.header::before {
+  left: 50%; /* Position in the center */
+  transform: translateX(-50%);
+}
+
+.header::after {
+  right: 50%; /* Position in the center */
+  transform: translateX(50%);
+}
+
 /* Header title styles */
 .header h1 {
   margin-bottom: 30px; /* Adjust this value to increase the gap */
