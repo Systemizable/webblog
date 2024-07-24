@@ -52,7 +52,7 @@ h1, h2, h3, p {
   padding: 30px 30px; /* Increased padding for a bigger header */
   background: linear-gradient(to right, #36454F, #008080);
   background-size: cover;
-  color: #fff;
+  color: #adadac;
   font-family: 'Ahsing Regular', serif;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -63,7 +63,7 @@ h1, h2, h3, p {
 
 /* Header title styles */
 .header h1 {
-  border-bottom: 3px solid #fff; /* Underline similar to navigation */
+  border-bottom: 3px solid #adadac; /* Underline similar to navigation */
   border-radius: 6px;
   position: relative; /* Ensure the content is above the pseudo-elements */
   z-index: 2; /* Ensure the content is above the pseudo-elements */
@@ -88,11 +88,11 @@ h1, h2, h3, p {
 .header nav ul li a {
   font-family: 'Ahsing Regular', serif;
   text-decoration: none;
-  color: #fff;
+  color: #adadac;
   font-size: 1.25rem;
   padding: 10px 15px;
   border-radius: 6px;
-  border-bottom: 3px solid #fff; /* Underline by default */
+  border-bottom: 3px solid #adadac; /* Underline by default */
   transition: color 0.3s, background-color 0.3s, transform 0.3s, border-bottom 0.3s; /* Add transition for underline */
 }
 
@@ -247,7 +247,7 @@ h1, h2, h3, p {
   padding: 40px;
   background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
-  color: #fff;
+  color: #adadac;
   scroll-margin-top: 400px; /* Adjust this value to match the height of your header */
 }
 
