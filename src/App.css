@@ -182,7 +182,7 @@ h1, h2, h3, p {
   text-align: center;
   padding: 20px;
   font-family: 'Duke Charming Regular', serif;
-  color: #FFFFFF; /* White text for better contrast */
+  color: #adadac; /* White text for better contrast */
   flex: 1;
 }
 
@@ -194,7 +194,7 @@ h1, h2, h3, p {
 }
 
 .social-icons a {
-  color: #FFFFFF;
+  color: #adadac;
   font-size: 2rem;
   transition: color 0.3s;
 }
