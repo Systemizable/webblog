@@ -61,7 +61,12 @@ h1, h2, h3, p {
   flex-wrap: wrap; /* Allow items to wrap to the next line */
 }
 
-/* Header title styles */
+.header-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .header h1 {
   border-bottom: 3px solid #adadac; /* Underline similar to navigation */
   border-radius: 6px;
@@ -72,7 +77,20 @@ h1, h2, h3, p {
   white-space: nowrap; /* Prevent the h1 text from wrapping */
 }
 
-/* Navigation styles */
+.subheadings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subheading {
+  margin: 0;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 1rem; /* Adjust font size as needed */
+  white-space: nowrap;
+}
+
 .header nav ul {
   font-family: 'Ahsing Regular', serif;
   list-style: none;
@@ -84,7 +102,6 @@ h1, h2, h3, p {
   z-index: 2; /* Ensure the content is above the pseudo-elements */
 }
 
-/* Navigation link items */
 .header nav ul li a {
   font-family: 'Ahsing Regular', serif;
   text-decoration: none;
@@ -96,7 +113,6 @@ h1, h2, h3, p {
   transition: color 0.3s, background-color 0.3s, transform 0.3s, border-bottom 0.3s; /* Add transition for underline */
 }
 
-/* Navigation link hover effect */
 .header nav ul li a:hover {
   color: #36454F;
   transform: scale(1.1);
@@ -105,22 +121,50 @@ h1, h2, h3, p {
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
-    padding: 15px 20px; /* Reduced padding for mobile */
+    padding: 15px 20px;
+  }
+
+  .header-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .header h1 {
-    margin-bottom: 10px; /* Adjust this value to increase the gap on mobile as well */
-    font-size: 1.5rem; /* Smaller font size for mobile */
+    font-size: 1.5rem;
   }
 
-  .header nav ul {
+  .subheadings {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .subheading-constant-learner {
+    transform: rotate(-90deg);
+    transform-origin: left center;
+    left: 0;
+  }
+
+  .subheading-avid-programmer {
+    transform: rotate(90deg);
+    transform-origin: right center;
+    right: 0;
+  }
+
+  .nav-links ul {
     flex-direction: column;
-    gap: 20px; /* Increased gap between individual list items for mobile */
+    align-items: flex-start;
+    margin-top: 20px;
   }
 
-  .header nav ul li a {
-    font-size: 1rem; /* Smaller font size for mobile */
-    padding: 8px 10px; /* Adjusted padding for mobile */
+  .nav-links ul li a {
+    font-size: 1rem;
+    padding: 8px 10px;
   }
 }
 
