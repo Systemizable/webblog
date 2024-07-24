@@ -6,6 +6,10 @@ const Header = () => (
         <div className="header-content">
             <h1>Joseph Sfeir</h1>
         </div>
+        <div className="circle-1"></div>
+        <div className="circle-2"></div>
+        <div className="circle-3"></div>
+        <div className="circle-4"></div>
         <nav className="nav-links">
             <ul>
                 <li><a href="#about">About Me</a></li>
