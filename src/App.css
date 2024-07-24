@@ -44,12 +44,26 @@ h1, h2, h3, p {
   padding: 0;
   box-sizing: border-box;
 }
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px 30px; /* Increased padding for a bigger header */
-  background: linear-gradient(50deg, #36454F, #110000);
+  background: linear-gradient(270deg, #36454F, #008080, #1f136e, #36454F);
+  background-size: 600% 600%;
+  animation: gradientAnimation 15s ease infinite;
   color: #008080;
   font-family: 'Ahsing Regular', serif;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -87,7 +101,6 @@ h1, h2, h3, p {
   border-radius: 5px;
   border-bottom: 2px solid #008080; /* Underline by default */
   transition: color 0.3s, background-color 0.3s, transform 0.3s, border-bottom 0.3s; /* Add transition for underline */
-
 }
 
 /* Navigation link hover effect */
