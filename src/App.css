@@ -109,7 +109,7 @@ h1, h2, h3, p {
   }
 
   .header h1 {
-    margin-bottom: 1px; /* Reduced bottom margin */
+    margin-bottom: 2px; /* Reduced bottom margin */
     margin-top: 3px; /* Added top margin */
     padding-bottom: 2px; /* Adjust padding-bottom to change distance between text and underline */
     font-size: 1.5rem; /* Smaller font size for mobile */
