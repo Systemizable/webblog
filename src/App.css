@@ -49,7 +49,7 @@ h1, h2, h3, p {
   justify-content: space-between;
   align-items: center;
   padding: 30px 30px; /* Increased padding for a bigger header */
-  background-color: #36454F;
+  background: linear-gradient(50deg, #36454F, #110000);
   color: #008080;
   font-family: 'Ahsing Regular', serif;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
