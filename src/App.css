@@ -44,12 +44,13 @@ h1, h2, h3, p {
   padding: 0;
   box-sizing: border-box;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px 30px; /* Increased padding for a bigger header */
-  background: linear-gradient(50deg, #36454F, #110000);
+  background: linear-gradient(120deg, #36454F, #110000);
   color: #008080;
   font-family: 'Ahsing Regular', serif;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -87,7 +88,6 @@ h1, h2, h3, p {
   border-radius: 5px;
   border-bottom: 2px solid #008080; /* Underline by default */
   transition: color 0.3s, background-color 0.3s, transform 0.3s, border-bottom 0.3s; /* Add transition for underline */
-
 }
 
 /* Navigation link hover effect */
@@ -99,18 +99,25 @@ h1, h2, h3, p {
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
-    padding: 30px 30px; /* Adjusted padding for mobile */
+    padding: 15px 20px; /* Reduced padding for mobile */
   }
 
   .header h1 {
-    margin-bottom: 20px; /* Adjust this value to increase the gap on mobile as well */
+    margin-bottom: 10px; /* Adjust this value to increase the gap on mobile as well */
+    font-size: 1.5rem; /* Smaller font size for mobile */
   }
 
   .header nav ul {
     flex-direction: column;
-    gap: 30px; /* Increased gap between individual list items for mobile */
+    gap: 20px; /* Increased gap between individual list items for mobile */
+  }
+
+  .header nav ul li a {
+    font-size: 1rem; /* Smaller font size for mobile */
+    padding: 8px 10px; /* Adjusted padding for mobile */
   }
 }
+
 /* Separator */
 .separator {
   border: 0;
