@@ -50,9 +50,9 @@ h1, h2, h3, p {
   justify-content: space-between;
   align-items: center;
   padding: 30px 30px; /* Increased padding for a bigger header */
-  background: linear-gradient(120deg, #36454F, #110000);
+  background: linear-gradient(to right, #36454F, #008080);
   background-size: cover;
-  color: #008080;
+  color: #fff;
   font-family: 'Ahsing Regular', serif;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -63,12 +63,13 @@ h1, h2, h3, p {
 
 /* Header title styles */
 .header h1 {
-  margin-bottom: 30px; /* Adjust this value to increase the gap */
-  flex-basis: 100%; /* Ensure h1 takes full width */
-  border-bottom: 2px solid #008080;
-  border-radius: 5px;
+  border-bottom: 3px solid #fff; /* Underline similar to navigation */
+  border-radius: 6px;
   position: relative; /* Ensure the content is above the pseudo-elements */
   z-index: 2; /* Ensure the content is above the pseudo-elements */
+  margin: 0; /* Remove margin to align it properly */
+  padding: 10px 0; /* Add padding to match navigation */
+  white-space: nowrap; /* Prevent the h1 text from wrapping */
 }
 
 /* Navigation styles */
@@ -87,17 +88,17 @@ h1, h2, h3, p {
 .header nav ul li a {
   font-family: 'Ahsing Regular', serif;
   text-decoration: none;
-  color: #008080;
+  color: #fff;
   font-size: 1.25rem;
   padding: 10px 15px;
-  border-radius: 5px;
-  border-bottom: 2px solid #008080; /* Underline by default */
+  border-radius: 6px;
+  border-bottom: 3px solid #fff; /* Underline by default */
   transition: color 0.3s, background-color 0.3s, transform 0.3s, border-bottom 0.3s; /* Add transition for underline */
 }
 
 /* Navigation link hover effect */
 .header nav ul li a:hover {
-  color: #008080;
+  color: #36454F;
   transform: scale(1.1);
 }
 
@@ -126,7 +127,7 @@ h1, h2, h3, p {
 /* Separator */
 .separator {
   border: 0;
-  height: 2px; /* Thicker separator */
+  height: 3px; /* Thicker separator */
   background: #008080;
   margin: 30px 0; /* More margin for better separation */
 }
@@ -199,7 +200,7 @@ h1, h2, h3, p {
 }
 
 .social-icons a:hover {
-  color: #1f136e;
+  color: #008080;
   transform: scale(1.4);
   transition: transform 0.3s;
 }
@@ -246,7 +247,7 @@ h1, h2, h3, p {
   padding: 40px;
   background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
-  color: #008080;
+  color: #fff;
   scroll-margin-top: 400px; /* Adjust this value to match the height of your header */
 }
 
