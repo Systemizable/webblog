@@ -10,9 +10,12 @@ const Hero = () => {
             <div className="circle-3"></div>
             <div className="circle-4"></div>
             <div className="circle-5"></div>
-            <div className="circle-top-right "></div>
-            <div className="hero-image">
-                <img src={`${process.env.PUBLIC_URL}/sexy.jpeg`} alt="Sexy" />
+            <div className="circle-top-right"></div>
+            <div className="hero-image-container">
+                <img src={`${process.env.PUBLIC_URL}/sexy.png`} alt="Sexy" />
+                <div className="inner-circle"></div>
+                <div className="dotted-circle"></div>
+                <div className="outer-circle"></div>
             </div>
             <div className="hero-text">
                 <h2>Check out my socials below!</h2>
