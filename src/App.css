@@ -165,6 +165,7 @@ h1, h2, h3, p {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 3;
 }
 
 .hero-image-container img {
@@ -183,6 +184,7 @@ h1, h2, h3, p {
 }
 
 .inner-circle {
+  position: absolute;
   width: 200px; /* Slightly smaller than the container */
   height: 200px;
   top: 70px;
@@ -201,6 +203,7 @@ h1, h2, h3, p {
   background-size: 5px 5px; /* Adjust the size of the dots */
   z-index: 1;
 }
+
 .outer-circle {
   position: absolute;
   width: 300px; /* Adjust the size as needed */
@@ -570,13 +573,13 @@ h1, h2, h3, p {
   }
 }
 
-/* Skills Section */
 .skills {
   padding: 40px;
   background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
   color: #008080;
   scroll-margin-top: 400px;
+  position: relative;
 }
 
 .skills h2 {
@@ -585,12 +588,67 @@ h1, h2, h3, p {
 }
 
 .skills-content {
-  text-align: justify;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px; /* Adjust height as needed */
+  position: relative;
 }
 
-.skills-content ul {
-  list-style-type: disc;
-  margin-left: 20px;
+.web {
+  position: relative;
+  width: 80%;
+  height: 80%;
+}
+
+.web-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #008080;
+}
+
+.web-circle-1 {
+  width: 20%;
+  height: 20%;
+  top: 40%;
+  left: 40%;
+}
+
+.web-circle-2 {
+  width: 40%;
+  height: 40%;
+  top: 30%;
+  left: 30%;
+}
+
+.web-circle-3 {
+  width: 60%;
+  height: 60%;
+  top: 20%;
+  left: 20%;
+}
+
+.web-circle-4 {
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+}
+
+.skill {
+  position: absolute;
+  background-color: rgba(0, 128, 128, 0.8);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.skill:hover {
+  background-color: rgba(0, 128, 128, 1);
 }
 
 @media (max-width: 768px) {
@@ -604,10 +662,6 @@ h1, h2, h3, p {
 
   .skills-content {
     font-size: 1.2rem;
-  }
-
-  .skills-content ul {
-    margin-left: 15px;
   }
 }
 
