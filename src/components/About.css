@@ -3,7 +3,7 @@
     background-color: #36454F;
     font-family: 'Duke Charming Regular', serif;
     color: #008080;
-    scroll-margin-top: 200px; /* Adjust this value to match the height of your header */
+    scroll-margin-top: 200px;
 }
 
 .about h2 {

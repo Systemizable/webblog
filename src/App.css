@@ -23,7 +23,7 @@ body {
   background-color: #36454F;
   color: #008080;
   font-family: 'Ahsing Regular', serif;
-  animation: fadeInPage 2.2s ease-in-out; /* Apply the fade-in animation to the entire page */
+  animation: fadeInPage 2.2s ease-in-out;
 }
 
 html {
@@ -38,19 +38,17 @@ h1, h2, h3, p {
   text-align: center;
 }
 
-/* Reset some default styles for better control */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Header styles */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 30px; /* Increased padding for a bigger header */
+  padding: 30px 30px;
   background: linear-gradient(to right, #36454F, #008080);
   background-size: cover;
   color: #adadac;
@@ -59,33 +57,30 @@ h1, h2, h3, p {
   position: sticky;
   top: 0;
   z-index: 1000;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  flex-wrap: wrap;
 }
 
-/* Header title styles */
 .header h1 {
-  border-bottom: 3px solid #adadac; /* Underline similar to navigation */
+  border-bottom: 3px solid #adadac;
   border-radius: 6px;
-  position: relative; /* Ensure the content is above the pseudo-elements */
-  z-index: 2; /* Ensure the content is above the pseudo-elements */
-  margin: 0; /* Remove margin to align it properly */
-  padding: 10px 0; /* Add padding to match navigation */
-  white-space: nowrap; /* Prevent the h1 text from wrapping */
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 10px 0;
+  white-space: nowrap;
 }
 
-/* Navigation styles */
 .header nav ul {
   font-family: 'Ahsing Regular', serif;
   list-style: none;
   display: flex;
-  gap: 60px; /* Increased gap between individual list items */
+  gap: 60px;
   margin: 0;
   padding: 0;
-  position: relative; /* Ensure the content is above the pseudo-elements */
-  z-index: 2; /* Ensure the content is above the pseudo-elements */
+  position: relative;
+  z-index: 2;
 }
 
-/* Navigation link items */
 .header nav ul li a {
   font-family: 'Ahsing Regular', serif;
   text-decoration: none;
@@ -93,11 +88,10 @@ h1, h2, h3, p {
   font-size: 1.25rem;
   padding: 10px 15px;
   border-radius: 6px;
-  border-bottom: 3px solid #adadac; /* Underline by default */
-  transition: color 0.3s, background-color 0.3s, transform 0.3s, border-bottom 0.3s; /* Add transition for underline */
+  border-bottom: 3px solid #adadac;
+  transition: color 0.3s, background-color 0.3s, transform 0.3s, border-bottom 0.3s;
 }
 
-/* Navigation link hover effect */
 .header nav ul li a:hover {
   color: #36454F;
   transform: scale(1.1);
@@ -106,35 +100,35 @@ h1, h2, h3, p {
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
-    padding: 15px 20px; /* Reduced padding for mobile */
+    padding: 15px 20px;
   }
 
   .header h1 {
-    margin-bottom: 2px; /* Reduced bottom margin */
-    margin-top: 3px; /* Added top margin */
-    padding-bottom: 2px; /* Adjust padding-bottom to change distance between text and underline */
-    font-size: 1.5rem; /* Smaller font size for mobile */
+    margin-bottom: 2px;
+    margin-top: 3px;
+    padding-bottom: 2px;
+    font-size: 1.5rem;
   }
 
   .header nav ul {
     flex-direction: column;
     margin-top: 5px;
-    gap: 20px; /* Increased gap between individual list items for mobile */
+    gap: 20px;
   }
 
   .header nav ul li a {
-    font-size: 1rem; /* Smaller font size for mobile */
-    padding: 8px 10px; /* Adjusted padding for mobile */
+    font-size: 1rem;
+    padding: 8px 10px;
   }
 }
 
-/* Separator */
 .separator {
   border: 0;
-  height: 3px; /* Thicker separator */
+  height: 3px;
   background: #008080;
-  margin: 30px 0; /* More margin for better separation */
+  margin: 30px 0;
 }
+
 .hero {
   display: flex;
   flex-direction: row;
@@ -149,20 +143,19 @@ h1, h2, h3, p {
   max-height: 600px;
 }
 
-/* Ensures content is above the overlay */
 .hero > * {
   position: relative;
   z-index: 2;
 }
 
-/* Hero image container with advanced border styling */
 .hero-image-container {
   position: relative;
-  width: 300px; /* Adjust the width as needed */
-  height: 300px; /* Adjust the height as needed */
-  border-radius: 50%; /* Make the image circular */
-  overflow: visible; /* Allow overflow to show circles */
+  width: 272px;
+  height: 272px;
+  border-radius: 50%;
+  overflow: visible;
   display: flex;
+  top: -20px;
   align-items: center;
   justify-content: center;
   z-index: 3;
@@ -173,7 +166,10 @@ h1, h2, h3, p {
   height: 100%;
   border-radius: 50%;
   transition: transform 0.3s;
-  z-index: 3; /* Ensure image overlays the inner circle */
+  z-index: 3;
+  margin-left: 16px;
+  margin-top: -6px;
+  filter: hue-rotate(10deg) sepia(0.3) saturate(1.2);
 }
 
 .inner-circle,
@@ -185,58 +181,57 @@ h1, h2, h3, p {
 
 .inner-circle {
   position: absolute;
-  width: 200px; /* Slightly smaller than the container */
+  width: 200px;
   height: 200px;
   top: 70px;
   left: 40px;
-  background: rgba(0, 128, 128, 0.3); /* Slightly opaque background */
-  z-index: 2; /* Ensure inner circle is below the image */
+  background: rgba(0, 128, 128, 0.3);
+  z-index: 2;
 }
 
 .dotted-circle {
-  width: 350px; /* Adjust the size as needed */
+  width: 350px;
   height: 350px;
-  top: -5px; /* Adjust to bring closer */
-  left: -35px; /* Adjust to bring closer */
+  top: -5px;
+  left: -35px;
   background: linear-gradient(to right, #36454F, #008080);
   mask: radial-gradient(circle, transparent 47%, black 47%, black 53%, transparent 53%);
-  background-size: 5px 5px; /* Adjust the size of the dots */
+  background-size: 5px 5px;
   z-index: 1;
 }
 
 .outer-circle {
   position: absolute;
-  width: 300px; /* Adjust the size as needed */
+  width: 300px;
   height: 300px;
   top: 15px;
   left: -15px;
   z-index: 0;
-  border-radius: 50%; /* Make the circle */
-  background: linear-gradient(to left, #36454F, #008080); /* Gradient background */
+  border-radius: 50%;
+  background: linear-gradient(to left, #36454F, #008080);
 }
 
 .outer-circle::before {
   content: "";
   position: absolute;
-  top: 10px; /* Adjust to match the border thickness */
-  left: 10px; /* Adjust to match the border thickness */
-  width: 286px; /* Adjust the size to create the illusion of border thickness */
-  height: 286px; /* Adjust the size to create the illusion of border thickness */
-  background: #36454F; /* Inner circle background color to match the page background */
-  border-radius: 50%; /* Make the circle */
+  top: 10px;
+  left: 10px;
+  width: 286px;
+  height: 286px;
+  background: #36454F;
+  border-radius: 50%;
   z-index: -1;
 }
 
 .hero-image-container img:hover {
-  transform: scale(1.05); /* Slightly enlarge image on hover */
+  transform: scale(1.05);
 }
 
-/* Hero text styles */
 .hero-text {
   text-align: center;
   padding: 20px;
   font-family: 'Duke Charming Regular', serif;
-  color: #adadac; /* White text for better contrast */
+  color: #adadac;
   flex: 1;
 }
 
@@ -263,7 +258,7 @@ h1, h2, h3, p {
   .hero {
     flex-direction: column;
     padding: 20px;
-    max-height: 800px; /* Increased max height for mobile */
+    max-height: 800px;
   }
 
   .hero-image-container {
@@ -276,13 +271,13 @@ h1, h2, h3, p {
   }
 
   .social-icons {
-    margin-top: 30px; /* Increased margin for better visibility on mobile */
+    margin-top: 30px;
   }
 }
 
 @keyframes fadeIn {
   to {
-    opacity: 1; /* Fade in to fully visible */
+    opacity: 1;
   }
 }
 
@@ -295,15 +290,12 @@ h1, h2, h3, p {
   }
 }
 
-
-
-/* About Section */
 .about {
   padding: 40px;
   background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
   color: #adadac;
-  scroll-margin-top: 400px; /* Adjust this value to match the height of your header */
+  scroll-margin-top: 400px;
 }
 
 .about h2 {
@@ -339,7 +331,6 @@ h1, h2, h3, p {
   }
 }
 
-/* Blog Section */
 .blog {
   font-size: 1.5rem;
   padding: 40px;
@@ -377,7 +368,6 @@ h1, h2, h3, p {
   }
 }
 
-/* Education Section */
 * {
   margin: 0;
   padding: 0;
@@ -434,19 +424,19 @@ h1, h2, h3, p {
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  height: 20px; /* Adjusted to align the line with the box */
+  height: 20px;
   background-color: #008080;
 }
 
 .timeline-event:first-child::before,
 .timeline-event:last-child::before {
-  height: 20px; /* Ensure the first and last events have lines reaching the timeline */
+  height: 20px;
 }
 
 .timeline-event::after {
   content: '';
   position: absolute;
-  top: -2px; /* Adjusted to align the circle with the box */
+  top: -2px;
   left: 50%;
   transform: translateX(-50%);
   width: 10px;
@@ -502,16 +492,16 @@ h1, h2, h3, p {
   }
 
   .timeline-event::before {
-    top: -20px; /* Adjusted to align the line with the box */
+    top: -20px;
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
-    height: 20px; /* Ensure the lines reach just below the edge of the box */
+    height: 20px;
     background-color: #008080;
   }
 
   .timeline-event::after {
-    display: none; /* Remove circles on mobile */
+    display: none;
   }
 
   .timeline-content {
@@ -532,7 +522,6 @@ h1, h2, h3, p {
   }
 }
 
-/* Projects Section */
 .projects {
   padding: 40px;
   background-color: #36454F;
@@ -591,7 +580,7 @@ h1, h2, h3, p {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px; /* Adjust height as needed */
+  height: 400px;
   position: relative;
 }
 
@@ -665,7 +654,6 @@ h1, h2, h3, p {
   }
 }
 
-/* Footer */
 .footer {
   padding: 20px;
   text-align: center;

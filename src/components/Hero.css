@@ -1,17 +1,17 @@
 .hero {
     display: flex;
-    flex-direction: row; /* Keep items side by side */
+    flex-direction: row;
     align-items: center;
-    justify-content: space-between; /* Distribute space evenly */
+    justify-content: space-between;
     padding: 40px;
     background-color: #36454F;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    transition: max-height 0.5s ease, padding 0.5s ease; /* Smooth transition for max-height and padding */
+    transition: max-height 0.5s ease, padding 0.5s ease;
     overflow: hidden;
-    max-height: 400px; /* Default max height */
+    max-height: 400px;
 }
 
 .hero::before {
@@ -21,7 +21,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 69, 79, 0.8); /* Add opacity for a modern overlay effect */
+    background-color: rgba(54, 69, 79, 0.8);
     z-index: 1;
 }
 
@@ -41,18 +41,18 @@
     height: auto;
     border: 5px ridge #36454F;
     border-radius: 10px;
-    transition: transform 0.3s; /* Add transition for hover effect */
+    transition: transform 0.3s;
 }
 
 .hero-image img:hover {
-    transform: scale(1.05); /* Slightly enlarge image on hover */
+    transform: scale(1.05);
 }
 
 .hero-text {
     text-align: center;
     padding: 20px;
     font-family: 'Duke Charming Regular', serif;
-    color: #FFFFFF; /* White text for better contrast */
+    color: #FFFFFF;
     flex: 1;
 }
 
