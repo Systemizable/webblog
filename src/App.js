@@ -7,7 +7,7 @@ import About from './components/About';
 import Education from './components/Education';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-import Blog from './components/Blog';
+import Git from './components/Git';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -26,7 +26,7 @@ function App() {
                     <hr className="separator" />
                     <Projects />
                     <hr className="separator" />
-                    <Blog />
+                    <Git />
                     <hr className="separator" />
                     <Footer />
                     <Analytics />

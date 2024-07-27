@@ -51,7 +51,7 @@ const Education = () => (
         </div>
         <div className="education-text">
             <h2>Education</h2>
-            <p>Growing up in Zahle, Lebanon, it just felt normal for me that I should be enrolled in Antonine Sisters School due to it being one of the most prominent schools in the city and possibly in the country. My early academic journey was filled with straight A's, and constant exemptions from taking final exams, and this carried through till the 9th grade. When COVID hit, I just felt drained and no longer felt the need to study as we're now online-learning. This prompted me to start discovering Programming, mostly due to my brother's major which is also Computer and Communications Engineering.</p>
+            <p>Growing up in Zahle, Lebanon, it just felt normal for me that I should be enrolled in Antonine Sisters School due to it being one of the most prominent schools in the city and possibly in the country. My early academic journey was filled with straight A's, and constant exemptions from taking final exams, and this carried through till the 9th grade. When COVID hit, I just felt drained and no longer felt the need to study as we're now online-learning. This prompted me to start discovering Programming, mostly due to my brother's major which is also Computer and Communications Engineering. In the Official Lebanese Exams, I earned a solid B+, this earned me a scholarship at UA, further solidifying my choice of university.</p>
         </div>
     </section>
 );
