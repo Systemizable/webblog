@@ -438,7 +438,7 @@ h1, h2, h3, p {
   background-color: #36454F;
   font-family: 'Duke Charming Regular', serif;
   color: #adadac;
-  scroll-margin-top: 400px;
+  scroll-margin-top: 300px;
 }
 
 .education-text {
@@ -589,6 +589,7 @@ h1, h2, h3, p {
   margin: 40px 20px;
   border-radius: 10px;
   text-align: center;
+  scroll-margin-top: 400px;
 }
 
 .projects h2 {
