@@ -169,7 +169,7 @@ h1, h2, h3, p {
   z-index: 3;
   margin-left: 16px;
   margin-top: -6px;
-  filter: hue-rotate(10deg) sepia(0.3) saturate(1.2);
+  filter: hue-rotate(11deg) sepia(0.3) saturate(1.5);
 }
 
 .inner-circle,
@@ -224,7 +224,7 @@ h1, h2, h3, p {
 }
 
 .hero-image-container img:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 .hero-text {
@@ -233,6 +233,7 @@ h1, h2, h3, p {
   font-family: 'Duke Charming Regular', serif;
   color: #adadac;
   flex: 1;
+  font-size: 2rem;
 }
 
 .social-icons {
@@ -244,7 +245,7 @@ h1, h2, h3, p {
 
 .social-icons a {
   color: #adadac;
-  font-size: 2rem;
+  font-size: 3rem;
   transition: color 0.3s;
 }
 
@@ -268,6 +269,7 @@ h1, h2, h3, p {
   .hero-text {
     text-align: center;
     padding: 10px;
+    font-size: 1.2rem;
   }
 
   .social-icons {
@@ -651,8 +653,46 @@ h1, h2, h3, p {
 
   .skills-content {
     font-size: 1.2rem;
+    height: 400px;
+  }
+
+  .web {
+    width: 100%;
+    height: 100%;
+  }
+
+  .web-circle {
+    border: 1px solid #008080;
+  }
+
+  .web-circle-1 {
+    width: 40%;
+    height: 40%;
+    top: 30%;
+    left: 30%;
+  }
+
+  .web-circle-2 {
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+  }
+
+  .web-circle-3 {
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+  }
+
+
+  .skill {
+    font-size: 0.9rem;
+    padding: 4px 8px;
   }
 }
+
 
 .footer {
   padding: 20px;
