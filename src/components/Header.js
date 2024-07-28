@@ -4,10 +4,8 @@ import './Header.css';
 const Header = () => (
     <header className="header">
         <div className="header-content">
-            <h1>Joseph Sfeir</h1>
+
             <div className="subheadings">
-                <h2 className="subheading subheading-constant-learner">Constant Learner</h2>
-                <h3 className="subheading subheading-avid-programmer">Avid Programmer</h3>
             </div>
         </div>
         <nav className="nav-links">

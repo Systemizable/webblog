@@ -17,11 +17,19 @@
   font-family: 'Architype Renner Medium';
   src: url('./fonts/ArchitypeRenner-Regular.otf') format('opentype');
 }
+@font-face {
+  font-family: 'P22 Underground';
+  src: url('./fonts/P22Underground-PCp.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Flamante Sans Bold';
+  src: url('./fonts/flamante-sans.bold.ttf') format('opentype');
+}
 
 body {
   margin: 0;
-  background-color: #36454F;
-  color: #008080;
+  background-color: #000000;
+  color: #141414;
   font-family: 'Ahsing Regular', serif;
   animation: fadeInPage 2.2s ease-in-out;
 }
@@ -49,10 +57,10 @@ h1, h2, h3, p {
   justify-content: space-between;
   align-items: center;
   padding: 30px 30px;
-  background: linear-gradient(to right, #36454F, #008080);
+  background: linear-gradient(to right, #000000, #000001);
   background-size: cover;
   color: #adadac;
-  font-family: 'Ahsing Regular', serif;
+  font-family: 'Flamante Sans Bold', serif;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -61,7 +69,6 @@ h1, h2, h3, p {
 }
 
 .header h1 {
-  border-bottom: 3px solid #adadac;
   border-radius: 6px;
   position: relative;
   z-index: 2;
@@ -82,18 +89,17 @@ h1, h2, h3, p {
 }
 
 .header nav ul li a {
-  font-family: 'Ahsing Regular', serif;
+  font-family: 'P22 Underground', serif;
   text-decoration: none;
   color: #adadac;
   font-size: 1.25rem;
   padding: 10px 15px;
   border-radius: 6px;
-  border-bottom: 3px solid #adadac;
   transition: color 0.3s, background-color 0.3s, transform 0.3s, border-bottom 0.3s;
 }
 
 .header nav ul li a:hover {
-  color: #36454F;
+  color: #fff;
   transform: scale(1.1);
 }
 
@@ -125,7 +131,7 @@ h1, h2, h3, p {
 .separator {
   border: 0;
   height: 3px;
-  background: #008080;
+  background: #141414;
   margin: 30px 0;
 }
 
@@ -135,6 +141,7 @@ h1, h2, h3, p {
   align-items: center;
   justify-content: space-between;
   padding: 40px;
+  background-color: #000000;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -167,8 +174,8 @@ h1, h2, h3, p {
   border-radius: 50%;
   transition: transform 0.3s;
   z-index: 3;
-  margin-left: 16px;
-  margin-top: -6px;
+  margin-left: 11px;
+  margin-top: -5px;
   filter: hue-rotate(11deg) sepia(0.3) saturate(1.5);
 }
 
@@ -185,7 +192,7 @@ h1, h2, h3, p {
   height: 200px;
   top: 70px;
   left: 40px;
-  background: rgba(0, 128, 128, 0.3);
+  background: #adadac;
   z-index: 2;
 }
 
@@ -194,7 +201,7 @@ h1, h2, h3, p {
   height: 350px;
   top: -5px;
   left: -35px;
-  background: linear-gradient(to right, #36454F, #008080);
+  background: linear-gradient(to right, #000000, #adadac);
   mask: radial-gradient(circle, transparent 47%, black 47%, black 53%, transparent 53%);
   background-size: 5px 5px;
   z-index: 1;
@@ -208,7 +215,7 @@ h1, h2, h3, p {
   left: -15px;
   z-index: 0;
   border-radius: 50%;
-  background: linear-gradient(to left, #36454F, #008080);
+  background: linear-gradient(to left, #000000, #adadac);
 }
 
 .outer-circle::before {
@@ -218,7 +225,7 @@ h1, h2, h3, p {
   left: 10px;
   width: 286px;
   height: 286px;
-  background: #36454F;
+  background: #242424;
   border-radius: 50%;
   z-index: -1;
 }
@@ -250,7 +257,7 @@ h1, h2, h3, p {
 }
 
 .social-icons a:hover {
-  color: #008080;
+  color: #adadac;
   transform: scale(1.4);
   transition: transform 0.3s;
 }
@@ -294,7 +301,7 @@ h1, h2, h3, p {
 
 .about {
   padding: 40px;
-  background-color: #36454F;
+  background-color: #000000;
   font-family: 'Duke Charming Regular', serif;
   color: #adadac;
   scroll-margin-top: 400px;
@@ -336,7 +343,7 @@ h1, h2, h3, p {
 .git {
   font-size: 1.5rem;
   padding: 40px;
-  background-color: #36454F;
+  background-color: #000000;
   font-family: 'Duke Charming Regular', serif;
   color: #adadac;
   scroll-margin-top: 400px;
@@ -364,7 +371,7 @@ h1, h2, h3, p {
 }
 
 .github-link:hover {
-  color: #008080;
+  color: #adadac;
   transform: scale(1.4);
   transition: transform 0.3s;
 }
@@ -374,11 +381,7 @@ h1, h2, h3, p {
   font-size: 2.5rem;
   vertical-align: middle;
 }
-.github-icon:hover {
-  color: #008080;
-  transform: scale(1.4);
-  transition: transform 0.3s;
-}
+
 
 .projects-list {
   list-style: none;
@@ -398,7 +401,7 @@ h1, h2, h3, p {
 }
 
 .projects-list a:hover {
-  color: #008080;
+  color: #adadac;
 }
 
 @media (max-width: 768px) {
@@ -432,13 +435,24 @@ h1, h2, h3, p {
   padding: 0;
   box-sizing: border-box;
 }
-
 .education {
   padding: 40px;
-  background-color: #36454F;
+  background-color: #000000;
   font-family: 'Duke Charming Regular', serif;
   color: #adadac;
   scroll-margin-top: 300px;
+  position: relative; /* Ensure the section is relative for absolute positioning of children */
+}
+
+.education h2 {
+  position: absolute; /* Position the h2 absolutely within the .education section */
+  top: 10px; /* Adjust this value to control the vertical placement */
+  left: 50%; /* Center the h2 horizontally */
+  transform: translateX(-50%); /* Center the h2 horizontally */
+  margin: 0; /* Remove any default margin */
+  font-size: 2rem; /* Adjust font size as needed */
+  text-align: center;
+  color: #adadac;
 }
 
 .education-text {
@@ -468,7 +482,7 @@ h1, h2, h3, p {
   left: 0;
   right: 0;
   height: 2px;
-  background-color: #008080;
+  background-color: #adadac;
 }
 
 .timeline-event {
@@ -485,7 +499,7 @@ h1, h2, h3, p {
   transform: translateX(-50%);
   width: 2px;
   height: 20px;
-  background-color: #008080;
+  background-color: #adadac;
 }
 
 .timeline-event:first-child::before,
@@ -501,14 +515,14 @@ h1, h2, h3, p {
   transform: translateX(-50%);
   width: 10px;
   height: 10px;
-  background-color: #008080;
+  background-color: #adadac;
   border-radius: 50%;
 }
 
 .timeline-content {
   padding: 10px;
-  background-color: #36454F;
-  border: 2px solid #008080;
+  background-color: #363535;
+  border: 2px solid #adadac;
   border-radius: 6px;
   margin-top: 20px;
 }
@@ -557,7 +571,7 @@ h1, h2, h3, p {
     transform: translateX(-50%);
     width: 2px;
     height: 20px;
-    background-color: #008080;
+    background-color: #adadac;
   }
 
   .timeline-event::after {
@@ -567,7 +581,7 @@ h1, h2, h3, p {
   .timeline-content {
     margin-top: 0;
     margin-left: 0;
-    border: 2px solid #008080;
+    border: 2px solid #adadac;
     border-radius: 6px;
     text-align: center;
   }
@@ -583,7 +597,7 @@ h1, h2, h3, p {
 }
 .projects {
   padding: 60px 20px;
-  background-color: #36454F;
+  background-color: #000000;
   color: #adadac;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 40px 20px;
@@ -605,7 +619,7 @@ h1, h2, h3, p {
   content: '';
   width: 50px;
   height: 4px;
-  background-color: #008080;
+  background-color: #adadac;
   display: block;
   margin: 10px auto 0;
   border-radius: 2px;
@@ -625,7 +639,7 @@ h1, h2, h3, p {
 }
 
 .projects-list li {
-  background-color: #2C3E50;
+  background-color: #363535;
   margin: 20px 0;
   padding: 20px;
   border-radius: 8px;
@@ -641,7 +655,7 @@ h1, h2, h3, p {
 .projects-list h3 {
   margin-bottom: 10px;
   font-size: 1.5rem;
-  color: #008080;
+  color: #adadac;
 }
 
 .projects-list p {
@@ -672,9 +686,10 @@ h1, h2, h3, p {
     font-size: 1.1rem;
   }
 }
+
 .skills {
   padding: 40px;
-  background-color: #36454F;
+  background-color: #000000;
   font-family: 'Duke Charming Regular', serif;
   color: #adadac;
   scroll-margin-top: 400px;
@@ -703,7 +718,7 @@ h1, h2, h3, p {
 .web-circle {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid #008080;
+  border: 2px solid #adadac;
 }
 
 .web-circle-1 {
@@ -741,16 +756,16 @@ h1, h2, h3, p {
 }
 
 .skill {
-  background-color: #008080; /* Skill box background color */
+  background-color: #363535; /* Skill box background color */
   padding: 5px 10px;
   border-radius: 5px;
-  color: #f0f0f0; /* Light white color for text inside the skill box */
+  color: #adadac; /* Light white color for text inside the skill box */
   text-decoration: none;
   transition: background-color 0.3s;
 }
 
 .skill:hover {
-  background-color: #007575; /* Slightly darker shade for hover */
+  background-color: #363535; /* Slightly darker shade for hover */
 }
 
 .skill-description {
@@ -758,10 +773,10 @@ h1, h2, h3, p {
   top: -40px; /* Position above the skill */
   left: 50%;
   transform: translate(-50%, -10px); /* Center and move above the skill */
-  background-color: #008080; /* Description box background color */
+  background-color: #363535; /* Description box background color */
   padding: 5px 10px;
   border-radius: 5px;
-  color: #f0f0f0; /* Light white color for text inside the description box */
+  color: #adadac; /* Light white color for text inside the description box */
   opacity: 0;
   animation: swoopUp 0.5s forwards;
 }
@@ -797,7 +812,7 @@ h1, h2, h3, p {
   }
 
   .web-circle {
-    border: 1px solid #008080;
+    border: 1px solid #363535;
   }
 
   .web-circle-1 {
@@ -836,7 +851,7 @@ h1, h2, h3, p {
 .footer {
   padding: 20px;
   text-align: center;
-  background-color: #36454F;
+  background-color: #000000;
   color: #adadac;
   font-family: 'Ahsing Regular', serif;
   font-size: 1.5rem;
