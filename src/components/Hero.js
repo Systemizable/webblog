@@ -12,7 +12,7 @@ const Hero = () => {
             <div className="circle-5"></div>
             <div className="circle-top-right"></div>
             <div className="hero-image-container">
-                <img src={`${process.env.PUBLIC_URL}/sexy.png`} alt="Sexy" />
+                <img src={`${process.env.PUBLIC_URL}/profile.png`} alt="Sexy" />
                 <div className="inner-circle"></div>
                 <div className="dotted-circle"></div>
                 <div className="outer-circle"></div>
