@@ -5,15 +5,15 @@ const Skills = () => {
     const [activeSkill, setActiveSkill] = useState(null);
 
     const skills = [
-        { id: 'css', name: 'CSS', years: 1, style: { top: '10%', left: '50%' } },
-        { id: 'advanced-cpp', name: 'Advanced C++', years: 2, style: { top: '20%', left: '70%' } },
-        { id: 'autocad', name: 'AutoCAD', years: 1, style: { top: '40%', left: '90%' } },
-        { id: 'debating', name: 'Debating', years: 5, style: { top: '60%', left: '70%' } },
-        { id: 'java', name: 'Java', years: 1, style: { top: '80%', left: '50%' } },
-        { id: 'javascript', name: 'JavaScript', years: 1, style: { top: '60%', left: '30%' } },
-        { id: 'python', name: 'Python', years: 4, style: { top: '40%', left: '10%' } },
-        { id: 'react', name: 'React', years: 1, style: { top: '20%', left: '30%' } },
-        { id: 'html', name: 'HTML', years: 4, style: { top: '50%', left: '50%' } },
+        { id: 'css', name: 'CSS', level: 'Intermediate', style: { top: '10%', left: '50%' } },
+        { id: 'advanced-cpp', name: 'Advanced C++', level: 'Expert', style: { top: '20%', left: '70%' } },
+        { id: 'autocad', name: 'AutoCAD', level: 'Intermediate', style: { top: '40%', left: '90%' } },
+        { id: 'cisco', name: 'Cisco', level: 'Beginner', style: { top: '60%', left: '70%' } },
+        { id: 'java', name: 'Java', level: 'Intermediate', style: { top: '80%', left: '50%' } },
+        { id: 'javascript', name: 'JavaScript', level: 'Intermediate', style: { top: '60%', left: '30%' } },
+        { id: 'python', name: 'Python', level: 'Advanced', style: { top: '40%', left: '10%' } },
+        { id: 'react', name: 'React', level: 'Beginner', style: { top: '20%', left: '30%' } },
+        { id: 'html', name: 'HTML', level: 'Advanced', style: { top: '50%', left: '50%' } },
     ];
 
     return (
@@ -35,7 +35,7 @@ const Skills = () => {
                         >
                             <a href={`#${skill.id}`} className="skill">{skill.name}</a>
                             {activeSkill === skill.id && (
-                                <div className="skill-description">{skill.years} years</div>
+                                <div className="skill-description">{skill.level}</div>
                             )}
                         </div>
                     ))}

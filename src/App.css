@@ -257,7 +257,7 @@ h1, h2, h3, p {
 }
 
 .social-icons a:hover {
-  color: #adadac;
+  color: #fff;
   transform: scale(1.4);
   transition: transform 0.3s;
 }
@@ -371,7 +371,7 @@ h1, h2, h3, p {
 }
 
 .github-link:hover {
-  color: #adadac;
+  color: #fff;
   transform: scale(1.4);
   transition: transform 0.3s;
 }
@@ -401,7 +401,7 @@ h1, h2, h3, p {
 }
 
 .projects-list a:hover {
-  color: #adadac;
+  color: #fff;
 }
 
 @media (max-width: 768px) {
@@ -644,6 +644,7 @@ h1, h2, h3, p {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -662,6 +663,28 @@ h1, h2, h3, p {
   margin: 0;
   color: #adadac;
   line-height: 1.6;
+}
+
+.difficulty-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #adadac;
+}
+
+.difficulty-circle.beginner {
+  background-color: #4CAF50; /* Green */
+}
+
+.difficulty-circle.intermediate {
+  background-color: #FF9800; /* Orange */
+}
+
+.difficulty-circle.advanced {
+  background-color: #F44336; /* Red */
 }
 
 @media (max-width: 768px) {
@@ -684,6 +707,11 @@ h1, h2, h3, p {
 
   .projects-list p {
     font-size: 1.1rem;
+  }
+
+  .difficulty-circle {
+    top: 10px;
+    right: 10px;
   }
 }
 
