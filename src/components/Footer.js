@@ -3,7 +3,9 @@ import './Footer.css';
 
 const Footer = () => (
     <footer className="footer" id="contact">
-        <p>Contact me at: +961 71010740</p>
+        <p>Contact me at:</p>
+        <h1>+961 71010740</h1>
+        <p className="email">josephssfeir@gmail.com</p>
     </footer>
 );
 

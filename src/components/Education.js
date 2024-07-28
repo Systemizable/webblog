@@ -8,43 +8,43 @@ const Education = () => (
                 <div className="timeline-event">
                     <div className="timeline-content">
                         <h3>Attended Antonine School</h3>
-                        <p>2008</p>
+                        <h4>2008</h4>
                     </div>
                 </div>
                 <div className="timeline-event">
                     <div className="timeline-content">
                         <h3>Introduced to Modding</h3>
-                        <p>2011</p>
+                        <h4>2013</h4>
                     </div>
                 </div>
                 <div className="timeline-event">
                     <div className="timeline-content">
                         <h3>Discovered Game Development</h3>
-                        <p>2015</p>
+                        <h4>2015</h4>
                     </div>
                 </div>
                 <div className="timeline-event">
                     <div className="timeline-content">
                         <h3>Decided That's the Career to Pursue</h3>
-                        <p>2018</p>
+                        <h4>2018</h4>
                     </div>
                 </div>
                 <div className="timeline-event">
                     <div className="timeline-content">
                         <h3>Started Learning Programming</h3>
-                        <p>2020</p>
+                        <h4>2020</h4>
                     </div>
                 </div>
                 <div className="timeline-event">
                     <div className="timeline-content">
                         <h3>Graduated</h3>
-                        <p>2023</p>
+                        <h4>2023</h4>
                     </div>
                 </div>
                 <div className="timeline-event">
                     <div className="timeline-content">
                         <h3>Attended UA</h3>
-                        <p>2023</p>
+                        <h4>2023</h4>
                     </div>
                 </div>
             </div>

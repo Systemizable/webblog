@@ -30,7 +30,7 @@ body {
   margin: 0;
   background-color: #000000;
   color: #141414;
-  font-family: 'Ahsing Regular', serif;
+  font-family: 'Flamante Sans Bold', serif;
   animation: fadeInPage 2.2s ease-in-out;
 }
 
@@ -237,7 +237,7 @@ h1, h2, h3, p {
 .hero-text {
   text-align: center;
   padding: 20px;
-  font-family: 'Duke Charming Regular', serif;
+  font-family: 'Flamante Sans Bold', serif;
   color: #adadac;
   flex: 1;
   font-size: 2rem;
@@ -300,43 +300,61 @@ h1, h2, h3, p {
 }
 
 .about {
-  padding: 40px;
+  padding: 60px 20px;
   background-color: #000000;
-  font-family: 'Duke Charming Regular', serif;
+  font-family: 'Flamante Sans Bold', serif;
   color: #adadac;
   scroll-margin-top: 400px;
 }
 
 .about h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: #adadac;
+  position: relative;
+}
+
+.about h2::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background-color: #adadac;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
 }
 
 .about-me {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: justify;
+  line-height: 1.8;
+  color: #adadac;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #141414;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .about-me p {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
   .about {
-    padding: 20px;
+    padding: 40px 10px;
   }
 
   .about h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .about-me {
-    font-size: 1.2rem;
-  }
-
-  .about-me p {
-    margin-bottom: 8px;
+    font-size: 1rem;
+    padding: 15px;
   }
 }
 
@@ -344,7 +362,7 @@ h1, h2, h3, p {
   font-size: 1.5rem;
   padding: 40px;
   background-color: #000000;
-  font-family: 'Duke Charming Regular', serif;
+  font-family: 'Flamante Sans Bold', serif;
   color: #adadac;
   scroll-margin-top: 400px;
   text-align: center;
@@ -354,7 +372,15 @@ h1, h2, h3, p {
   text-align: center;
   margin-bottom: 20px;
 }
-
+.git h2::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background-color: #adadac;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
 .git-content {
   display: flex;
   flex-direction: column;
@@ -438,7 +464,7 @@ h1, h2, h3, p {
 .education {
   padding: 40px;
   background-color: #000000;
-  font-family: 'Duke Charming Regular', serif;
+  font-family: 'Flamante Sans Bold', serif;
   color: #adadac;
   scroll-margin-top: 300px;
   position: relative; /* Ensure the section is relative for absolute positioning of children */
@@ -454,11 +480,23 @@ h1, h2, h3, p {
   text-align: center;
   color: #adadac;
 }
+.education h4 {
+  font-family: 'Duke Charming Regular', serif;
+}
+.education h2::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background-color: #adadac;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
 
 .education-text {
   text-align: center;
   margin-top: 40px;
-  font-family: 'Duke Charming Regular', serif;
+  font-family: 'Flamante Sans Bold', serif;
   font-size: 1.5rem;
 }
 
@@ -531,6 +569,7 @@ h1, h2, h3, p {
   margin-top: 10px;
   font-size: 0.9rem;
   color: #adadac;
+  font-family: 'Flamante Sans Bold', serif; /* Ensure the correct font-family is applied */
 }
 
 @media (max-width: 768px) {
@@ -595,6 +634,7 @@ h1, h2, h3, p {
     width: 100%;
   }
 }
+
 .projects {
   padding: 60px 20px;
   background-color: #000000;
@@ -604,8 +644,8 @@ h1, h2, h3, p {
   border-radius: 10px;
   text-align: center;
   scroll-margin-top: 400px;
+  font-family: "Flamante Sans Bold", serif;
 }
-
 .projects h2 {
   text-align: center;
   margin-bottom: 40px;
@@ -718,7 +758,7 @@ h1, h2, h3, p {
 .skills {
   padding: 40px;
   background-color: #000000;
-  font-family: 'Duke Charming Regular', serif;
+  font-family: 'Flamante Sans Bold', serif;
   color: #adadac;
   scroll-margin-top: 400px;
   position: relative;
@@ -727,8 +767,17 @@ h1, h2, h3, p {
 .skills h2 {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 2rem;
 }
-
+.skills h2::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background-color: #adadac;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
 .skills-content {
   display: flex;
   justify-content: center;
@@ -878,16 +927,35 @@ h1, h2, h3, p {
 
 .footer {
   padding: 20px;
-  text-align: center;
   background-color: #000000;
   color: #adadac;
-  font-family: 'Ahsing Regular', serif;
+  font-family: 'Flamante Sans Bold', serif;
   font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer h1{
+  font-family: 'Duke Charming Regular', serif;
+  align-items: center;
+}
+.footer .email {
+  margin-left: auto;
 }
 
 @media (max-width: 768px) {
   .footer {
-    padding: 1px;
-    font-size: 1.2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer p {
+    margin: 5px 0;
+  }
+
+  .footer .email {
+    margin-left: 0;
   }
 }
