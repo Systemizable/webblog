@@ -229,6 +229,7 @@ h1, h2, h3, p {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  scroll-margin-top: 150px;
   position: relative;
   overflow: hidden;
 }
@@ -307,7 +308,7 @@ h1, h2, h3, p {
     font-size: 1.3rem; /* Adjusted size */
   }
 }
-.about {
+.services {
   padding: 60px 20px;
   background-color: #000000;
   color: #adadac;
@@ -315,11 +316,11 @@ h1, h2, h3, p {
   margin: 40px 20px;
   border-radius: 10px;
   text-align: center;
-  scroll-margin-top: 400px;
+  scroll-margin-top: 150px; /* Increased the value to scroll more down */
   font-family: "Flamante Sans Bold", serif;
 }
 
-.about h2 {
+.services h2 {
   text-align: center;
   margin-bottom: 40px;
   font-weight: 700;
@@ -328,7 +329,7 @@ h1, h2, h3, p {
   position: relative;
 }
 
-.about h2::after {
+.services h2::after {
   content: '';
   width: 50px;
   height: 4px;
@@ -414,12 +415,12 @@ h1, h2, h3, p {
 }
 
 @media (max-width: 768px) {
-  .about {
+  .services {
     padding: 40px 10px;
     margin: 20px 10px;
   }
 
-  .about h2 {
+  .services h2 {
     font-size: 1.8rem;
   }
 
@@ -435,283 +436,6 @@ h1, h2, h3, p {
     font-size: 1.1rem;
   }
 }
-
-.git {
-  font-size: 1.5rem;
-  padding: 40px;
-  background-color: #000000;
-  font-family: 'Flamante Sans Bold', serif;
-  color: #adadac;
-  scroll-margin-top: 400px;
-  text-align: center;
-}
-
-.git h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.git h2::after {
-  content: '';
-  width: 80px;
-  height: 4px;
-  background-color: #adadac;
-  display: block;
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
-.git-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.github-link {
-  display: inline-block;
-  font-size: 1.8rem;
-  color: #adadac;
-  text-decoration: none;
-  margin-bottom: 20px;
-  transition: color 0.3s;
-}
-
-.github-link:hover {
-  color: #fff;
-  transform: scale(1.4);
-  transition: transform 0.3s;
-}
-
-.github-icon {
-  margin-right: 10px;
-  font-size: 2.5rem;
-  vertical-align: middle;
-}
-
-
-.projects-list {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-}
-
-.projects-list li {
-  margin: 10px 0;
-}
-
-.projects-list a {
-  color: #adadac;
-  text-decoration: none;
-  font-size: 1.3rem;
-  transition: color 0.3s;
-}
-
-.projects-list a:hover {
-  color: #fff;
-}
-
-@media (max-width: 768px) {
-  .git {
-    padding: 20px;
-  }
-
-  .git h2 {
-    font-size: 1.8rem;
-  }
-
-  .git-content {
-    font-size: 1.2rem;
-  }
-
-  .github-link {
-    font-size: 1.5rem;
-  }
-
-  .github-icon {
-    font-size: 2rem;
-  }
-
-  .projects-list a {
-    font-size: 1.1rem;
-  }
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.education {
-  padding: 40px;
-  background-color: #000000;
-  font-family: 'Flamante Sans Bold', serif;
-  color: #adadac;
-  scroll-margin-top: 300px;
-  position: relative; /* Ensure the section is relative for absolute positioning of children */
-}
-
-.education h2 {
-  position: absolute; /* Position the h2 absolutely within the .education section */
-  top: 10px; /* Adjust this value to control the vertical placement */
-  left: 50%; /* Center the h2 horizontally */
-  transform: translateX(-50%); /* Center the h2 horizontally */
-  margin: 0; /* Remove any default margin */
-  font-size: 2rem; /* Adjust font size as needed */
-  text-align: center;
-  color: #adadac;
-}
-.education h4 {
-  font-family: 'Duke Charming Regular', serif;
-}
-.education h2::after {
-  content: '';
-  width: 80px;
-  height: 4px;
-  background-color: #adadac;
-  display: block;
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
-
-.education-text {
-  text-align: center;
-  margin-top: 40px;
-  font-family: 'Flamante Sans Bold', serif;
-  font-size: 1.5rem;
-}
-
-.timeline-container {
-  position: relative;
-  margin: 20px 0;
-}
-
-.timeline {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: #adadac;
-}
-
-.timeline-event {
-  position: relative;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.timeline-event::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 20px;
-  background-color: #adadac;
-}
-
-.timeline-event:first-child::before,
-.timeline-event:last-child::before {
-  height: 20px;
-}
-
-.timeline-event::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 10px;
-  height: 10px;
-  background-color: #adadac;
-  border-radius: 50%;
-}
-
-.timeline-content {
-  padding: 10px;
-  background-color: #363535;
-  border: 2px solid #adadac;
-  border-radius: 6px;
-  margin-top: 20px;
-}
-
-.timeline-content p {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  color: #adadac;
-  font-family: 'Flamante Sans Bold', serif; /* Ensure the correct font-family is applied */
-}
-
-@media (max-width: 768px) {
-  .education {
-    padding: 20px;
-  }
-
-  .education h2 {
-    font-size: 1.8rem;
-  }
-
-  .timeline {
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-  }
-
-  .timeline::before {
-    top: 0;
-    left: 50%;
-    bottom: 0;
-    width: 2px;
-    height: 100%;
-    transform: translateX(-50%);
-  }
-
-  .timeline-event {
-    width: 100%;
-    margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .timeline-event::before {
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 20px;
-    background-color: #adadac;
-  }
-
-  .timeline-event::after {
-    display: none;
-  }
-
-  .timeline-content {
-    margin-top: 0;
-    margin-left: 0;
-    border: 2px solid #adadac;
-    border-radius: 6px;
-    text-align: center;
-  }
-
-  .education-images {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .education-images img {
-    width: 100%;
-  }
-}
 .projects {
   padding: 60px 20px;
   background-color: #000000;
@@ -720,7 +444,7 @@ h1, h2, h3, p {
   margin: 40px 20px;
   border-radius: 10px;
   text-align: center;
-  scroll-margin-top: 400px;
+  scroll-margin-top: 150px;
   font-family: "Flamante Sans Bold", serif;
 }
 
@@ -873,7 +597,7 @@ h1, h2, h3, p {
   background-color: #000000;
   font-family: 'Duke Charming Regular', serif;
   color: #adadac;
-  scroll-margin-top: 400px;
+  scroll-margin-top: 150px;
   position: relative;
 }
 
@@ -890,7 +614,7 @@ h1, h2, h3, p {
   height: 4px;
   background-color: #adadac;
   display: block;
-  margin: 10px auto 0;
+  margin-bottom: 20px;
   border-radius: 2px;
 }
 
@@ -898,15 +622,15 @@ h1, h2, h3, p {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  height: 300px;
   position: relative;
   font-family: Roboto, serif;
 }
 
 .circle {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -1018,12 +742,12 @@ h1, h2, h3, p {
   }
 
   .circle {
-    width: 250px;
-    height: 250px;
+    width: 200px; /* Adjusted size */
+    height: 200px; /* Adjusted size */
   }
 
   .skill-container {
-    transform: rotate(0deg) translate(3em) rotate(0deg); /* Adjusted translate value */
+    transform: rotate(0deg) translate(2.5em) rotate(0deg); /* Adjusted translate value */
   }
 
   .skill {

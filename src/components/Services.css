@@ -1,0 +1,128 @@
+.services {
+    padding: 60px 20px;
+    background-color: #000000;
+    color: #adadac;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 40px 20px;
+    border-radius: 10px;
+    text-align: center;
+    scroll-margin-top: 700px; /* Increased the value to scroll more down */
+    font-family: "Flamante Sans Bold", serif;
+}
+
+.services h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #adadac;
+    position: relative;
+}
+
+.services h2::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background-color: #adadac;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.projects-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-card {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    position: relative;
+    width: 100%;
+    max-width: 350px; /* Adjust width as necessary */
+    margin: 10px;
+    height: 400px; /* Adjust height to make them taller */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+    z-index: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.projects-content:hover > .project-card:not(:hover) {
+    filter: blur(5px);
+}
+
+.project-card h3,
+.project-card p,
+.project-card .language {
+    position: relative;
+    z-index: 2;
+}
+
+.project-card h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.project-card p {
+    margin: 0;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.project-card .project-header {
+    text-align: left;
+}
+
+.project-card .project-header .language {
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .services {
+        padding: 40px 10px;
+        margin: 20px 10px;
+    }
+
+    .services h2 {
+        font-size: 1.8rem;
+    }
+
+    .project-card {
+        margin: 15px 0;
+    }
+
+    .project-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .project-card p {
+        font-size: 1.1rem;
+    }
+}

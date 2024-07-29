@@ -1,23 +1,136 @@
 .skills {
     padding: 40px;
-    background-color: #f4f4f4;
+    background-color: #000000;
     font-family: 'Duke Charming Regular', serif;
-    color: #008080;
-    scroll-margin-top: 200px;
+    color: #adadac;
+    scroll-margin-top: 150px;
+    position: relative;
 }
 
 .skills h2 {
     text-align: center;
     margin-bottom: 20px;
+    font-size: 2rem;
+    font-family: "Flamante Sans Bold", serif;
+}
+
+.skills h2::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background-color: #adadac;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 
 .skills-content {
-    text-align: justify;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    position: relative;
+    font-family: Roboto, serif;
 }
 
-.skills-content ul {
-    list-style-type: disc;
-    margin-left: 20px;
+.circle {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-container {
+    position: absolute;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.skill {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.circle-bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #adadac;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.circle-fill {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 184, 37, 0.8); /* Initial background color with opacity */
+    transition: height 0.3s ease, background-color 0.3s ease;
+    height: 0; /* Initial height is 0 */
+    z-index: 2; /* Ensure the fill covers the icon */
+}
+
+.skill-icon {
+    font-size: 2rem;
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
+    transition: opacity 0.3s ease; /* Transition for opacity */
+}
+
+.skill-percent {
+    position: absolute;
+    bottom: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, 50%); /* Adjust position */
+    font-size: 1.5rem; /* Bigger font size */
+    color: #ffffff;
+    font-weight: bold; /* Bold text */
+    z-index: 3; /* Ensure the percentage is above the fill */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
+}
+
+.skill-description {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #363535;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #adadac;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.skill:hover .circle-fill {
+    height: var(--skill-level); /* Fill up the circle on hover */
+    background-color: rgba(255, 184, 37, 1); /* Solid background color on hover */
+}
+
+.skill:hover .skill-percent {
+    opacity: 1; /* Show percentage on hover */
+}
+
+.skill:hover .skill-description {
+    opacity: 1;
+}
+
+.skill:hover .skill-icon {
+    opacity: 0; /* Hide the icon on hover */
 }
 
 @media (max-width: 768px) {
@@ -26,10 +139,38 @@
     }
 
     .skills h2 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     .skills-content {
         font-size: 1.2rem;
+        height: 400px;
+    }
+
+    .circle {
+        width: 200px; /* Adjusted size */
+        height: 200px; /* Adjusted size */
+    }
+
+    .skill-container {
+        transform: rotate(0deg) translate(2.5em) rotate(0deg); /* Adjusted translate value */
+    }
+
+    .skill {
+        width: 40px;
+        height: 40px;
+    }
+
+    .skill-icon {
+        font-size: 1.2rem;
+    }
+
+    .skill-description {
+        top: 70px;
+    }
+
+    .skill-percent {
+        font-size: 0.8rem; /* Slightly smaller font size for mobile */
+        font-weight: bold;
     }
 }

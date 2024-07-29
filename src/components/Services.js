@@ -1,8 +1,8 @@
 import React from 'react';
-import './About.css';
+import './Services.css';
 
-const About = () => (
-    <section className="about" id="about">
+const Services = () => (
+    <section className="services" id="services">
         <h2>Services</h2>
         <div className="projects-content">
             <div className="project-card" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/net.jpg)` }}>
@@ -36,4 +36,4 @@ const About = () => (
     </section>
 );
 
-export default About;
+export default Services;

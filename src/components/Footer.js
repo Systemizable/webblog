@@ -4,7 +4,7 @@ import './Footer.css';
 const Footer = () => (
     <footer className="footer" id="contact">
         <h2>Contact</h2>
-        <p>Got a Project in Mind? Get in Touch and <span className="highlight">Let's Talk</span></p>
+        <p>Contact me for projects, ideas.</p>
         <div className="contact-info">
             <p><i className="fas fa-envelope"></i> josephssfeir@gmail.com</p>
             <p><i className="fas fa-map-marker-alt"></i> Lebanon</p>

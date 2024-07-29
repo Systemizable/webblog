@@ -3,13 +3,10 @@ import React from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import About from './components/About';
-import Education from './components/Education';
+import Services from './components/Services';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-import Git from './components/Git';
 import Footer from './components/Footer';
-import Certificates from './components/Certificates';
 import './App.css';
 
 function App() {
@@ -19,7 +16,7 @@ function App() {
                     <Hero/>
                     <Skills/>
                     <Projects/>
-                    <About/>
+                    <Services/>
                     <Footer/>
                     <Analytics/>
             </div>

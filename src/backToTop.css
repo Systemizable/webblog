@@ -1,0 +1,31 @@
+#backToTop {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    bottom: 20px; /* 20px from the bottom */
+    right: 20px; /* 20px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #333; /* Set background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 50%; /* Circular shape */
+    font-size: 24px; /* Increase font size */
+    transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition */
+    opacity: 0; /* Initial state is invisible */
+}
+
+#backToTop:hover {
+    background-color: #555; /* Add a lighter grey background on hover */
+}
+
+#backToTop.show {
+    display: block;
+    opacity: 1; /* Visible */
+}
+
+#backToTop.hide {
+    opacity: 0; /* Invisible */
+    transition: opacity 0.3s ease; /* Smooth transition */
+}
