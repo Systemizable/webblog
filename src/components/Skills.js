@@ -1,7 +1,7 @@
 import React from 'react';
 import './Skills.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCss3Alt, faHtml5, faJs, faReact, faPython, faJava, faNodeJs, faGitAlt, faBootstrap } from '@fortawesome/free-brands-svg-icons';
+import { faCss3Alt, faHtml5, faJs, faReact, faPython, faJava } from '@fortawesome/free-brands-svg-icons';
 import { faCode, faDraftingCompass, faNetworkWired, faDatabase } from '@fortawesome/free-solid-svg-icons';
 
 const Skills = () => {
