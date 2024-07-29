@@ -41,7 +41,7 @@ const Projects = () => (
                     <div className="difficulty-circle intermediate" title="Intermediate"></div>
                     <div className="text-container">
                         <h3>Water Level Sensor</h3>
-                        <p>This is an introduction to engineering project. We were tasked, in any shape or form, to create a water level sensor that gave out signals when it reached certain levels. We opted for an Arduino, LCD, and sonic sensor, and found major success! Earned a 91.</p>
+                        <p>This is an introduction to engineering project. We were tasked, in any shape or form, to create a water level sensor that gave out signals when it reached certain levels. We opted for an Arduino, LCD, and sonic sensor, and found major success!</p>
                     </div>
                 </div>
                 <div className="slide-container">
@@ -49,7 +49,7 @@ const Projects = () => (
                     <div className="difficulty-circle advanced" title="Advanced"></div>
                     <div className="text-container">
                         <h3>Car Renting Program</h3>
-                        <p>This is a Programming 2 project. We were tasked to create in C++, a car rental program that would save user credentials, provide encryption for passwords, save rental details, and alter a PDF file containing rental info. We earned a 100.</p>
+                        <p>This is a Programming 2 project. We were tasked to create in C++, a car rental program that would save user credentials, provide encryption for passwords, save rental details, and alter a PDF file containing rental info.</p>
                     </div>
                 </div>
                 <div className="slide-container">
