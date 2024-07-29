@@ -1,6 +1,5 @@
 import React from 'react';
 import './About.css';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
 
 const About = () => (
     <section className="about" id="about">
