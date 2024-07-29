@@ -573,6 +573,7 @@ h1, h2, h3, p {
 
   .projects h2 {
     font-size: 1.8rem;
+    margin-top: 30px;
   }
 
   .project-card {
@@ -614,7 +615,7 @@ h1, h2, h3, p {
   height: 4px;
   background-color: #adadac;
   display: block;
-  margin-bottom: 20px;
+  margin: 10px auto 0;
   border-radius: 2px;
 }
 
@@ -622,15 +623,15 @@ h1, h2, h3, p {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
+  height: 400px;
   position: relative;
   font-family: Roboto, serif;
 }
 
 .circle {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -734,16 +735,17 @@ h1, h2, h3, p {
 
   .skills h2 {
     font-size: 1.8rem;
+    margin-bottom:70px;
   }
 
   .skills-content {
-    font-size: 1.2rem;
-    height: 400px;
+    font-size: 1rem; /* Reduced font size */
+    height: 250px; /* Reduced height */
   }
 
   .circle {
-    width: 200px; /* Adjusted size */
-    height: 200px; /* Adjusted size */
+    width: 50px; /* Adjusted size */
+    height: 50px; /* Adjusted size */
   }
 
   .skill-container {
