@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css';
-import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa'; // Import the FontAwesome icons
+import { FaInstagram, FaLinkedin, FaGithub, FaDownload } from 'react-icons/fa'; // Import the FontAwesome icons
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -38,7 +38,12 @@ const Header = () => {
                         <li><a href="#skills" onClick={handleLinkClick}>Skills</a></li>
                         <li><a href="#about" onClick={handleLinkClick}>Services</a></li>
                         <li><a href="#projects" onClick={handleLinkClick}>Projects</a></li>
-                        <li><a href="#resume" onClick={handleLinkClick}>Resume</a></li>
+                        <li className="resume-link">
+                            <a href="#resume" onClick={handleLinkClick}>
+                                Resume
+                                <FaDownload className="download-icon" />
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
