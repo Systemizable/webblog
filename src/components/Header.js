@@ -39,7 +39,11 @@ const Header = () => {
                         <li><a href="#about" onClick={handleLinkClick}>Services</a></li>
                         <li><a href="#projects" onClick={handleLinkClick}>Projects</a></li>
                         <li className="resume-link">
-                            <a href="#resume" onClick={handleLinkClick}>
+                            <a
+                                href={`${process.env.PUBLIC_URL}/JSResume.pdf`}
+                                download="JSResume.pdf"
+                                onClick={handleLinkClick}
+                            >
                                 Resume
                                 <FaDownload className="download-icon" />
                             </a>
