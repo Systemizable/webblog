@@ -867,7 +867,7 @@ h1, h2, h3, p {
   text-align: center;
   margin-bottom: 20px;
   font-size: 2rem;
-  font-family: "Flamante Sans Bold",serif;
+  font-family: "Flamante Sans Bold", serif;
 }
 
 .skills h2::after {
@@ -931,9 +931,10 @@ h1, h2, h3, p {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: #ffb825;
-  transition: height 0.3s ease;
+  background-color: rgba(255, 184, 37, 0.8); /* Initial background color with opacity */
+  transition: height 0.3s ease, background-color 0.3s ease;
   height: 0; /* Initial height is 0 */
+  z-index: 2; /* Ensure the fill covers the icon */
 }
 
 .skill-icon {
@@ -941,14 +942,18 @@ h1, h2, h3, p {
   color: #ffffff;
   position: relative;
   z-index: 1;
+  transition: opacity 0.3s ease; /* Transition for opacity */
 }
 
 .skill-percent {
   position: absolute;
-  bottom: 5px;
-  font-size: 0.8rem;
+  bottom: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, 50%); /* Adjust position */
+  font-size: 1.5rem; /* Bigger font size */
   color: #ffffff;
-  z-index: 1;
+  font-weight: bold; /* Bold text */
+  z-index: 3; /* Ensure the percentage is above the fill */
   opacity: 0; /* Initially hidden */
   transition: opacity 0.3s ease;
 }
@@ -969,6 +974,7 @@ h1, h2, h3, p {
 
 .skill:hover .circle-fill {
   height: var(--skill-level); /* Fill up the circle on hover */
+  background-color: rgba(255, 184, 37, 1); /* Solid background color on hover */
 }
 
 .skill:hover .skill-percent {
@@ -977,6 +983,10 @@ h1, h2, h3, p {
 
 .skill:hover .skill-description {
   opacity: 1;
+}
+
+.skill:hover .skill-icon {
+  opacity: 0; /* Hide the icon on hover */
 }
 
 @media (max-width: 768px) {
@@ -999,7 +1009,7 @@ h1, h2, h3, p {
   }
 
   .skill-container {
-    transform: rotate(0deg) translate(8em) rotate(0deg);
+    transform: rotate(0deg) translate(4em) rotate(0deg); /* Adjusted translate value */
   }
 
   .skill {
@@ -1014,7 +1024,12 @@ h1, h2, h3, p {
   .skill-description {
     top: 70px;
   }
+
+  .skill-percent {
+    font-size: 1rem; /* Slightly smaller font size for mobile */
+  }
 }
+
 .footer {
   padding: 40px;
   background-color: #000000;

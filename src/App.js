@@ -18,8 +18,8 @@ function App() {
                     <Header/>
                     <Hero/>
                     <Skills/>
-                    <About/>
                     <Projects/>
+                    <About/>
                     <Footer/>
                     <Analytics/>
             </div>
