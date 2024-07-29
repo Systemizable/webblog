@@ -15,24 +15,13 @@ import './App.css';
 function App() {
         return (
             <div className="App">
-                <Header/>
-                <hr className="separator"/>
-                <Hero/>
-                <hr className="separator"/>
-                <About/>
-                <hr className="separator"/>
-                <Education/>
-                <hr className="separator"/>
-                <Skills/>
-                <hr className="separator"/>
-                <Projects/>
-                <hr className="separator"/>
-                <Git/>
-                <hr className="separator"/>
-                <Certificates/>
-                <hr className="separator"/>
-                <Footer/>
-                <Analytics/>
+                    <Header/>
+                    <Hero/>
+                    <Skills/>
+                    <About/>
+                    <Projects/>
+                    <Footer/>
+                    <Analytics/>
             </div>
         );
 }

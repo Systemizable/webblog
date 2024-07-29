@@ -1,22 +1,38 @@
 import React from 'react';
 import './About.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
 
 const About = () => (
     <section className="about" id="about">
-        <h2>About Me</h2>
-        <div className="about-me">
-            <p>
-                I am a dedicated Computer and Communications Engineering student at Antonine University, specializing in programming and software development. My expertise lies in various programming languages, with a strong focus on creating innovative solutions and enhancing user experiences.
-            </p>
-            <p>
-                With a solid foundation in both theoretical and practical aspects of engineering, I have developed proficiency in game development, software engineering, and project management. My approach to problem-solving is methodical and analytical, ensuring efficient and effective results.
-            </p>
-            <p>
-                I am also an active participant in academic and extracurricular activities, including organized debates and technical competitions. My ability to work collaboratively in team settings, along with my strong communication skills, enables me to contribute effectively to any project.
-            </p>
-            <p>
-                My goal is to leverage my technical skills and passion for innovation to contribute to impactful projects in the field of software development and engineering. I am committed to continuous learning and professional growth, aiming to stay at the forefront of technological advancements.
-            </p>
+        <h2>Services</h2>
+        <div className="projects-content">
+            <div className="project-card" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/net.jpg)` }}>
+                <div className="project-header">
+                    <span className="language">Cisco Networking</span>
+                    <h3>Cisco Networking</h3>
+                </div>
+                <p>
+                    I offer comprehensive services in Cisco networking. With expertise in designing, implementing, and managing complex network infrastructures, I ensure robust and secure connectivity solutions tailored to your business needs.
+                </p>
+            </div>
+            <div className="project-card" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/auto.jpg)` }}>
+                <div className="project-header">
+                    <span className="language">AutoCAD Design</span>
+                    <h3>AutoCAD Design</h3>
+                </div>
+                <p>
+                    Specializing in AutoCAD, I provide detailed and precise design services. From architectural plans to engineering blueprints, I deliver high-quality CAD drawings that meet industry standards and client specifications.
+                </p>
+            </div>
+            <div className="project-card" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/webs.jpg)` }}>
+                <div className="project-header">
+                    <span className="language">Web Development</span>
+                    <h3>Web Development</h3>
+                </div>
+                <p>
+                    I create engaging and functional websites tailored to your needs. My web development services include designing responsive websites, developing interactive features, and ensuring a seamless user experience across all devices.
+                </p>
+            </div>
         </div>
     </section>
 );

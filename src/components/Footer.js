@@ -3,9 +3,21 @@ import './Footer.css';
 
 const Footer = () => (
     <footer className="footer" id="contact">
-        <p>Contact me at:</p>
-        <h1>+961 71010740</h1>
-        <p className="email">josephssfeir@gmail.com</p>
+        <h2>Contact</h2>
+        <p>Got a Project in Mind? Get in Touch and <span className="highlight">Let's Talk</span></p>
+        <div className="contact-info">
+            <p><i className="fas fa-envelope"></i> josephssfeir@gmail.com</p>
+            <p><i className="fas fa-map-marker-alt"></i> Lebanon</p>
+        </div>
+        <form className="contact-form">
+            <div className="input-group">
+                <input type="text" name="name" placeholder="Name" required />
+                <input type="email" name="email" placeholder="Email" required />
+            </div>
+            <input type="text" name="subject" placeholder="Subject" required />
+            <textarea name="message" placeholder="Message" required></textarea>
+            <button type="submit">SUBMIT</button>
+        </form>
     </footer>
 );
 

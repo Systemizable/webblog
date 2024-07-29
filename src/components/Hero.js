@@ -1,35 +1,19 @@
 import React from 'react';
 import './Hero.css';
-import { FaInstagram, FaLinkedin, FaFacebook } from 'react-icons/fa'; // Import the FontAwesome icons
 
 const Hero = () => {
     return (
         <section className="hero">
-            <div className="circle-1"></div>
-            <div className="circle-2"></div>
-            <div className="circle-3"></div>
-            <div className="circle-4"></div>
-            <div className="circle-5"></div>
-            <div className="circle-top-right"></div>
-            <div className="hero-image-container">
-                <img src={`${process.env.PUBLIC_URL}/profile.png`} alt="Sexy" />
-                <div className="inner-circle"></div>
-                <div className="dotted-circle"></div>
-                <div className="outer-circle"></div>
-            </div>
-            <div className="hero-text">
-                <h2>Check out my socials below!</h2>
-                <p>Connect with me on the following:</p>
-                <div className="social-icons">
-                    <a href="https://www.instagram.com/josephsfeirrr/" target="_blank" rel="noopener noreferrer">
-                        <FaInstagram />
-                    </a>
-                    <a href="https://www.linkedin.com/in/joseph-sfeir-416062261/" target="_blank" rel="noopener noreferrer">
-                        <FaLinkedin />
-                    </a>
-                    <a href="https://www.facebook.com/joseph.sfeir.56" target="_blank" rel="noopener noreferrer">
-                        <FaFacebook />
-                    </a>
+            <h2 className="about-me-title">About Me</h2>
+            <div className="hero-content">
+                <div className="hero-image-container">
+                    <img src={`${process.env.PUBLIC_URL}/profile.jpeg`} alt="Profile" />
+                </div>
+                <div className="hero-text">
+                    <h3>Hey, I'm Joseph</h3>
+                    <p>
+                        I am a Computer and Communications Engineering student at Antonine University, specializing in programming and software development. I have a solid foundation in both theoretical and practical aspects of engineering, with proficiency in game development, software engineering, and project management. My goal is to leverage my technical skills and passion for innovation to contribute to impactful projects in software development and engineering.
+                    </p>
                 </div>
             </div>
         </section>

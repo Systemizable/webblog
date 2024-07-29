@@ -1,42 +1,44 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Skills.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCss3Alt, faHtml5, faJs, faReact, faPython, faJava, faNodeJs, faGitAlt, faBootstrap } from '@fortawesome/free-brands-svg-icons';
+import { faCode, faDraftingCompass, faNetworkWired, faDatabase } from '@fortawesome/free-solid-svg-icons';
 
 const Skills = () => {
-    const [activeSkill, setActiveSkill] = useState(null);
-
     const skills = [
-        { id: 'css', name: 'CSS', level: 'Intermediate', style: { top: '10%', left: '50%' } },
-        { id: 'advanced-cpp', name: 'Advanced C++', level: 'Expert', style: { top: '20%', left: '70%' } },
-        { id: 'autocad', name: 'AutoCAD', level: 'Intermediate', style: { top: '40%', left: '90%' } },
-        { id: 'cisco', name: 'Cisco', level: 'Beginner', style: { top: '60%', left: '70%' } },
-        { id: 'java', name: 'Java', level: 'Intermediate', style: { top: '80%', left: '50%' } },
-        { id: 'javascript', name: 'JavaScript', level: 'Intermediate', style: { top: '60%', left: '30%' } },
-        { id: 'python', name: 'Python', level: 'Advanced', style: { top: '40%', left: '10%' } },
-        { id: 'react', name: 'React', level: 'Beginner', style: { top: '20%', left: '30%' } },
-        { id: 'html', name: 'HTML', level: 'Advanced', style: { top: '50%', left: '50%' } },
+        { id: 'css', name: 'CSS', level: 70, icon: faCss3Alt },
+        { id: 'cpp', name: 'C++', level: 90, icon: faCode },
+        { id: 'autocad', name: 'AutoCAD', level: 70, icon: faDraftingCompass },
+        { id: 'cisco', name: 'Cisco', level: 40, icon: faNetworkWired },
+        { id: 'java', name: 'Java', level: 65, icon: faJava },
+        { id: 'javascript', name: 'JavaScript', level: 70, icon: faJs },
+        { id: 'python', name: 'Python', level: 85, icon: faPython },
+        { id: 'react', name: 'React', level: 50, icon: faReact },
+        { id: 'html', name: 'HTML', level: 85, icon: faHtml5 },
+        { id: 'mongodb', name: 'MongoDB', level: 65, icon: faDatabase },
     ];
 
     return (
         <section className="skills" id="skills">
             <h2>Skills</h2>
             <div className="skills-content">
-                <div className="web">
-                    <div className="web-circle web-circle-1"></div>
-                    <div className="web-circle web-circle-2"></div>
-                    <div className="web-circle web-circle-3"></div>
-                    <div className="web-circle web-circle-4"></div>
-                    {skills.map(skill => (
+                <div className="circle">
+                    {skills.map((skill, index) => (
                         <div
                             key={skill.id}
                             className="skill-container"
-                            style={skill.style}
-                            onMouseEnter={() => setActiveSkill(skill.id)}
-                            onMouseLeave={() => setActiveSkill(null)}
+                            style={{ transform: `rotate(${(index / skills.length) * 360}deg) translate(10em) rotate(${(-(index / skills.length) * 360)}deg)` }}
                         >
-                            <a href={`#${skill.id}`} className="skill">{skill.name}</a>
-                            {activeSkill === skill.id && (
-                                <div className="skill-description">{skill.level}</div>
-                            )}
+                            <div className="skill">
+                                <div className="circle-bg">
+                                    <div className="circle-fill" style={{ '--skill-level': `${skill.level}%` }}></div>
+                                    <FontAwesomeIcon icon={skill.icon} className="skill-icon" />
+                                    <div className="skill-percent">{skill.level}%</div>
+                                </div>
+                                <div className="skill-description">
+                                    <span className="skill-name">{skill.name}</span>
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>
