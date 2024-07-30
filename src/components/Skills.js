@@ -10,12 +10,12 @@ const Skills = () => {
         { id: 'cpp', name: 'C++', level: 90, icon: faCode },
         { id: 'autocad', name: 'AutoCAD', level: 70, icon: faDraftingCompass },
         { id: 'cisco', name: 'Cisco', level: 40, icon: faNetworkWired },
-        { id: 'java', name: 'Java', level: 65, icon: faJava },
+        { id: 'java', name: 'Java', level: 45, icon: faJava },
         { id: 'javascript', name: 'JavaScript', level: 70, icon: faJs },
         { id: 'python', name: 'Python', level: 85, icon: faPython },
         { id: 'react', name: 'React', level: 50, icon: faReact },
         { id: 'html', name: 'HTML', level: 85, icon: faHtml5 },
-        { id: 'mongodb', name: 'MongoDB', level: 65, icon: faDatabase },
+        { id: 'mongodb', name: 'MongoDB', level: 55, icon: faDatabase },
     ];
 
     return (
