@@ -413,12 +413,12 @@ h1, h2, h3, p {
   right: 0;
   bottom: 0;
   transition: transform 200ms linear;
-  filter: blur(6px); /* Add blur to the background */
+  filter: blur(6px);
 }
 
 .project-card:hover .project-card__background {
   transform: scale(1.05);
-  filter: blur(6px); /* Maintain blur on hover */
+  filter: blur(6px);
 }
 
 .project-card__content {
@@ -799,12 +799,13 @@ h1, h2, h3, p {
 }
 /* Footer Styles */
 .footer {
-  padding: 40px;
   background-color: #000000;
   color: #adadac;
   font-family: 'Flamante Sans Bold', serif;
   text-align: center;
+  padding-top: 10px; /* Reduce the padding at the top of the footer */
 }
+
 
 .footer h2 {
   font-size: 2rem;
