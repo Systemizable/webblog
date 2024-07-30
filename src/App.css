@@ -797,18 +797,12 @@ h1, h2, h3, p {
   }
 }
 /* Footer Styles */
-.footer {
-  background-color: #000000;
-  color: #adadac;
-  font-family: 'Flamante Sans Bold', serif;
-  text-align: center;
-  /* Reduce the padding at the top of the footer */
-}
+
 
 .footer {
   padding-top: 10px;
   padding-bottom: 100px;/* Reduce the padding at the top of the footer */
-  margin-top: -50px; /* Ensure there is no margin at the top of the footer */
+  margin-top: 80px; /* Ensure there is no margin at the top of the footer */
   background-color: #000000;
   color: #adadac;
   font-family: 'Flamante Sans Bold', serif;
