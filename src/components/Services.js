@@ -11,7 +11,7 @@ const Services = () => (
                     <span className="project-card__category">Cisco Networking</span>
                     <h3 className="project-card__heading">Cisco Networking</h3>
                     <p className="project-card__description">
-                        I offer comprehensive services in Cisco networking. With expertise in designing, implementing, and managing complex network infrastructures, I ensure robust and secure connectivity solutions tailored to your business needs.
+                        I offer services in Cisco networking, drawing from my experience in a Cisco networking course. I can assist with designing, implementing, and managing network infrastructures to ensure reliable and secure connectivity tailored to your business needs.
                     </p>
                 </div>
             </div>
