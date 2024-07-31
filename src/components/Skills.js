@@ -27,7 +27,9 @@ const Skills = () => {
                         <div
                             key={skill.id}
                             className="skill-container"
-                            style={{ transform: `rotate(${(index / skills.length) * 360}deg) translate(10em) rotate(${(-(index / skills.length) * 360)}deg)` }}
+                            style={{
+                                transform: `rotate(${(index / skills.length) * 360}deg) translate(10em) rotate(${(-(index / skills.length) * 360)}deg)`
+                            }}
                         >
                             <div className="skill">
                                 <div className="circle-bg">

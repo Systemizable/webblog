@@ -618,7 +618,6 @@ h1, h2, h3, p {
     right: 15px;
   }
 }
-
 .skills {
   padding: 40px;
   background-color: #000000;
@@ -655,6 +654,7 @@ h1, h2, h3, p {
 }
 
 .circle {
+  margin-top: 50px;
   position: relative;
   width: 400px;
   height: 400px;
@@ -670,14 +670,10 @@ h1, h2, h3, p {
   transition: transform 0.3s ease;
 }
 
-.skill {
-  position: relative;
-  width: 80px;
-  height: 80px;
+.skill-inner {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  transition: transform 0.3s ease;
 }
 
 .circle-bg {
@@ -725,18 +721,47 @@ h1, h2, h3, p {
 
 .skill-description {
   position: absolute;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #363535;
-  padding: 5px 10px;
+  background-color: rgba(54, 53, 53, 1); /* Solid background color */
+  padding: 3px 6px; /* Smaller padding */
   border-radius: 5px;
   color: #adadac;
+  font-size: 1.2rem; /* Smaller font size */
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
 
+.skill-container:nth-child(6) .skill-description {
+  left: -110px; /* Position to the left for JavaScript circle */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.skill-container:nth-child(1) .skill-description {
+  left: 97px; /* Position to the right for CSS circle */
+  top: 40px;
+  transform: translateY(-50%);
+}
+.skill-container:nth-child(9) .skill-description {
+  left: 8px; /* Position to the right for CSS circle */
+  top: -20px;
+  transform: translateY(-50%);
+}
+.skill-container:nth-child(8) .skill-description {
+  left: 12px; /* Position to the right for CSS circle */
+  top: -20px;
+  transform: translateY(-50%);
+}
+.skill-container:nth-child(10) .skill-description {
+  left: 12px; /* Position to the right for CSS circle */
+  top: -20px;
+  transform: translateY(-50%);
+}
+.skill-container:nth-child(7) .skill-description {
+  left: 5px; /* Position to the right for CSS circle */
+  top: -20px;
+  transform: translateY(-50%);
+}
 .skill:hover .circle-fill {
   height: var(--skill-level); /* Fill up the circle on hover */
   background-color: rgba(255, 184, 37, 1); /* Solid background color on hover */
@@ -757,11 +782,12 @@ h1, h2, h3, p {
 @media (max-width: 768px) {
   .skills {
     padding: 20px;
+    margin-bottom: 40px;
   }
 
   .skills h2 {
     font-size: 1.8rem;
-    margin-bottom:70px;
+    margin-bottom: 70px;
   }
 
   .skills-content {
@@ -795,9 +821,38 @@ h1, h2, h3, p {
     font-size: 0.8rem; /* Slightly smaller font size for mobile */
     font-weight: bold;
   }
-}
-/* Footer Styles */
+  .skill-container:nth-child(1) .skill-description {
+    left: -55px; /* Position to the right for CSS circle */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .skill-container:nth-child(6) .skill-description {
+    left: 50px; /* Position to the left for JavaScript circle */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .skill-container:nth-child(7) .skill-description {
+    left: -12px; /* Position to the right for CSS circle */
+    top: -40px;
+    transform: translateY(-50%);
+  }
+  .skill-container:nth-child(10) .skill-description {
+    left: -20px; /* Position to the right for CSS circle */
+    top: -40px;
+    transform: translateY(-50%);
+  }
+  .skill-container:nth-child(8) .skill-description {
+    left: -10px; /* Position to the right for CSS circle */
+    top: -30px;
+    transform: translateY(-50%);
+  }
+  .skill-container:nth-child(9) .skill-description {
+    left: -10px; /* Position to the right for CSS circle */
+    top: -30px;
+    transform: translateY(-50%);
+  }
 
+}
 
 .footer {
   padding-top: 10px;
