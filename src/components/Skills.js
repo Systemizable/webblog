@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import './Skills.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCss3Alt, faHtml5, faJs, faReact, faPython, faJava } from '@fortawesome/free-brands-svg-icons';
@@ -18,77 +18,32 @@ const Skills = () => {
         { id: 'mongodb', name: 'MongoDB', level: 55, icon: faDatabase },
     ];
 
-    const [activeSkill, setActiveSkill] = useState(null);
-    const skillRefs = useRef([]);
-
-    useEffect(() => {
-        const checkPosition = () => {
-            let topmostIndex = -1;
-            let topmostValue = Number.POSITIVE_INFINITY;
-
-            skillRefs.current.forEach((ref, index) => {
-                const rect = ref.getBoundingClientRect();
-                const containerRect = ref.parentNode.getBoundingClientRect();
-
-                // Calculate the distance to the top of the container
-                const distanceToTop = rect.top - containerRect.top;
-
-                if (distanceToTop < topmostValue) {
-                    topmostValue = distanceToTop;
-                    topmostIndex = index;
-                }
-            });
-
-            // Reset all active classes
-            skillRefs.current.forEach((ref, index) => {
-                ref.classList.remove('active');
-            });
-
-            // Set active class to the topmost element
-            if (topmostIndex >= 0) {
-                skillRefs.current[topmostIndex].classList.add('active');
-                setActiveSkill(skills[topmostIndex]);
-            } else {
-                setActiveSkill(null);
-            }
-        };
-
-        const interval = setInterval(checkPosition, 100);
-
-        return () => clearInterval(interval);
-    }, []);
-
     return (
         <section className="skills" id="skills">
             <h2>Skills</h2>
             <div className="skills-content">
-                <div className="circle-container">
-                    <div className="center-dot"></div> {/* Center dot */}
+                <div className="circle">
                     {skills.map((skill, index) => (
                         <div
                             key={skill.id}
                             className="skill-container"
                             style={{
-                                animationDelay: `${(index / skills.length) * 25}s`
+                                transform: `rotate(${(index / skills.length) * 360}deg) translate(10em) rotate(${(-(index / skills.length) * 360)}deg)`
                             }}
-                            ref={(el) => (skillRefs.current[index] = el)}
                         >
-                            <div className="circle-bg">
-                                <div className="circle-fill" style={{ '--skill-level': `${skill.level}%` }}></div>
-                                <FontAwesomeIcon icon={skill.icon} className="skill-icon" />
-                                <div className="skill-percent">{skill.level}%</div>
+                            <div className="skill">
+                                <div className="circle-bg">
+                                    <div className="circle-fill" style={{ '--skill-level': `${skill.level}%` }}></div>
+                                    <FontAwesomeIcon icon={skill.icon} className="skill-icon" />
+                                    <div className="skill-percent">{skill.level}%</div>
+                                </div>
+                                <div className="skill-description">
+                                    <span className="skill-name">{skill.name}</span>
+                                </div>
                             </div>
                         </div>
                     ))}
                 </div>
-                {activeSkill && (
-                    <div className="active-skill-description">
-                        <div className="skill-description">
-                            <span className="skill-name">{activeSkill.name}</span>
-                            <span className="skill-percent">{activeSkill.level}%</span>
-                        </div>
-                    </div>
-                )}
             </div>
         </section>
     );

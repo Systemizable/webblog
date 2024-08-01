@@ -17,18 +17,22 @@
   font-family: 'Architype Renner Medium';
   src: url('./fonts/ArchitypeRenner-Regular.otf') format('opentype');
 }
+
 @font-face {
   font-family: 'P22 Underground';
   src: url('./fonts/P22Underground-PCp.otf') format('opentype');
 }
+
 @font-face {
   font-family: 'Flamante Sans Bold';
   src: url('./fonts/flamante-sans.bold.ttf') format('opentype');
 }
+
 @font-face {
   font-family: 'Flamante Seca Bold';
   src: url('./fonts/Flamante-Seca-Bold-FFP.ttf') format('opentype');
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -57,6 +61,7 @@ h1, h2, h3, p {
   padding: 0;
   box-sizing: border-box;
 }
+
 .header {
   display: flex;
   justify-content: space-between; /* Aligns icons on the left and nav on the right */
@@ -115,6 +120,7 @@ h1, h2, h3, p {
 .header nav ul li a:hover {
   color: #ffffff;
 }
+
 .nav-container {
   display: flex;
   align-items: center;
@@ -162,6 +168,7 @@ h1, h2, h3, p {
   transform: scale(1.5);
   transition: transform 0.3s;
 }
+
 .download-icon {
   display: none;
   margin-left: 8px; /* Space between text and icon */
@@ -173,10 +180,11 @@ h1, h2, h3, p {
   display: inline-block;
   opacity: 1;
 }
+
 /* Mobile styles */
 @media (max-width: 768px) {
   .header {
-    flex-direction: row;
+    flex-direction: column; /* Changed to column to ensure the menu icon and nav align correctly */
     padding: 15px 20px;
     text-align: center;
   }
@@ -220,6 +228,7 @@ h1, h2, h3, p {
     font-size: 1rem;
     padding: 8px 10px;
   }
+
   .download-icon {
     display: none;
     margin-left: 5px;
@@ -254,6 +263,7 @@ h1, h2, h3, p {
   font-size: 2rem;
   margin-bottom: 20px; /* Add some spacing between the title and the rectangle */
 }
+
 .about-me-title::after {
   content: '';
   width: 50px;
@@ -263,6 +273,7 @@ h1, h2, h3, p {
   margin: 10px auto 0;
   border-radius: 2px;
 }
+
 .hero-content {
   display: flex;
   align-items: center;
@@ -349,6 +360,7 @@ h1, h2, h3, p {
     margin-top: 20px; /* Adjust margin between sections */
   }
 }
+
 .services {
   padding: 60px 20px;
   background-color: #000000;
@@ -570,7 +582,6 @@ h1, h2, h3, p {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-
 .arrow-prev {
   left: 10px; /* Adjust to position within the picture */
 }
@@ -632,6 +643,7 @@ h1, h2, h3, p {
     right: 15px;
   }
 }
+
 .skills {
   padding: 40px;
   background-color: #000000;
@@ -662,49 +674,32 @@ h1, h2, h3, p {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  flex-direction: column;
-  top: 150px;
-  left: 250px;
-  margin-bottom: -350px;
+  height: 400px;
+  position: relative;
   font-family: Roboto, serif;
 }
 
-.circle-container {
+.circle {
+  margin-top: 50px;
   position: relative;
-  width: 600px; /* Increase the width to space out the circles more */
-  height: 600px; /* Increase the height to space out the circles more */
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 .skill-container {
   position: absolute;
   text-align: center;
-  width: 80px;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: move-around 25.2s linear infinite; /* Adjust animation speed */
-
+  transition: transform 0.3s ease;
 }
 
-@keyframes move-around {
-  0% {
-    transform: rotate(0deg) translateX(260px) rotate(0deg) scale(1.2); /* Increased translateX value */
-  }
-  25% {
-    transform: rotate(90deg) translateX(260px) rotate(-90deg) scale(0.5); /* Increased translateX value */
-  }
-  50% {
-    transform: rotate(180deg) translateX(260px) rotate(-180deg) scale(1.2); /* Increased translateX value */
-  }
-  75% {
-    transform: rotate(270deg) translateX(260px) rotate(-270deg) scale(2.0); /* Increased translateX value */
-  }
-  100% {
-    transform: rotate(360deg) translateX(260px) rotate(-360deg) scale(1.2); /* Increased translateX value */
-  }
+.skill-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .circle-bg {
@@ -738,57 +733,61 @@ h1, h2, h3, p {
 }
 
 .skill-percent {
-  font-size: 1rem;
+  position: absolute;
+  bottom: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, 50%); /* Adjust position */
+  font-size: 1.5rem; /* Bigger font size */
   color: #ffffff;
-  font-weight: bold;
+  font-weight: bold; /* Bold text */
+  z-index: 3; /* Ensure the percentage is above the fill */
   opacity: 0; /* Initially hidden */
   transition: opacity 0.3s ease;
 }
-.active-skill-description {
-  position: absolute;
-  top: -60px; /* Position the description directly below the circle */
-  left: 650px;
-  transform: translateX(-50%);
-  text-align: center;
-  transition: ease-in-out 0.3s;
-}
 
 .skill-description {
-  background-color: #2e2e2e;
-  padding: 3px 6px;
+  position: absolute;
+  background-color: rgba(54, 53, 53, 1); /* Solid background color */
+  padding: 3px 6px; /* Smaller padding */
   border-radius: 5px;
   color: #adadac;
-  font-size: 1.2rem;
-  font-family: "Flamante Sans Bold", serif;
-  opacity: 1;
-  transition: ease-in-out 0.3s;
-}
-
-.skill-container.active .skill-description {
-  opacity: 1;
-  transform: translateX(-50%) translateY(10px); /* Adjust to position the description */
-}
-.skill:hover .skill-description {
-  opacity: 1;
-}
-
-.skill:hover .skill-icon {
+  font-size: 1.2rem; /* Smaller font size */
   opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
-.skill-container.active .skill-percent,
-.skill-container.active .skill-description {
-  opacity: 1;
-}
-.skill-container.active .circle-fill {
-  height: var(--skill-level); /* Fill up the circle when active */
-  background-color: rgba(255, 184, 37, 1); /* Solid background color when active */
+.skill-container:nth-child(6) .skill-description {
+  left: -110px; /* Position to the left for JavaScript circle */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.skill-container.active .skill-icon {
-  opacity: 0; /* Hide the icon when active */
+.skill-container:nth-child(1) .skill-description {
+  left: 97px; /* Position to the right for CSS circle */
+  top: 40px;
+  transform: translateY(-50%);
 }
-
+.skill-container:nth-child(9) .skill-description {
+  left: 8px; /* Position to the right for CSS circle */
+  top: -20px;
+  transform: translateY(-50%);
+}
+.skill-container:nth-child(8) .skill-description {
+  left: 12px; /* Position to the right for CSS circle */
+  top: -20px;
+  transform: translateY(-50%);
+}
+.skill-container:nth-child(10) .skill-description {
+  left: 12px; /* Position to the right for CSS circle */
+  top: -20px;
+  transform: translateY(-50%);
+}
+.skill-container:nth-child(7) .skill-description {
+  left: 5px; /* Position to the right for CSS circle */
+  top: -20px;
+  transform: translateY(-50%);
+}
 .skill:hover .circle-fill {
   height: var(--skill-level); /* Fill up the circle on hover */
   background-color: rgba(255, 184, 37, 1); /* Solid background color on hover */
@@ -818,28 +817,22 @@ h1, h2, h3, p {
   }
 
   .skills-content {
-    font-size: 1rem;
-    height: 650px; /* Adjusted height for smaller screens */
-    left:90px;
-    top:-100px;
-    margin-bottom: -400px;
+    font-size: 1rem; /* Reduced font size */
+    height: 250px; /* Reduced height */
   }
 
-  .circle-container {
-    width: 200px; /* Smaller size for mobile */
-    height: 200px;
-    left: -10px;/* Smaller size for mobile */
-  }
-
-  .center-dot {
-    width: 5px;
-    height: 5px;
+  .circle {
+    width: 50px; /* Adjusted size */
+    height: 50px; /* Adjusted size */
   }
 
   .skill-container {
+    transform: rotate(0deg) translate(2.5em) rotate(0deg); /* Adjusted translate value */
+  }
+
+  .skill {
     width: 40px;
     height: 40px;
-    animation: move-around-mobile 25s linear infinite; /* Adjust animation speed */
   }
 
   .skill-icon {
@@ -847,60 +840,48 @@ h1, h2, h3, p {
   }
 
   .skill-description {
-    font-size: 0.6rem;
-
+    top: 70px;
   }
 
   .skill-percent {
-    font-size: 0.8rem;
+    font-size: 0.8rem; /* Slightly smaller font size for mobile */
+    font-weight: bold;
+  }
+  .skill-container:nth-child(1) .skill-description {
+    left: -55px; /* Position to the right for CSS circle */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .skill-container:nth-child(6) .skill-description {
+    left: 50px; /* Position to the left for JavaScript circle */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .skill-container:nth-child(7) .skill-description {
+    left: -12px; /* Position to the right for CSS circle */
+    top: -40px;
+    transform: translateY(-50%);
+  }
+  .skill-container:nth-child(10) .skill-description {
+    left: -20px; /* Position to the right for CSS circle */
+    top: -40px;
+    transform: translateY(-50%);
+  }
+  .skill-container:nth-child(8) .skill-description {
+    left: -10px; /* Position to the right for CSS circle */
+    top: -30px;
+    transform: translateY(-50%);
+  }
+  .skill-container:nth-child(9) .skill-description {
+    left: -10px; /* Position to the right for CSS circle */
+    top: -30px;
+    transform: translateY(-50%);
   }
 
-  .active-skill-description {
-    position: absolute;
-    top: 100px; /* Position the description directly below the circle */
-    left: 130px;
-    transform: translateX(-50%);
-    text-align: center;
-    transition: ease-in-out 0.3s;
-  }
-
-  .skill-description {
-    background-color: #2e2e2e;
-    padding: 3px 6px;
-    border-radius: 5px;
-    color: #adadac;
-    font-size: 1.2rem;
-    font-family: "Flamante Sans Bold", serif;
-    opacity: 1;
-    transition: ease-in-out 0.3s;
-  }
-
-  .skill-container.active .skill-description {
-    opacity: 1;
-    transform: translateX(-50%) translateY(10px); /* Adjust to position the description */
-  }
-}
-
-@keyframes move-around-mobile {
-  0% {
-    transform: rotate(0deg) translateX(130px) rotate(0deg) scale(1.2); /* Decreased translateX value for mobile */
-  }
-  25% {
-    transform: rotate(90deg) translateX(130px) rotate(-90deg) scale(0.5); /* Decreased translateX value for mobile */
-  }
-  50% {
-    transform: rotate(180deg) translateX(130px) rotate(-180deg) scale(1.2); /* Decreased translateX value for mobile */
-  }
-  75% {
-    transform: rotate(270deg) translateX(130px) rotate(-270deg) scale(2.0); /* Decreased translateX value for mobile */
-  }
-  100% {
-    transform: rotate(360deg) translateX(130px) rotate(-360deg) scale(1.2); /* Decreased translateX value for mobile */
-  }
 }
 .footer {
   padding-top: 10px;
-  padding-bottom: 100px;/* Reduce the padding at the top of the footer */
+  padding-bottom: 100px; /* Reduce the padding at the top of the footer */
   margin-top: 80px; /* Ensure there is no margin at the top of the footer */
   background-color: #000000;
   color: #adadac;
@@ -951,7 +932,6 @@ h1, h2, h3, p {
   gap: 20px;
   max-width: 600px;
   margin: 0 auto;
-
 }
 
 .input-group {
@@ -1227,6 +1207,7 @@ h1, h2, h3, p {
   visibility: hidden;
   transition: opacity 0.3s 0s, visibility 0s 0.3s;
 }
+
 .cd-popup.is-visible {
   opacity: 1;
   visibility: visible;
@@ -1246,19 +1227,23 @@ h1, h2, h3, p {
   transition-property: transform;
   transition-duration: 0.3s;
 }
+
 .cd-popup-container p {
   padding: 3em 1em;
 }
+
 .cd-popup-container .cd-buttons:after {
   content: "";
   display: table;
   clear: both;
 }
+
 .cd-popup-container .cd-buttons li {
   float: none;
   width: 100%;
   list-style: none;
 }
+
 .cd-popup-container .cd-buttons a {
   display: block;
   height: 60px;
@@ -1267,23 +1252,29 @@ h1, h2, h3, p {
   color: #FFF;
   transition: background-color 0.2s;
 }
+
 .cd-popup-container .cd-buttons li:first-child a {
   background: #8cce1e;
   border-radius: 0 0 .25em .25em;
 }
+
 .no-touch .cd-popup-container .cd-buttons li:first-child a:hover {
   background-color: #7fbf17;
 }
+
 .cd-popup-container .cd-buttons li:last-child a {
   background: #35a785;
   border-radius: 0 0 .25em .25em;
 }
+
 .no-touch .cd-popup-container .cd-buttons li:last-child a:hover {
   background-color: #2f9775;
 }
+
 .cd-popup-container .cd-popup-close {
   display: none; /* Remove the close button in the top right corner */
 }
+
 .cd-popup-container .cd-popup-close::before, .cd-popup-container .cd-popup-close::after {
   content: '';
   position: absolute;
@@ -1292,17 +1283,21 @@ h1, h2, h3, p {
   height: 3px;
   background-color: #acacad;
 }
+
 .cd-popup-container .cd-popup-close::before {
   transform: rotate(45deg);
   left: 8px;
 }
+
 .cd-popup-container .cd-popup-close::after {
   transform: rotate(-45deg);
   right: 8px;
 }
+
 .is-visible .cd-popup-container {
   transform: translateY(0);
 }
+
 @media only screen and (min-width: 1170px) {
   .cd-popup-container {
     margin: 8em auto;
