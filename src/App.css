@@ -31,6 +31,10 @@
 }
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
   background-color: #000000;
   font-family: 'Flamante Sans Bold', serif;
   animation: fadeInPage 2.2s ease-in-out;
@@ -682,6 +686,7 @@ h1, h2, h3, p {
   justify-content: center;
   align-items: center;
   animation: move-around 25.2s linear infinite; /* Adjust animation speed */
+
 }
 
 @keyframes move-around {
@@ -814,12 +819,16 @@ h1, h2, h3, p {
 
   .skills-content {
     font-size: 1rem;
-    height: 250px;
+    height: 650px; /* Adjusted height for smaller screens */
+    left:90px;
+    top:-100px;
+    margin-bottom: -400px;
   }
 
   .circle-container {
-    width: 300px; /* Adjusted size */
-    height: 300px; /* Adjusted size */
+    width: 200px; /* Smaller size for mobile */
+    height: 200px;
+    left: -10px;/* Smaller size for mobile */
   }
 
   .center-dot {
@@ -828,8 +837,9 @@ h1, h2, h3, p {
   }
 
   .skill-container {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    animation: move-around-mobile 25s linear infinite; /* Adjust animation speed */
   }
 
   .skill-icon {
@@ -838,11 +848,54 @@ h1, h2, h3, p {
 
   .skill-description {
     font-size: 0.6rem;
-    bottom: -20px;
+
   }
 
   .skill-percent {
     font-size: 0.8rem;
+  }
+
+  .active-skill-description {
+    position: absolute;
+    top: 100px; /* Position the description directly below the circle */
+    left: 130px;
+    transform: translateX(-50%);
+    text-align: center;
+    transition: ease-in-out 0.3s;
+  }
+
+  .skill-description {
+    background-color: #2e2e2e;
+    padding: 3px 6px;
+    border-radius: 5px;
+    color: #adadac;
+    font-size: 1.2rem;
+    font-family: "Flamante Sans Bold", serif;
+    opacity: 1;
+    transition: ease-in-out 0.3s;
+  }
+
+  .skill-container.active .skill-description {
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px); /* Adjust to position the description */
+  }
+}
+
+@keyframes move-around-mobile {
+  0% {
+    transform: rotate(0deg) translateX(130px) rotate(0deg) scale(1.2); /* Decreased translateX value for mobile */
+  }
+  25% {
+    transform: rotate(90deg) translateX(130px) rotate(-90deg) scale(0.5); /* Decreased translateX value for mobile */
+  }
+  50% {
+    transform: rotate(180deg) translateX(130px) rotate(-180deg) scale(1.2); /* Decreased translateX value for mobile */
+  }
+  75% {
+    transform: rotate(270deg) translateX(130px) rotate(-270deg) scale(2.0); /* Decreased translateX value for mobile */
+  }
+  100% {
+    transform: rotate(360deg) translateX(130px) rotate(-360deg) scale(1.2); /* Decreased translateX value for mobile */
   }
 }
 
