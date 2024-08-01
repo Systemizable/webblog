@@ -820,15 +820,15 @@ h1, h2, h3, p {
   .skills-content {
     font-size: 1rem;
     height: 650px; /* Adjusted height for smaller screens */
-    left: 90px;
-    top: -100px;
+    left:90px;
+    top:-100px;
     margin-bottom: -400px;
   }
 
   .circle-container {
     width: 200px; /* Smaller size for mobile */
     height: 200px;
-    left: -10px; /* Adjusted position */
+    left: -10px;/* Smaller size for mobile */
   }
 
   .center-dot {
@@ -839,7 +839,7 @@ h1, h2, h3, p {
   .skill-container {
     width: 40px;
     height: 40px;
-    /* Remove the animation for mobile */
+    animation: move-around-mobile 25s linear infinite; /* Adjust animation speed */
   }
 
   .skill-icon {
@@ -848,6 +848,7 @@ h1, h2, h3, p {
 
   .skill-description {
     font-size: 0.6rem;
+
   }
 
   .skill-percent {
@@ -870,30 +871,33 @@ h1, h2, h3, p {
     color: #adadac;
     font-size: 1.2rem;
     font-family: "Flamante Sans Bold", serif;
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  .skill-container:hover .skill-description {
     opacity: 1;
+    transition: ease-in-out 0.3s;
   }
 
-  .skill-container:hover .circle-fill {
-    height: var(--skill-level); /* Fill up the circle on hover */
-    background-color: rgba(255, 184, 37, 1); /* Solid background color on hover */
-  }
-
-  .skill-container:hover .skill-percent {
-    opacity: 1; /* Show percentage on hover */
-  }
-
-  .skill-container:hover .skill-icon {
-    opacity: 0; /* Hide the icon on hover */
+  .skill-container.active .skill-description {
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px); /* Adjust to position the description */
   }
 }
 
-
-
+@keyframes move-around-mobile {
+  0% {
+    transform: rotate(0deg) translateX(130px) rotate(0deg) scale(1.2); /* Decreased translateX value for mobile */
+  }
+  25% {
+    transform: rotate(90deg) translateX(130px) rotate(-90deg) scale(0.5); /* Decreased translateX value for mobile */
+  }
+  50% {
+    transform: rotate(180deg) translateX(130px) rotate(-180deg) scale(1.2); /* Decreased translateX value for mobile */
+  }
+  75% {
+    transform: rotate(270deg) translateX(130px) rotate(-270deg) scale(2.0); /* Decreased translateX value for mobile */
+  }
+  100% {
+    transform: rotate(360deg) translateX(130px) rotate(-360deg) scale(1.2); /* Decreased translateX value for mobile */
+  }
+}
 .footer {
   padding-top: 10px;
   padding-bottom: 100px;/* Reduce the padding at the top of the footer */
