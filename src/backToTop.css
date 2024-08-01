@@ -1,3 +1,4 @@
+/* backtotop.css */
 #backToTop {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -14,6 +15,7 @@
     font-size: 24px; /* Increase font size */
     transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition */
     opacity: 0; /* Initial state is invisible */
+    overflow: hidden; /* Prevents the button from causing horizontal overflow */
 }
 
 #backToTop:hover {
