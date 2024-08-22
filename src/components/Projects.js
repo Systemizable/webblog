@@ -66,7 +66,7 @@ const Projects = () => (
                     <div className="difficulty-circle intermediate" title="Advanced"></div>
                     <div className="text-container">
                         <h3>Car Renting Program</h3>
-                        <p>This is a Programming 2 project. We were tasked to create in C++, a car rental program that
+                        <p>This is a Programming II project. We were tasked to create in C++, a car rental program that
                             would save user credentials, provide encryption for passwords, save rental details, and
                             alter a PDF file containing rental info.</p>
                     </div>
@@ -76,8 +76,7 @@ const Projects = () => (
                     <div className="difficulty-circle advanced" title="Intermediate"></div>
                     <div className="text-container">
                         <h3>Portfolio Website</h3>
-                        <p>This website will be added to my projects in the future, showcasing my skills and portfolio
-                            as a programmer.</p>
+                        <p>This website showcasing my skills, projects and resume as a programmer.</p>
                     </div>
                 </div>
             </Carousel>

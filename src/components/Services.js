@@ -8,20 +8,20 @@ const Services = () => (
             <div className="project-card">
                 <div className="project-card__background" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/net.jpg)` }}></div>
                 <div className="project-card__content">
-                    <span className="project-card__category">Cisco Networking</span>
-                    <h3 className="project-card__heading">Cisco Networking</h3>
+                    <span className="project-card__category">Web Design</span>
+                    <h3 className="project-card__heading">Web Design</h3>
                     <p className="project-card__description">
-                        I offer services in Cisco networking, drawing from my experience in a Cisco networking course. I can assist with designing, implementing, and managing network infrastructures to ensure reliable and secure connectivity tailored to your business needs.
+                        I offer services in web design, drawing from my experience in web development. I can assist with designing, implementing, and managing websites to ensure reliable and engaging user experiences tailored to your business needs.
                     </p>
                 </div>
             </div>
             <div className="project-card">
-                <div className="project-card__background" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/auto.jpg)` }}></div>
+                <div className="project-card__background" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/auto.png)` }}></div>
                 <div className="project-card__content">
-                    <span className="project-card__category">AutoCAD Design</span>
-                    <h3 className="project-card__heading">AutoCAD Design</h3>
+                    <span className="project-card__category">API Implementation</span>
+                    <h3 className="project-card__heading">API Implementation</h3>
                     <p className="project-card__description">
-                        Specializing in AutoCAD, I provide detailed and precise design services. From architectural plans to engineering blueprints, I deliver high-quality CAD drawings that meet industry standards and client specifications.
+                        Intermediate in API development, I design and implement robust APIs, mainly using Postman, that facilitate seamless communication between applications.
                     </p>
                 </div>
             </div>

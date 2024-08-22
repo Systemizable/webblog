@@ -2,14 +2,14 @@ import React from 'react';
 import './Skills.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCss3Alt, faHtml5, faJs, faReact, faPython, faJava } from '@fortawesome/free-brands-svg-icons';
-import { faCode, faDraftingCompass, faNetworkWired, faDatabase } from '@fortawesome/free-solid-svg-icons';
+import {faCode, faDatabase, faCloudArrowDown, faMobile} from '@fortawesome/free-solid-svg-icons';
 
 const Skills = () => {
     const skills = [
         { id: 'css', name: 'CSS', level: 70, icon: faCss3Alt },
         { id: 'cpp', name: 'C++', level: 90, icon: faCode },
-        { id: 'autocad', name: 'AutoCAD', level: 70, icon: faDraftingCompass },
-        { id: 'cisco', name: 'Cisco', level: 40, icon: faNetworkWired },
+        { id: 'api', name: 'API', level: 60, icon: faCloudArrowDown },
+        { id: 'mobile', name: 'Mobile Development', level: 30, icon: faMobile },
         { id: 'java', name: 'Java', level: 45, icon: faJava },
         { id: 'javascript', name: 'JavaScript', level: 70, icon: faJs },
         { id: 'python', name: 'Python', level: 85, icon: faPython },
