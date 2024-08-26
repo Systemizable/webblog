@@ -262,7 +262,7 @@ h1, h2, h3, p {
 .hero-image-container {
   flex-shrink: 0;
   position: relative;
-  width: 180px; /* Adjusted size */
+  width: 190px; /* Adjusted size */
   height: 190px; /* Adjusted size */
   overflow: hidden;
   margin-right: 30px;
@@ -280,7 +280,7 @@ h1, h2, h3, p {
   color: #adadac;
   font-family: 'Flamante Sans Bold', serif;
   font-size: 1rem; /* Slightly bigger and more relaxed font size */
-  line-height: 1.6; /* Increased line height for a more relaxed look */
+  line-height: 1.6;
 }
 
 .hero-text h3 {
@@ -412,7 +412,7 @@ h1, h2, h3, p {
   right: 0;
   bottom: 0;
   transition: transform 200ms linear;
-  filter: blur(6px);
+  filter: blur(12px);
 }
 
 .project-card:hover .project-card__background {
@@ -1261,4 +1261,19 @@ h1, h2, h3, p {
   .cd-popup-container {
     margin: 8em auto;
   }
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #acacad;
+  border-radius: 10px;
 }

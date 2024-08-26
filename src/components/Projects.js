@@ -42,6 +42,15 @@ const Projects = () => (
                 </div>
 
                 <div className="slide-container">
+                    <img src={`${process.env.PUBLIC_URL}/port.png`} alt="Portfolio Website" className="slide-image"/>
+                    <div className="difficulty-circle advanced" title="Intermediate"></div>
+                    <div className="text-container">
+                        <h3>Portfolio Website</h3>
+                        <p>This website showcasing my skills, projects and resume as a programmer.</p>
+                    </div>
+                </div>
+
+                <div className="slide-container">
                     <img src={`${process.env.PUBLIC_URL}/math.png`} alt="Math Menu Operations" className="slide-image"/>
                     <div className="difficulty-circle beginner" title="Beginner"></div>
                     <div className="text-container">
@@ -71,14 +80,7 @@ const Projects = () => (
                             alter a PDF file containing rental info.</p>
                     </div>
                 </div>
-                <div className="slide-container">
-                    <img src={`${process.env.PUBLIC_URL}/port.png`} alt="Portfolio Website" className="slide-image"/>
-                    <div className="difficulty-circle advanced" title="Intermediate"></div>
-                    <div className="text-container">
-                        <h3>Portfolio Website</h3>
-                        <p>This website showcasing my skills, projects and resume as a programmer.</p>
-                    </div>
-                </div>
+
             </Carousel>
         </div>
     </section>
