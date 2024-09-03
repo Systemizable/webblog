@@ -729,6 +729,8 @@ h1, h2, h3, p {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+  font-weight:bold;
+  font-family: "Flamante Sans Bold", serif;
 }
 
 .skill-container:nth-child(6) .skill-description {
@@ -907,12 +909,14 @@ h1, h2, h3, p {
   gap: 20px;
   max-width: 600px;
   margin: 0 auto;
+
 }
 
 .input-group {
   display: flex;
   gap: 20px;
   width: 100%;
+
 }
 
 .input-group input {
@@ -923,7 +927,7 @@ h1, h2, h3, p {
   background-color: #1c1c1c;
   color: #adadac;
   font-size: 1rem;
-  font-family: 'Roboto', serif; /* Ensure the same font is applied */
+  font-family: 'Duke Sans', sans-serif;
 }
 
 .contact-form input,
@@ -935,7 +939,8 @@ h1, h2, h3, p {
   background-color: #1c1c1c;
   color: #adadac;
   font-size: 1rem;
-  font-family: 'Roboto', serif; /* Ensure the same font is applied */
+  font-family: 'Duke Sans', sans-serif;
+  font-weight:bold;
   resize: none;
 }
 
@@ -974,7 +979,8 @@ h1, h2, h3, p {
   font-size: 1.125rem;
   outline: none;
   transition: transform .125s;
-  font-family: 'Roboto', serif; /* Ensure the same font is applied */
+  font-family: 'Duke Sans', sans-serif;
+  font-weight:bold;
 }
 
 .contact-form button:active {
