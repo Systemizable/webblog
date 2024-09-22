@@ -962,7 +962,10 @@ h1, h2, h3, p {
   -webkit-box-shadow: 0 0 0 30px #1c1c1c inset !important;
   -webkit-text-fill-color: #adadac !important;
 }
-
+.link-icon {
+  margin-left: 8px; /* Adds space between "Resume" and the icon */
+  vertical-align: middle; /* Ensures the icon aligns with the text */
+}
 /* Modern button styles */
 .contact-form button {
   position: relative;

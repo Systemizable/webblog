@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css';
-import { FaInstagram, FaLinkedin, FaGithub, FaDownload } from 'react-icons/fa'; // Import the FontAwesome icons
+import {FaInstagram, FaLinkedin, FaGithub, FaDownload, FaLink} from 'react-icons/fa'; // Import the FontAwesome icons
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -40,12 +40,13 @@ const Header = () => {
                         <li><a href="#services" onClick={handleLinkClick}>Services</a></li>
                         <li className="resume-link">
                             <a
-                                href={`${process.env.PUBLIC_URL}/JSResume.pdf`}
-                                download="JSResume.pdf"
+                                href="https://jssresume.netlify.app/"
+                                target="_blank" // Opens the link in a new tab
+                                rel="noopener noreferrer" // Improves security for external links
                                 onClick={handleLinkClick}
                             >
                                 Resume
-                                <FaDownload className="download-icon"/>
+                                <FaLink className="link-icon"/> {/* Changed icon to FaLink */}
                             </a>
                         </li>
                     </ul>
