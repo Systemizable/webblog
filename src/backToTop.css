@@ -13,21 +13,24 @@
     padding: 15px; /* Some padding */
     border-radius: 50%; /* Circular shape */
     font-size: 24px; /* Increase font size */
-    transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition */
     opacity: 0; /* Initial state is invisible */
     overflow: hidden; /* Prevents the button from causing horizontal overflow */
-}
-
-#backToTop:hover {
-    background-color: #555; /* Add a lighter grey background on hover */
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 #backToTop.show {
-    display: block;
-    opacity: 1; /* Visible */
+    opacity: 1;
+    visibility: visible;
 }
 
 #backToTop.hide {
-    opacity: 0; /* Invisible */
-    transition: opacity 0.3s ease; /* Smooth transition */
+    opacity: 0;
+    visibility: hidden;
+}
+
+#backToTop:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background-color:white;
+    color: #333;
 }

@@ -29,6 +29,16 @@ const Projects = () => (
                 }
             >
                 <div className="slide-container">
+                    <img src={`${process.env.PUBLIC_URL}/agri.png`} alt="AgriCrop" className="slide-image"/>
+                    <div className="difficulty-circle advanced" title="Advanced"></div>
+                    <div className="text-container">
+                        <h3>AgriCrop: The Future of Farming</h3>
+                        <p>This farming website, AgriCrop, features a detailed homepage, a marketplace that includes various farming products, and a section for
+                            tutorials to help users with farming techniques and more.</p>
+                        <a href="https://agricrop.netlify.app" target="_blank" rel="noopener noreferrer">Check out AgriCrop!</a>
+                    </div>
+                </div>
+                <div className="slide-container">
                     <img src={`${process.env.PUBLIC_URL}/ecom.png`} alt="E-Commerce Website" className="slide-image"/>
                     <div className="difficulty-circle advanced" title="Advanced"></div>
                     <div className="text-container">
