@@ -29,67 +29,102 @@ const Projects = () => (
                 }
             >
                 <div className="slide-container">
+
+                    <img src={`${process.env.PUBLIC_URL}/election.png`} alt="Election Analysis" className="slide-image"/>
+                    <div className="difficulty-circle advanced" title="Advanced"></div>
+                    <div className="text-container">
+                        <h3>Election Analysis - Prediction</h3>
+                        <p>Election Analysis for the latest municipal elections + a prediction for the next 2026 MP
+                            elections for the Lebanese Forces as a sample.
+                           Using Python, as well as several plotting, prediction and calculation frameworks!</p>
+                    </div>
+
+                    <img src={`${process.env.PUBLIC_URL}/oop.png`} alt="OOP Project" className="slide-image"/>
+                    <div className="difficulty-circle advanced" title="Advanced"></div>
+                    <div className="text-container">
+                        <h3>OOP 1: Project</h3>
+                        <p>Object Oriented Programming project that required to create a Job Portal Application
+                            using Java, MongoDB and Spring Boot. The project includes user authentication, job listings,
+                            and application management.
+                            And with SwaggerAPI as well as JavaDOC Documentation</p>
+                        <a href="https://jobportal-952d.onrender.com/index.html" target="_blank"
+                           rel="noopener noreferrer">Check out
+                            the JavaDoc documentation!</a>
+                    </div>
+
+
                     <img src={`${process.env.PUBLIC_URL}/agri.png`} alt="AgriCrop" className="slide-image"/>
                     <div className="difficulty-circle advanced" title="Advanced"></div>
                     <div className="text-container">
                         <h3>AgriCrop: The Future of Farming</h3>
-                        <p>This farming website, AgriCrop, features a detailed homepage, a marketplace that includes various farming products, and a section for
+                        <p>This farming website, AgriCrop, features a detailed homepage, a marketplace that includes
+                            various farming products, and a section for
                             tutorials to help users with farming techniques and more.</p>
-                        <a href="https://agricrop.netlify.app" target="_blank" rel="noopener noreferrer">Check out AgriCrop!</a>
+                        <a href="https://agricrop.netlify.app" target="_blank" rel="noopener noreferrer">Check out
+                            AgriCrop!</a>
                     </div>
                 </div>
                 <div className="slide-container">
-                    <img src={`${process.env.PUBLIC_URL}/ecom.png`} alt="E-Commerce Website" className="slide-image"/>
+                    <img src={`${process.env.PUBLIC_URL}/ecom.png`} alt="E-Commerce Website"
+                         className="slide-image"/>
                     <div className="difficulty-circle advanced" title="Advanced"></div>
                     <div className="text-container">
                         <h3>E-Commerce Website</h3>
-                        <p>One of my first very advanced projects I've done. This E-Commerce website contains a detailed
+                        <p>One of my first very advanced projects I've done. This E-Commerce website contains a
+                            detailed
                             home page, with a shopping page that contains all products, with the ability to check
                             individual products.</p>
-                        <a href="https://jarvis-ecom.netlify.app" target="_blank" rel="noopener noreferrer">Check out
-                            Jarvis E-Com!</a>
+                        <a href="https://jarvis-ecom.netlify.app" target="_blank" rel="noopener noreferrer">Check
+                                out
+                                Jarvis E-Com!</a>
+                        </div>
                     </div>
-                </div>
 
-                <div className="slide-container">
-                    <img src={`${process.env.PUBLIC_URL}/port.png`} alt="Portfolio Website" className="slide-image"/>
-                    <div className="difficulty-circle advanced" title="Intermediate"></div>
-                    <div className="text-container">
-                        <h3>Portfolio Website</h3>
-                        <p>This website showcasing my skills, projects and resume as a programmer.</p>
+                    <div className="slide-container">
+                        <img src={`${process.env.PUBLIC_URL}/port.png`} alt="Portfolio Website"
+                             className="slide-image"/>
+                        <div className="difficulty-circle advanced" title="Intermediate"></div>
+                        <div className="text-container">
+                            <h3>Portfolio Website</h3>
+                            <p>This website showcasing my skills, projects and resume as a programmer.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div className="slide-container">
-                    <img src={`${process.env.PUBLIC_URL}/math.png`} alt="Math Menu Operations" className="slide-image"/>
-                    <div className="difficulty-circle beginner" title="Beginner"></div>
-                    <div className="text-container">
-                        <h3>Math Menu Operations</h3>
-                        <p>This is a simple project that represents my first ever coding project. Even though it's
-                            extremely basic, it holds a special place as the foundation of my programming journey.</p>
+                    <div className="slide-container">
+                        <img src={`${process.env.PUBLIC_URL}/math.png`} alt="Math Menu Operations"
+                             className="slide-image"/>
+                        <div className="difficulty-circle beginner" title="Beginner"></div>
+                        <div className="text-container">
+                            <h3>Math Menu Operations</h3>
+                            <p>This is a simple project that represents my first ever coding project. Even though it's
+                                extremely basic, it holds a special place as the foundation of my programming
+                                journey.</p>
+                        </div>
                     </div>
-                </div>
-                <div className="slide-container">
-                    <img src={`${process.env.PUBLIC_URL}/arduino.png`} alt="Water Level Sensor"
-                         className="slide-image"/>
-                    <div className="difficulty-circle intermediate" title="Intermediate"></div>
-                    <div className="text-container">
-                        <h3>Water Level Sensor</h3>
-                        <p>This is an introduction to engineering project. We were tasked, in any shape or form, to
-                            create a water level sensor that gave out signals when it reached certain levels. We opted
-                            for an Arduino, LCD, and sonic sensor, and found major success!</p>
+                    <div className="slide-container">
+                        <img src={`${process.env.PUBLIC_URL}/arduino.png`} alt="Water Level Sensor"
+                             className="slide-image"/>
+                        <div className="difficulty-circle intermediate" title="Intermediate"></div>
+                        <div className="text-container">
+                            <h3>Water Level Sensor</h3>
+                            <p>This is an introduction to engineering project. We were tasked, in any shape or form, to
+                                create a water level sensor that gave out signals when it reached certain levels. We
+                                opted
+                                for an Arduino, LCD, and sonic sensor, and found major success!</p>
+                        </div>
                     </div>
-                </div>
-                <div className="slide-container">
-                    <img src={`${process.env.PUBLIC_URL}/car.png`} alt="Car Renting Program" className="slide-image"/>
-                    <div className="difficulty-circle intermediate" title="Advanced"></div>
-                    <div className="text-container">
-                        <h3>Car Renting Program</h3>
-                        <p>This is a Programming II project. We were tasked to create in C++, a car rental program that
-                            would save user credentials, provide encryption for passwords, save rental details, and
-                            alter a PDF file containing rental info.</p>
+                    <div className="slide-container">
+                        <img src={`${process.env.PUBLIC_URL}/car.png`} alt="Car Renting Program"
+                             className="slide-image"/>
+                        <div className="difficulty-circle intermediate" title="Advanced"></div>
+                        <div className="text-container">
+                            <h3>Car Renting Program</h3>
+                            <p>This is a Programming II project. We were tasked to create in C++, a car rental program
+                                that
+                                would save user credentials, provide encryption for passwords, save rental details, and
+                                alter a PDF file containing rental info.</p>
+                        </div>
                     </div>
-                </div>
 
             </Carousel>
         </div>
