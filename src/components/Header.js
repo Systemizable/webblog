@@ -40,13 +40,12 @@ const Header = () => {
                         <li><a href="#services" onClick={handleLinkClick}>Services</a></li>
                         <li className="resume-link">
                             <a
-                                href="https://jssresume.netlify.app/"
-                                target="_blank" // Opens the link in a new tab
-                                rel="noopener noreferrer" // Improves security for external links
+                                href={`${process.env.PUBLIC_URL}/JosephSfeirCV.pdf`}
+                                download="JosephSfeirCV.pdf" // This triggers download instead of navigation
                                 onClick={handleLinkClick}
                             >
                                 Resume
-                                <FaLink className="link-icon"/> {/* Changed icon to FaLink */}
+                                <FaLink className="link-icon"/>
                             </a>
                         </li>
                     </ul>

@@ -2,20 +2,22 @@ import React from 'react';
 import './Skills.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCss3Alt, faHtml5, faJs, faReact, faPython, faJava } from '@fortawesome/free-brands-svg-icons';
-import {faCode, faDatabase, faCloudArrowDown, faMobile} from '@fortawesome/free-solid-svg-icons';
+import {faCode, faDatabase, faCloudArrowDown, faMobile, faServer} from '@fortawesome/free-solid-svg-icons';
 
 const Skills = () => {
     const skills = [
         { id: 'css', name: 'CSS', level: 70, icon: faCss3Alt },
         { id: 'cpp', name: 'C++', level: 90, icon: faCode },
-        { id: 'api', name: 'API', level: 60, icon: faCloudArrowDown },
-        { id: 'mobile', name: 'Mobile Development', level: 30, icon: faMobile },
-        { id: 'java', name: 'Java', level: 45, icon: faJava },
-        { id: 'javascript', name: 'JavaScript', level: 70, icon: faJs },
+        { id: 'api', name: 'API', level: 80, icon: faCloudArrowDown },
+        { id: 'mobile', name: 'Mobile Development', level: 50, icon: faMobile },
+        { id: 'java', name: 'Java', level: 85, icon: faJava },
+        { id: 'javascript', name: 'JavaScript', level: 80, icon: faJs },
         { id: 'python', name: 'Python', level: 85, icon: faPython },
         { id: 'react', name: 'React', level: 50, icon: faReact },
         { id: 'html', name: 'HTML', level: 85, icon: faHtml5 },
-        { id: 'mongodb', name: 'MongoDB', level: 55, icon: faDatabase },
+        { id: 'mongodb', name: 'MongoDB', level: 75, icon: faDatabase },
+        { id: 'sql', name: 'SQL', level: 70, icon: faServer},
+
     ];
 
     return (
