@@ -30,6 +30,20 @@ const Projects = () => (
             >
                 <div className="slide-container">
 
+                    <img src={`${process.env.PUBLIC_URL}/saa.png`} alt="Sports Analysis App"
+                         className="slide-image"/>
+                    <div className="difficulty-circle advanced" title="Advanced"></div>
+                    <div className="text-container">
+                        <h3>Sports Analysis App</h3>
+                        <p>Sports Analysis App, that utilizes web scraping, from Basketball and Football websites
+                            in order to fetch 'Stats' or 'Player Statistics' and calculates the number's GOAT (Greatest of All Time)
+                            written fully in Python, and stats visualized in HTML and CSS.
+                        </p>
+                    </div>
+                </div>
+
+                <div className="slide-container">
+
                     <img src={`${process.env.PUBLIC_URL}/election.png`} alt="Election Analysis"
                          className="slide-image"/>
                     <div className="difficulty-circle advanced" title="Advanced"></div>
