@@ -113,35 +113,3 @@
     line-height: 1.8;
     animation: fadeInUp 1s ease-out 0.3s both;
 }
-
-@keyframes fadeInUp {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero-left {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-
-    .hero-text {
-        text-align: center;
-        font-size: 1.2rem;
-    }
-
-    .hero-text h3 {
-        font-size: 2rem;
-    }
-}

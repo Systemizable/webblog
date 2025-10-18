@@ -153,44 +153,4 @@
     opacity: 0; /* Hide the icon on hover */
 }
 
-@media (max-width: 768px) {
-    .skills {
-        padding: 20px;
-    }
-
-    .skills h2 {
-        font-size: 1.8rem;
-    }
-
-    .skills-content {
-        font-size: 1.2rem;
-        height: 400px;
-    }
-
-    .circle {
-        width: 50px; /* Adjusted size */
-        height: 50px; /* Adjusted size */
-    }
-
-    .skill-container {
-        transform: rotate(0deg) translate(2.5em) rotate(0deg); /* Adjusted translate value */
-    }
-
-    .skill {
-        width: 40px;
-        height: 40px;
-    }
-
-    .skill-icon {
-        font-size: 1.2rem;
-    }
-
-    .skill-description {
-        top: 70px;
-    }
-
-    .skill-percent {
-        font-size: 0.8rem; /* Slightly smaller font size for mobile */
-        font-weight: bold;
-    }
-}
+/* @media (max-width: 768px) moved to src/App.css */

@@ -7,7 +7,7 @@ const Hero = () => {
             <h2 className="about-me-title">About Me</h2>
             <div className="hero-content">
                 <div className="hero-image-container">
-                    <img src={`${process.env.PUBLIC_URL}/profile.jpeg`} alt="Profile" />
+                    <img src={`${process.env.PUBLIC_URL}/profile.jpg`} alt="Profile" />
                 </div>
                 <div className="hero-text">
                     <h3>Hey, I'm Joseph</h3>

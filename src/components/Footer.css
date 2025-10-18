@@ -1,11 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@font-face {
+  font-family: 'Stockport';
+  src: url('../fonts/Stockport - Serif Personal Use.otf') format('opentype');
+}
 
 .footer {
     padding: 80px 20px;
     text-align: center;
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     color: #fff;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Stockport', serif;
     position: relative;
     overflow: hidden;
 }
@@ -35,14 +40,14 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Stockport', serif;
 }
 
 .contact-header p {
     font-size: 1.1rem;
     color: #b0b0b0;
     line-height: 1.6;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Stockport', serif;
     font-weight: 400;
 }
 
@@ -100,7 +105,7 @@
     font-size: 1rem;
     color: #adadac;
     font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Stockport', serif;
 }
 
 .info-text p,
@@ -110,7 +115,7 @@
     color: #e0e0e0;
     text-decoration: none;
     transition: color 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Stockport', serif;
     font-weight: 400;
 }
 
@@ -145,7 +150,7 @@
     border-radius: 12px;
     color: #fff;
     font-size: 1rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Stockport', serif;
     font-weight: 400;
     transition: all 0.3s ease;
     outline: none;
@@ -169,7 +174,7 @@
     pointer-events: none;
     background: transparent;
     padding: 0 4px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Stockport', serif;
     font-weight: 500;
 }
 
@@ -208,7 +213,7 @@
     margin-top: 6px;
     margin-left: 4px;
     animation: fadeIn 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Stockport', serif;
     font-weight: 500;
 }
 
@@ -234,21 +239,17 @@
 /* Submit Button */
 .submit-btn {
     width: 100%;
-    padding: 18px 32px;
-    background: linear-gradient(135deg, #adadac, #8a8a8a);
-    color: #1a1a1a;
+    padding: 16px;
+    background: linear-gradient(135deg, #ffb825, #ff6b6b);
+    color: #000;
     border: none;
     border-radius: 12px;
     font-size: 1.1rem;
     font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Stockport', serif;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
     transition: all 0.3s ease;
-    margin-top: 32px;
+    box-shadow: 0 4px 20px rgba(255, 184, 37, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -360,7 +361,7 @@
     margin: 0 0 16px 0;
     font-size: 2rem;
     color: #fff;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Stockport', serif;
     font-weight: 700;
 }
 
@@ -369,7 +370,7 @@
     color: #b0b0b0;
     line-height: 1.6;
     font-size: 1rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Stockport', serif;
     font-weight: 400;
 }
 
@@ -383,7 +384,7 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Stockport', serif;
 }
 
 .popup-close-btn:hover {
@@ -472,29 +473,24 @@
     }
 }
 
-/* Responsive Design */
-@media (max-width: 968px) {
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
     .contact-content {
-        grid-template-columns: 1fr;
         gap: 40px;
     }
 
     .contact-header h2 {
         font-size: 2.5rem;
     }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .info-card {
-        padding: 20px;
-    }
 }
 
 @media (max-width: 768px) {
     .footer {
-        padding: 60px 16px;
+        padding: 60px 20px;
+    }
+
+    .contact-header {
+        margin-bottom: 40px;
     }
 
     .contact-header h2 {
@@ -505,14 +501,170 @@
         font-size: 1rem;
     }
 
+    /* Stack contact content vertically on tablets and mobile */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+
+    .info-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.3rem;
+    }
+
+    /* Make form row single column on mobile */
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
     .popup-content {
-        padding: 32px 24px;
-        margin: 0 16px;
+        padding: 32px;
+        margin: 0 20px;
+        max-width: calc(100% - 40px);
     }
 
     .popup-icon {
-        width: 64px;
-        height: 64px;
+        width: 60px;
+        height: 60px;
         font-size: 2rem;
+    }
+
+    .popup-content h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 40px 15px;
+    }
+
+    .contact-header h2 {
+        font-size: 1.75rem;
+        margin-bottom: 15px;
+    }
+
+    .contact-header p {
+        font-size: 0.95rem;
+    }
+
+    .contact-content {
+        gap: 30px;
+    }
+
+    .info-card {
+        padding: 16px;
+        gap: 15px;
+    }
+
+    .info-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .info-text h4 {
+        font-size: 0.9rem;
+    }
+
+    .info-text p,
+    .info-text a {
+        font-size: 0.9rem;
+    }
+
+    .form-field {
+        margin-bottom: 20px;
+    }
+
+    .form-field input,
+    .form-field textarea {
+        font-size: 0.95rem;
+        padding: 16px 14px 10px;
+    }
+
+    .form-field label {
+        font-size: 0.95rem;
+        left: 14px;
+    }
+
+    .form-field.focused label,
+    .form-field input:not(:placeholder-shown) + label,
+    .form-field textarea:not(:placeholder-shown) + label {
+        font-size: 0.7rem;
+    }
+
+    .submit-btn {
+        padding: 14px;
+        font-size: 1rem;
+    }
+
+    .popup-content {
+        padding: 24px;
+        margin: 0 15px;
+    }
+
+    .popup-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+    }
+
+    .popup-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+
+    .popup-content p {
+        font-size: 0.9rem;
+        margin-bottom: 24px;
+    }
+
+    .popup-close-btn {
+        padding: 12px 32px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .footer {
+        padding: 30px 10px;
+    }
+
+    .contact-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-header p {
+        font-size: 0.9rem;
+    }
+
+    .info-card {
+        padding: 14px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+
+    .form-field input,
+    .form-field textarea {
+        font-size: 0.9rem;
+        padding: 14px 12px 10px;
+    }
+
+    .submit-btn {
+        padding: 12px;
+        font-size: 0.95rem;
     }
 }

@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
+@font-face {
+  font-family: 'Stockport';
+  src: url('../fonts/Stockport - Serif Personal Use.otf') format('opentype');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +24,7 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Stockport', serif;
     z-index: 1000;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border-bottom: 1px solid rgba(173, 173, 172, 0.1);
@@ -67,14 +72,14 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Stockport', serif;
     animation: gradientPulse 3s ease-in-out infinite;
 }
 
 .brand-name {
     font-size: 1.25rem;
     color: #adadac;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Stockport', serif;
     transition: color 0.3s ease;
 }
 
@@ -164,7 +169,7 @@
     border-radius: 8px;
     transition: all 0.3s ease;
     position: relative;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Stockport', serif;
     font-weight: 500;
     display: block;
 }
@@ -199,7 +204,7 @@
     padding: 10px 24px !important;
     border-radius: 25px !important;
     font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Stockport', serif;
     display: flex !important;
     align-items: center;
     gap: 8px;
@@ -258,14 +263,14 @@
     transform: rotate(-45deg) translate(8px, -8px);
 }
 
-/* Mobile Styles */
+/* Media Queries */
 @media (max-width: 768px) {
     .header-content {
         padding: 0 20px;
     }
 
-    .brand-logo {
-        flex: 1;
+    .brand-logo a {
+        gap: 1px;
     }
 
     .brand-initial {
@@ -276,8 +281,12 @@
         font-size: 1rem;
     }
 
+    .brand-name .brand-s {
+        font-size: 1.5rem;
+    }
+
     .social-icons {
-        gap: 12px;
+        gap: 15px;
     }
 
     .social-icons a {
@@ -293,89 +302,111 @@
     .nav-menu {
         position: fixed;
         top: 70px;
-        left: 0;
-        right: 0;
-        background: rgba(28, 28, 28, 0.98);
+        right: -100%;
+        width: 280px;
+        height: calc(100vh - 70px);
+        background: rgba(0, 0, 0, 0.98);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        border-radius: 0 0 20px 20px;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-        border: 1px solid rgba(255, 184, 37, 0.1);
-        border-top: none;
+        transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        border-left: 1px solid rgba(255, 184, 37, 0.2);
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
     }
 
     .nav-menu.open {
-        max-height: 500px;
-        opacity: 1;
-        padding: 20px 0;
+        right: 0;
     }
 
     .nav-menu ul {
         flex-direction: column;
-        gap: 5px;
+        gap: 0;
+        padding: 20px 0;
         width: 100%;
-        padding: 0 20px;
     }
 
     .nav-menu ul li {
         width: 100%;
-        animation: slideInRight 0.3s ease forwards;
-        opacity: 0;
-    }
-
-    .nav-menu.open ul li {
-        opacity: 1;
-    }
-
-    .nav-menu.open ul li:nth-child(1) {
-        animation-delay: 0.1s;
-    }
-
-    .nav-menu.open ul li:nth-child(2) {
-        animation-delay: 0.15s;
-    }
-
-    .nav-menu.open ul li:nth-child(3) {
-        animation-delay: 0.2s;
-    }
-
-    .nav-menu.open ul li:nth-child(4) {
-        animation-delay: 0.25s;
-    }
-
-    .nav-menu.open ul li:nth-child(5) {
-        animation-delay: 0.3s;
-    }
-
-    @keyframes slideInRight {
-        from {
-            opacity: 0;
-            transform: translateX(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
+        border-bottom: 1px solid rgba(255, 184, 37, 0.1);
     }
 
     .nav-menu ul li a {
-        padding: 12px 20px;
+        padding: 18px 30px;
         width: 100%;
-        text-align: left;
         font-size: 1.1rem;
+        border-radius: 0;
+    }
+
+    .nav-menu ul li a::after {
+        left: 30px;
+        right: 30px;
+        bottom: 16px;
     }
 
     .resume-btn {
         justify-content: center !important;
+        margin: 10px 20px !important;
+        width: calc(100% - 40px) !important;
     }
 }
 
 @media (max-width: 480px) {
+    .header-content {
+        padding: 0 15px;
+    }
+
+    .brand-initial {
+        font-size: 1.3rem;
+    }
+
     .brand-name {
-        display: none;
+        font-size: 0.9rem;
+    }
+
+    .brand-name .brand-s {
+        font-size: 1.3rem;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+
+    .social-icons a {
+        font-size: 1.1rem;
+        width: 32px;
+        height: 32px;
+    }
+
+    .menu-icon span {
+        width: 22px;
+        height: 2.5px;
+    }
+
+    .nav-menu {
+        width: 250px;
+    }
+
+    .nav-menu ul li a {
+        font-size: 1rem;
+        padding: 16px 25px;
+    }
+}
+
+@media (max-width: 360px) {
+    .brand-initial {
+        font-size: 1.2rem;
+    }
+
+    .brand-name {
+        font-size: 0.85rem;
+    }
+
+    .brand-name .brand-s {
+        font-size: 1.2rem;
+    }
+
+    .social-icons a {
+        font-size: 1rem;
+        width: 30px;
+        height: 30px;
     }
 }

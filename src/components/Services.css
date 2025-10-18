@@ -93,36 +93,3 @@
     color: #ffffff;
     line-height: 1.6;
 }
-
-.card .project-header {
-    text-align: left;
-}
-
-.card .project-header .language {
-    font-size: 0.9rem;
-    color: #ffffff;
-    margin-bottom: 5px;
-}
-
-@media (max-width: 768px) {
-    .services {
-        padding: 40px 10px;
-        margin: 20px 10px;
-    }
-
-    .services h2 {
-        font-size: 1.8rem;
-    }
-
-    .card {
-        margin: 15px 0;
-    }
-
-    .card h3 {
-        font-size: 1.3rem;
-    }
-
-    .card p {
-        font-size: 1.1rem;
-    }
-}
