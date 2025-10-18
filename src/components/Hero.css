@@ -10,6 +10,16 @@
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .hero-left {
@@ -21,6 +31,18 @@
     padding: 20px;
     border-radius: 10px;
     margin-right: 20px;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .hero-left img {
@@ -28,6 +50,23 @@
     height: 150px;
     border-radius: 50%;
     margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 10px 30px rgba(255, 184, 37, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-left img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 40px rgba(255, 184, 37, 0.5);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .hero-text {
@@ -36,6 +75,54 @@
     color: #adadac;
     font-family: 'Flamante Sans Bold', serif;
     font-size: 1.5rem;
+    animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.hero-text h3 {
+    background: linear-gradient(90deg, #ffffff, #ffb825, #ffffff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease infinite;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 100% center;
+    }
+}
+
+.hero-text p {
+    line-height: 1.8;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @media (max-width: 768px) {
@@ -52,5 +139,9 @@
     .hero-text {
         text-align: center;
         font-size: 1.2rem;
+    }
+
+    .hero-text h3 {
+        font-size: 2rem;
     }
 }
