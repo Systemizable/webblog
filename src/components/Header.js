@@ -86,16 +86,13 @@ const Header = () => {
 
                     <nav className={`nav-menu ${menuOpen ? 'open' : ''}`}>
                         <ul>
-                            {SECTIONS.map((section, index) => (
+                            {SECTIONS.map(section => (
                                 <li key={section.id}>
                                     <a
                                         href={`#${section.id}`}
                                         onClick={handleLinkClick}
                                         className={activeSection === section.id ? 'active' : ''}
                                     >
-                                        <span className="nav-index">
-                                            {String(index + 1).padStart(2, '0')}.
-                                        </span>
                                         {section.label}
                                     </a>
                                 </li>

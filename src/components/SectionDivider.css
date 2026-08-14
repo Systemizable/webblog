@@ -18,11 +18,9 @@
     letter-spacing: 0.22em;
     color: var(--accent);
     padding: 8px 22px;
-    border-radius: 8px;
-    background-color: rgba(10, 14, 18, 0.78);
+    border-radius: var(--r-xs);
+    background-color: var(--bg);
     border: 1px solid var(--line);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
     white-space: nowrap;
 }
 

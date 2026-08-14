@@ -33,6 +33,17 @@
 
     --container: 1200px;
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Deliberate radius scale rather than one value on every surface --
+       uniform radius across all components is itself a generic-AI tell. */
+    --r-xs: 4px;
+    --r-sm: 8px;
+    --r-md: 12px;
+    --r-lg: 18px;
+
+    /* Neutral elevation. Coloured glow is reserved for interactive
+       states only, never as ambient decoration on resting cards. */
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 * {
@@ -114,10 +125,9 @@ a {
     align-items: center;
     gap: 8px;
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+    letter-spacing: 0.02em;
     color: var(--accent);
     margin-bottom: 14px;
 }

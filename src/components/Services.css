@@ -21,92 +21,46 @@
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-    gap: 24px;
+    column-gap: 40px;
+    row-gap: 8px;
 }
 
+/* Deliberately not the "identical cards with a centred icon on top" grid.
+   Icon sits inline with the title, the surface is flat rather than a raised
+   card, and separation comes from a rule + hover tint rather than a border
+   box on every item. */
 .service-card {
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    padding: 28px;
-    background-color: var(--surface-2);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    position: relative;
-    overflow: hidden;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s var(--ease-out);
-}
-
-.service-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(420px circle at 50% 0%, rgba(0, 255, 156, 0.09), transparent 70%);
-    opacity: 0;
-    transition: opacity 0.35s ease;
-    pointer-events: none;
+    gap: 10px;
+    padding: 22px 20px 24px 0;
+    border-top: 1px solid var(--line);
+    background-color: transparent;
+    transition: border-color 0.3s ease;
 }
 
 .service-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45), 0 0 22px rgba(0, 255, 156, 0.1);
+    border-top-color: var(--accent);
 }
 
-.service-card:hover::before {
-    opacity: 1;
-}
-
-.service-card__top {
+.service-card__head {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    z-index: 1;
-}
-
-.service-card__icon-wrap {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 46px;
-    height: 46px;
-    border-radius: 10px;
-    background-color: var(--accent-soft);
-    border: 1px solid rgba(0, 255, 156, 0.28);
-    transition: background-color 0.3s ease;
-}
-
-.service-card:hover .service-card__icon-wrap {
-    background-color: rgba(0, 255, 156, 0.2);
+    align-items: baseline;
+    gap: 12px;
 }
 
 .service-card__icon {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--accent);
-}
-
-.service-card__index {
-    font-family: var(--font-mono);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--line-bright);
-    line-height: 1;
-    transition: color 0.3s ease;
-}
-
-.service-card:hover .service-card__index {
-    color: var(--accent);
+    flex-shrink: 0;
 }
 
 .service-card__title {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--text);
     font-family: var(--font-display);
     line-height: 1.3;
-    position: relative;
-    z-index: 1;
 }
 
 .service-card__description {
@@ -114,8 +68,6 @@
     line-height: 1.75;
     color: var(--text-dim);
     font-family: var(--font-body);
-    position: relative;
-    z-index: 1;
 }
 
 @media (max-width: 768px) {
@@ -129,23 +81,17 @@
 
     .services-grid {
         grid-template-columns: 1fr;
-        gap: 18px;
+        column-gap: 0;
+        row-gap: 0;
     }
 
     .service-card {
-        padding: 22px;
+        padding: 20px 0 22px;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .service-card,
-    .service-card::before,
-    .service-card__icon-wrap,
-    .service-card__index {
+    .service-card {
         transition: none;
-    }
-
-    .service-card:hover {
-        transform: none;
     }
 }

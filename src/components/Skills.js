@@ -24,12 +24,7 @@ const Skills = () => {
                             key={group.id}
                             style={{ '--i': groupIndex + 1 }}
                         >
-                            <h3 className="skill-group__label">
-                                <span className="skill-group__index">
-                                    {String(groupIndex + 1).padStart(2, '0')}
-                                </span>
-                                {group.label}
-                            </h3>
+                            <h3 className="skill-group__label">{group.label}</h3>
                             <ul className="skill-list">
                                 {group.skills.map(skill => (
                                     <li className="skill-tile" key={skill.id}>

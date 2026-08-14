@@ -112,12 +112,6 @@
     transition: color 0.25s ease;
 }
 
-.nav-index {
-    color: var(--accent);
-    font-size: 0.72rem;
-    opacity: 0.75;
-}
-
 .nav-menu a::after {
     content: '';
     position: absolute;

@@ -64,19 +64,14 @@ const Services = () => {
                             key={service.id}
                             style={{ '--i': index + 1 }}
                         >
-                            <div className="service-card__top">
-                                <span className="service-card__icon-wrap">
-                                    <FontAwesomeIcon
-                                        icon={service.icon}
-                                        className="service-card__icon"
-                                        aria-hidden="true"
-                                    />
-                                </span>
-                                <span className="service-card__index">
-                                    {String(index + 1).padStart(2, '0')}
-                                </span>
+                            <div className="service-card__head">
+                                <FontAwesomeIcon
+                                    icon={service.icon}
+                                    className="service-card__icon"
+                                    aria-hidden="true"
+                                />
+                                <h3 className="service-card__title">{service.title}</h3>
                             </div>
-                            <h3 className="service-card__title">{service.title}</h3>
                             <p className="service-card__description">{service.description}</p>
                         </article>
                     ))}
