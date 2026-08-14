@@ -1,0 +1,39 @@
+.section-divider {
+    position: relative;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    /* Transparent on purpose: the page matrix shows through here */
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.section-divider__label {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    padding: 8px 22px;
+    border-radius: 8px;
+    background-color: rgba(10, 14, 18, 0.78);
+    border: 1px solid var(--line);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .section-divider {
+        height: 84px;
+    }
+
+    .section-divider__label {
+        font-size: 0.66rem;
+        letter-spacing: 0.14em;
+        padding: 7px 14px;
+    }
+}

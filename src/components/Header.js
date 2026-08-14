@@ -1,89 +1,114 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
-import {FaInstagram, FaLinkedin, FaGithub, FaLink} from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaGithub, FaDownload } from 'react-icons/fa';
+
+const SECTIONS = [
+    { id: 'hero', label: 'About' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'services', label: 'Services' },
+    { id: 'contact', label: 'Contact' },
+];
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState('hero');
+    const [progress, setProgress] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
 
-            // Detect active section
-            const sections = ['hero', 'skills', 'projects', 'services'];
-            const scrollPosition = window.scrollY + 200;
+            const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            setProgress(scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0);
 
-            for (const section of sections) {
-                const element = document.getElementById(section);
+            const scrollPosition = window.scrollY + 200;
+            for (const section of SECTIONS) {
+                const element = document.getElementById(section.id);
                 if (element) {
                     const offsetTop = element.offsetTop;
                     const offsetBottom = offsetTop + element.offsetHeight;
-
                     if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-                        setActiveSection(section);
+                        setActiveSection(section.id);
                         break;
                     }
                 }
             }
         };
 
-        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
-
-    const handleLinkClick = () => {
-        setMenuOpen(false);
-    };
+    const toggleMenu = () => setMenuOpen(open => !open);
+    const handleLinkClick = () => setMenuOpen(false);
 
     return (
         <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+            <div className="header-progress" style={{ width: `${progress}%` }} aria-hidden="true"></div>
+
             <div className="header-content">
                 <div className="brand-logo">
                     <a href="#hero" onClick={handleLinkClick}>
+                        <span className="brand-bracket">[</span>
                         <span className="brand-initial">J</span>
-                        <span className="brand-name">oseph <span className="brand-s">S</span>feir</span>
+                        <span className="brand-name">Sfeir</span>
+                        <span className="brand-bracket">]</span>
                     </a>
                 </div>
 
                 <div className="social-icons">
-                    <a href="https://www.instagram.com/josephsfeirrr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <FaInstagram />
+                    <a href="https://github.com/Systemizable" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <FaGithub />
                     </a>
                     <a href="https://www.linkedin.com/in/joseph-sfeir-416062261/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <FaLinkedin />
                     </a>
-                    <a href="https://github.com/Systemizable" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <FaGithub />
+                    <a href="https://www.instagram.com/josephsfeirrr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <FaInstagram />
                     </a>
                 </div>
 
                 <div className="nav-container">
-                    <div className={`menu-icon ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+                    <button
+                        type="button"
+                        className={`menu-icon ${menuOpen ? 'open' : ''}`}
+                        onClick={toggleMenu}
+                        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                        aria-expanded={menuOpen}
+                    >
                         <span></span>
                         <span></span>
                         <span></span>
-                    </div>
+                    </button>
+
                     <nav className={`nav-menu ${menuOpen ? 'open' : ''}`}>
                         <ul>
-                            <li><a href="#hero" onClick={handleLinkClick} className={activeSection === 'hero' ? 'active' : ''}>About Me</a></li>
-                            <li><a href="#skills" onClick={handleLinkClick} className={activeSection === 'skills' ? 'active' : ''}>Skills</a></li>
-                            <li><a href="#projects" onClick={handleLinkClick} className={activeSection === 'projects' ? 'active' : ''}>Projects</a></li>
-                            <li><a href="#services" onClick={handleLinkClick} className={activeSection === 'services' ? 'active' : ''}>Services</a></li>
+                            {SECTIONS.map((section, index) => (
+                                <li key={section.id}>
+                                    <a
+                                        href={`#${section.id}`}
+                                        onClick={handleLinkClick}
+                                        className={activeSection === section.id ? 'active' : ''}
+                                    >
+                                        <span className="nav-index">
+                                            {String(index + 1).padStart(2, '0')}.
+                                        </span>
+                                        {section.label}
+                                    </a>
+                                </li>
+                            ))}
                             <li className="resume-link">
                                 <a
-                                    href={`${process.env.PUBLIC_URL}/JosephSfeirCV.pdf`}
+                                    href={`${process.env.PUBLIC_URL}/JosephSfeirCVLATEST.pdf`}
                                     download="JosephSfeirCV.pdf"
                                     onClick={handleLinkClick}
                                     className="resume-btn"
                                 >
                                     Resume
-                                    <FaLink className="link-icon"/>
+                                    <FaDownload className="link-icon" />
                                 </a>
                             </li>
                         </ul>

@@ -1,150 +1,69 @@
 import React from 'react';
 import './Projects.css';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // Requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import { useReveal } from '../hooks/useCustomHooks';
+import { projects } from '../data/projects';
 
-const Projects = () => (
-    <section className="projects" id="projects">
-        <h2>Projects</h2>
-        <div className="carousel-container">
-            <Carousel
-                showThumbs={false}
-                showStatus={false}
-                infiniteLoop
-                useKeyboardArrows
-                autoPlay
-                renderArrowPrev={(onClickHandler, hasPrev, label) =>
-                    hasPrev && (
-                        <button type="button" onClick={onClickHandler} title={label} className="arrow arrow-prev">
-                            &#10094;
-                        </button>
-                    )
-                }
-                renderArrowNext={(onClickHandler, hasNext, label) =>
-                    hasNext && (
-                        <button type="button" onClick={onClickHandler} title={label} className="arrow arrow-next">
-                            &#10095;
-                        </button>
-                    )
-                }
-            >
-                <div className="slide-container">
+const Projects = () => {
+    const revealRef = useReveal(0.06);
 
-                    <img src={`${process.env.PUBLIC_URL}/saa.png`} alt="Sports Analysis App"
-                         className="slide-image"/>
-                    <div className="difficulty-circle advanced" title="Advanced"></div>
-                    <div className="text-container">
-                        <h3>Sports Analysis App</h3>
-                        <p>Sports Analysis App, that utilizes web scraping, from Basketball and Football websites
-                            in order to fetch 'Stats' or 'Player Statistics' and calculates the number's GOAT (Greatest of All Time)
-                            written fully in Python, and stats visualized in HTML and CSS.
-                        </p>
-                    </div>
+    return (
+        <section className="projects" id="projects">
+            <div className="projects-inner reveal" ref={revealRef}>
+                <div className="projects-header reveal-item" style={{ '--i': 0 }}>
+                    <span className="section-eyebrow">Selected Work</span>
+                    <h2 className="section-title">
+                        Projects<em>.</em>
+                    </h2>
                 </div>
 
-                <div className="slide-container">
+                <div className="projects-grid">
+                    {projects.map((project, index) => (
+                        <article
+                            className="project-card reveal-item"
+                            key={project.id}
+                            style={{ '--i': index + 1 }}
+                        >
+                            <div className="project-card__media">
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/${project.image}`}
+                                    alt={`Screenshot of ${project.title}`}
+                                    className="project-card__image"
+                                    loading="lazy"
+                                />
+                                <span className={`project-card__level ${project.difficulty.toLowerCase()}`}>
+                                    {project.difficulty}
+                                </span>
+                            </div>
 
-                    <img src={`${process.env.PUBLIC_URL}/election.png`} alt="Election Analysis"
-                         className="slide-image"/>
-                    <div className="difficulty-circle advanced" title="Advanced"></div>
-                    <div className="text-container">
-                        <h3>Election Analysis - Prediction</h3>
-                        <p>Election Analysis for the latest municipal elections + a prediction for the next MP
-                            elections for the Lebanese Forces as a sample.
-                            Using Python, as well as several plotting, prediction and calculation frameworks!</p>
-                    </div>
-                </div>
-                <div className="slide-container">
-                    <img src={`${process.env.PUBLIC_URL}/oop.png`} alt="OOP Project" className="slide-image"/>
-                    <div className="difficulty-circle advanced" title="Advanced"></div>
-                    <div className="text-container">
-                        <h3>OOP I: Project</h3>
-                        <p>Object Oriented Programming project that required to create a Job Portal Application
-                            using Java, MongoDB and Spring Boot. The project includes user authentication, job listings,
-                            and application management.
-                            And with SwaggerAPI as well as JavaDOC Documentation</p>
-                        <a href="https://jobportal-952d.onrender.com/index.html" target="_blank"
-                           rel="noopener noreferrer">Check out
-                            the JavaDoc documentation!</a>
-                    </div>
-                </div>
-                <div className="slide-container">
-                    <img src={`${process.env.PUBLIC_URL}/agri.png`} alt="AgriCrop" className="slide-image"/>
-                    <div className="difficulty-circle advanced" title="Advanced"></div>
-                    <div className="text-container">
-                        <h3>AgriCrop: The Future of Farming</h3>
-                        <p>This farming website, AgriCrop, features a detailed homepage, a marketplace that includes
-                            various farming products, and a section for
-                            tutorials to help users with farming techniques and more.</p>
-                        <a href="https://agricrop.netlify.app" target="_blank" rel="noopener noreferrer">Check out
-                            AgriCrop!</a>
-                    </div>
-                </div>
-                <div className="slide-container">
-                    <img src={`${process.env.PUBLIC_URL}/ecom.png`} alt="E-Commerce Website"
-                         className="slide-image"/>
-                    <div className="difficulty-circle advanced" title="Advanced"></div>
-                    <div className="text-container">
-                        <h3>E-Commerce Website</h3>
-                        <p>One of my first very advanced projects I've done. This E-Commerce website contains a
-                            detailed
-                            home page, with a shopping page that contains all products, with the ability to check
-                            individual products.</p>
-                        <a href="https://jarvis-ecom.netlify.app" target="_blank" rel="noopener noreferrer">Check
-                            out
-                            Jarvis E-Com!</a>
-                    </div>
-                </div>
+                            <div className="project-card__body">
+                                <h3 className="project-card__title">{project.title}</h3>
 
-                <div className="slide-container">
-                    <img src={`${process.env.PUBLIC_URL}/port.png`} alt="Portfolio Website"
-                         className="slide-image"/>
-                    <div className="difficulty-circle advanced" title="Intermediate"></div>
-                    <div className="text-container">
-                        <h3>Portfolio Website</h3>
-                        <p>This website showcasing my skills, projects and resume as a programmer.</p>
-                    </div>
-                </div>
+                                <ul className="project-card__stack">
+                                    {project.stack.map(tech => (
+                                        <li key={tech}>{tech}</li>
+                                    ))}
+                                </ul>
 
-                <div className="slide-container">
-                    <img src={`${process.env.PUBLIC_URL}/math.png`} alt="Math Menu Operations"
-                         className="slide-image"/>
-                    <div className="difficulty-circle beginner" title="Beginner"></div>
-                    <div className="text-container">
-                        <h3>Math Menu Operations</h3>
-                        <p>This is a simple project that represents my first ever coding project. Even though it's
-                            extremely basic, it holds a special place as the foundation of my programming
-                            journey.</p>
-                    </div>
-                </div>
-                <div className="slide-container">
-                    <img src={`${process.env.PUBLIC_URL}/arduino.png`} alt="Water Level Sensor"
-                         className="slide-image"/>
-                    <div className="difficulty-circle intermediate" title="Intermediate"></div>
-                    <div className="text-container">
-                        <h3>Water Level Sensor</h3>
-                        <p>This is an introduction to engineering project. We were tasked, in any shape or form, to
-                            create a water level sensor that gave out signals when it reached certain levels. We
-                            opted
-                            for an Arduino, LCD, and sonic sensor, and found major success!</p>
-                    </div>
-                </div>
-                <div className="slide-container">
-                    <img src={`${process.env.PUBLIC_URL}/car.png`} alt="Car Renting Program"
-                         className="slide-image"/>
-                    <div className="difficulty-circle intermediate" title="Advanced"></div>
-                    <div className="text-container">
-                        <h3>Car Renting Program</h3>
-                        <p>This is a Programming II project. We were tasked to create in C++, a car rental program
-                            that
-                            would save user credentials, provide encryption for passwords, save rental details, and
-                            alter a PDF file containing rental info.</p>
-                    </div>
-                </div>
+                                <p className="project-card__description">{project.description}</p>
 
-            </Carousel>
-        </div>
-    </section>
-);
+                                {project.link && (
+                                    <a
+                                        className="project-card__link"
+                                        href={project.link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {project.link.label}
+                                        <span className="project-card__arrow" aria-hidden="true">→</span>
+                                    </a>
+                                )}
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
 
 export default Projects;

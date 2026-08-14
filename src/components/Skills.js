@@ -1,48 +1,47 @@
 import React from 'react';
 import './Skills.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCss3Alt, faHtml5, faJs, faReact, faPython, faJava } from '@fortawesome/free-brands-svg-icons';
-import {faCode, faDatabase, faCloudArrowDown, faMobile, faServer} from '@fortawesome/free-solid-svg-icons';
+import { useReveal } from '../hooks/useCustomHooks';
+import { skillGroups } from '../data/skills';
 
 const Skills = () => {
-    const skills = [
-        { id: 'css', name: 'CSS', level: 70, icon: faCss3Alt },
-        { id: 'cpp', name: 'C++', level: 90, icon: faCode },
-        { id: 'api', name: 'API', level: 80, icon: faCloudArrowDown },
-        { id: 'mobile', name: 'Mobile Development', level: 50, icon: faMobile },
-        { id: 'java', name: 'Java', level: 85, icon: faJava },
-        { id: 'javascript', name: 'JavaScript', level: 80, icon: faJs },
-        { id: 'python', name: 'Python', level: 85, icon: faPython },
-        { id: 'react', name: 'React', level: 50, icon: faReact },
-        { id: 'html', name: 'HTML', level: 85, icon: faHtml5 },
-        { id: 'mongodb', name: 'MongoDB', level: 75, icon: faDatabase },
-        { id: 'sql', name: 'SQL', level: 70, icon: faServer},
-
-    ];
+    const revealRef = useReveal();
 
     return (
         <section className="skills" id="skills">
-            <h2>Skills</h2>
-            <div className="skills-content">
-                <div className="circle">
-                    {skills.map((skill, index) => (
+            <div className="skills-inner reveal" ref={revealRef}>
+                <div className="skills-header reveal-item" style={{ '--i': 0 }}>
+                    <span className="section-eyebrow">Toolkit</span>
+                    <h2 className="section-title">
+                        Skills &amp; <em>Stack</em>
+                    </h2>
+                </div>
+
+                <div className="skills-groups">
+                    {skillGroups.map((group, groupIndex) => (
                         <div
-                            key={skill.id}
-                            className="skill-container"
-                            style={{
-                                transform: `rotate(${(index / skills.length) * 360}deg) translate(10em) rotate(${(-(index / skills.length) * 360)}deg)`
-                            }}
+                            className="skill-group reveal-item"
+                            key={group.id}
+                            style={{ '--i': groupIndex + 1 }}
                         >
-                            <div className="skill">
-                                <div className="circle-bg">
-                                    <div className="circle-fill" style={{ '--skill-level': `${skill.level}%` }}></div>
-                                    <FontAwesomeIcon icon={skill.icon} className="skill-icon" />
-                                    <div className="skill-percent">{skill.level}%</div>
-                                </div>
-                                <div className="skill-description">
-                                    <span className="skill-name">{skill.name}</span>
-                                </div>
-                            </div>
+                            <h3 className="skill-group__label">
+                                <span className="skill-group__index">
+                                    {String(groupIndex + 1).padStart(2, '0')}
+                                </span>
+                                {group.label}
+                            </h3>
+                            <ul className="skill-list">
+                                {group.skills.map(skill => (
+                                    <li className="skill-tile" key={skill.id}>
+                                        <FontAwesomeIcon
+                                            icon={skill.icon}
+                                            className="skill-tile__icon"
+                                            aria-hidden="true"
+                                        />
+                                        <span className="skill-tile__name">{skill.name}</span>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                     ))}
                 </div>

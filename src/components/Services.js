@@ -1,109 +1,86 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import './Services.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faJava } from '@fortawesome/free-brands-svg-icons';
+import { faPalette, faPlug, faServer, faDatabase, faTableColumns } from '@fortawesome/free-solid-svg-icons';
+import { useReveal } from '../hooks/useCustomHooks';
+
+const services = [
+    {
+        id: 'web-design',
+        title: 'Web Design',
+        icon: faPalette,
+        description: 'I offer services in web design, drawing from my experience in web development. I can assist with designing, implementing, and managing websites to ensure reliable and engaging user experiences tailored to your business needs.',
+    },
+    {
+        id: 'api',
+        title: 'API Implementation',
+        icon: faPlug,
+        description: 'Intermediate in API development, I design and implement robust APIs, mainly using Postman, that facilitate seamless communication between applications.',
+    },
+    {
+        id: 'backend',
+        title: 'Backend Development',
+        icon: faServer,
+        description: 'I build the server side of an application: authentication, data models, and the endpoints your frontend talks to. Most of my backend work is in Java with Spring Boot, backed by MongoDB or a SQL database.',
+    },
+    {
+        id: 'database',
+        title: 'Database Implementation',
+        icon: faDatabase,
+        description: 'Intermediate in database development, proficient in designing and implementing databases, such as MongoDB, MySQL and PostgreSQL, that ensure efficient data storage and retrieval for your applications.',
+    },
+    {
+        id: 'java',
+        title: 'Java Development',
+        icon: faJava,
+        description: "Professional in Java development, I've specialized in creating robust applications using Java, from Minecraft plugins to complex backend systems.",
+    },
+    {
+        id: 'sql',
+        title: 'SQL Development',
+        icon: faTableColumns,
+        description: 'Intermediate in SQL development, using PL/SQL to create efficient and scalable database solutions. I can help you design, implement, and optimize SQL databases for your applications.',
+    },
+];
 
 const Services = () => {
-    const cardRefs = useRef([]);
-
-    const handleMouseMove = (e, index) => {
-        const card = cardRefs.current[index];
-        if (!card) return;
-
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        // Set CSS variables for glow effect
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
-
-        // Calculate rotation based on mouse position
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX = ((y - centerY) / centerY) * -15; // -15 to 15 degrees
-        const rotateY = ((x - centerX) / centerX) * 15; // -15 to 15 degrees
-
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-    };
-
-    const handleMouseLeave = (index) => {
-        const card = cardRefs.current[index];
-        if (!card) return;
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
-    };
-
-    const services = [
-        {
-            category: "Web Design",
-            title: "Web Design",
-            description: "I offer services in web design, drawing from my experience in web development. I can assist with designing, implementing, and managing websites to ensure reliable and engaging user experiences tailored to your business needs.",
-            image: "net.jpg",
-            icon: "🎨"
-        },
-        {
-            category: "API Implementation",
-            title: "API Implementation",
-            description: "Intermediate in API development, I design and implement robust APIs, mainly using Postman, that facilitate seamless communication between applications.",
-            image: "auto.png",
-            icon: "🔌"
-        },
-        {
-            category: "Backend Development",
-            title: "Backend Development",
-            description: "I create engaging and functional websites tailored to your needs. My backend development services include designing clean cores, developing fast response, and ensuring a seamless user experience across all devices.",
-            image: "webs.jpg",
-            icon: "⚙️"
-        },
-        {
-            category: "Database Implementation",
-            title: "Database Implementation",
-            description: "Intermediate in database development, proficient in designing and implementing databases, such as MongoDB, MySQL and PostgreSQL, that ensure efficient data storage and retrieval for your applications.",
-            image: "database.jpg",
-            icon: "💾"
-        },
-        {
-            category: "Java Development",
-            title: "Java Development",
-            description: "Professional in Java development, I've specialized in creating robust applications using Java, from Minecraft plugins to complex backend systems.",
-            image: "java.png",
-            icon: "☕"
-        },
-        {
-            category: "SQL Development",
-            title: "SQL Development",
-            description: "Intermediate in SQL development, using PL/SQL to create efficient and scalable database solutions. I can help you design, implement, and optimize SQL databases for your applications.",
-            image: "sql.jpg",
-            icon: "🗄️"
-        }
-    ];
+    const revealRef = useReveal(0.08);
 
     return (
         <section className="services" id="services">
-            <div className="services-header">
-                <h2>Services</h2>
-                <p className="services-subtitle">Crafting Digital Solutions with Precision & Innovation</p>
-            </div>
-            <div className="services-grid">
-                {services.map((service, index) => (
-                    <div
-                        key={index}
-                        className="service-card"
-                        ref={el => cardRefs.current[index] = el}
-                        onMouseMove={(e) => handleMouseMove(e, index)}
-                        onMouseLeave={() => handleMouseLeave(index)}
-                    >
-                        <div className="service-card__glow"></div>
-                        <div className="service-card__background"
-                             style={{backgroundImage: `url(${process.env.PUBLIC_URL}/${service.image})`}}></div>
-                        <div className="service-card__overlay"></div>
-                        <div className="service-card__content">
-                            <div className="service-card__icon">{service.icon}</div>
-                            <span className="service-card__category">{service.category}</span>
+            <div className="services-inner reveal" ref={revealRef}>
+                <div className="services-header reveal-item" style={{ '--i': 0 }}>
+                    <span className="section-eyebrow">Services</span>
+                    <h2 className="section-title">
+                        What I can <em>build</em>
+                    </h2>
+                </div>
+
+                <div className="services-grid">
+                    {services.map((service, index) => (
+                        <article
+                            className="service-card reveal-item"
+                            key={service.id}
+                            style={{ '--i': index + 1 }}
+                        >
+                            <div className="service-card__top">
+                                <span className="service-card__icon-wrap">
+                                    <FontAwesomeIcon
+                                        icon={service.icon}
+                                        className="service-card__icon"
+                                        aria-hidden="true"
+                                    />
+                                </span>
+                                <span className="service-card__index">
+                                    {String(index + 1).padStart(2, '0')}
+                                </span>
+                            </div>
                             <h3 className="service-card__title">{service.title}</h3>
                             <p className="service-card__description">{service.description}</p>
-                        </div>
-                    </div>
-                ))}
+                        </article>
+                    ))}
+                </div>
             </div>
         </section>
     );

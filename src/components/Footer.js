@@ -1,22 +1,31 @@
 import React, { useState } from 'react';
 import './Footer.css';
 import emailjs from 'emailjs-com';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faEnvelope,
+    faLocationDot,
+    faClock,
+    faCircleCheck,
+    faCircleExclamation,
+    faPaperPlane,
+} from '@fortawesome/free-solid-svg-icons';
+import { useReveal } from '../hooks/useCustomHooks';
+
+const FIELDS = ['name', 'email', 'subject', 'message'];
+
+const INFO = [
+    { id: 'email', icon: faEnvelope, label: 'Email', value: 'josephssfeir@gmail.com', href: 'mailto:josephssfeir@gmail.com' },
+    { id: 'location', icon: faLocationDot, label: 'Location', value: 'Lebanon' },
+    { id: 'response', icon: faClock, label: 'Response Time', value: 'Within 24 hours' },
+];
 
 const Footer = () => {
+    const revealRef = useReveal(0.08);
     const [loading, setLoading] = useState(false);
     const [showPopup, setShowPopup] = useState(false);
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-    });
-    const [focused, setFocused] = useState({
-        name: false,
-        email: false,
-        subject: false,
-        message: false
-    });
+    const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+    const [focused, setFocused] = useState({});
     const [errors, setErrors] = useState({});
     const [touched, setTouched] = useState({});
 
@@ -24,9 +33,10 @@ const Footer = () => {
         switch (name) {
             case 'name':
                 return value.trim().length < 2 ? 'Name must be at least 2 characters' : '';
-            case 'email':
+            case 'email': {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 return !emailRegex.test(value) ? 'Please enter a valid email address' : '';
+            }
             case 'subject':
                 return value.trim().length < 3 ? 'Subject must be at least 3 characters' : '';
             case 'message':
@@ -36,36 +46,31 @@ const Footer = () => {
         }
     };
 
-    const handleChange = (e) => {
+    const handleChange = e => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
-
         if (touched[name]) {
-            const error = validateField(name, value);
-            setErrors(prev => ({ ...prev, [name]: error }));
+            setErrors(prev => ({ ...prev, [name]: validateField(name, value) }));
         }
     };
 
-    const handleBlur = (e) => {
+    const handleBlur = e => {
         const { name, value } = e.target;
         setTouched(prev => ({ ...prev, [name]: true }));
         setFocused(prev => ({ ...prev, [name]: false }));
-
-        const error = validateField(name, value);
-        setErrors(prev => ({ ...prev, [name]: error }));
+        setErrors(prev => ({ ...prev, [name]: validateField(name, value) }));
     };
 
-    const handleFocus = (e) => {
+    const handleFocus = e => {
         const { name } = e.target;
         setFocused(prev => ({ ...prev, [name]: true }));
     };
 
-    const sendEmail = (e) => {
+    const sendEmail = e => {
         e.preventDefault();
 
-        // Validate all fields
         const newErrors = {};
-        Object.keys(formData).forEach(key => {
+        FIELDS.forEach(key => {
             const error = validateField(key, formData[key]);
             if (error) newErrors[key] = error;
         });
@@ -82,17 +87,12 @@ const Footer = () => {
             .then(() => {
                 setLoading(false);
                 setShowPopup(true);
-                // Reset form
                 setFormData({ name: '', email: '', subject: '', message: '' });
                 setErrors({});
                 setTouched({});
                 e.target.reset();
-
-                // Auto-close popup after 5 seconds
-                setTimeout(() => {
-                    setShowPopup(false);
-                }, 5000);
-            }, (error) => {
+                setTimeout(() => setShowPopup(false), 5000);
+            }, error => {
                 setLoading(false);
                 setShowPopup(true);
                 setErrors({ submit: 'Failed to send message. Please try again later.' });
@@ -103,167 +103,149 @@ const Footer = () => {
     const closePopup = () => {
         setShowPopup(false);
         setErrors(prev => {
-            const newErrors = { ...prev };
-            delete newErrors.submit;
-            return newErrors;
+            const next = { ...prev };
+            delete next.submit;
+            return next;
         });
     };
 
-    const isFormValid = Object.keys(formData).every(
-        key => touched[key] && !validateField(key, formData[key])
-    );
+    // Valid when the data itself passes — not gated on the user having blurred
+    // every field, which used to leave the button dead after a paste-and-submit.
+    const isFormValid = FIELDS.every(key => !validateField(key, formData[key]));
+
+    const fieldClass = name =>
+        [
+            'form-field',
+            focused[name] || formData[name] ? 'focused' : '',
+            errors[name] && touched[name] ? 'error' : '',
+            formData[name] && !errors[name] ? 'valid' : '',
+        ].filter(Boolean).join(' ');
 
     return (
         <footer className="footer" id="contact">
-            <div className="contact-header">
-                <h2>Let's Work Together</h2>
-                <p>Have a project in mind? I'd love to hear about it. Drop me a message and let's create something amazing.</p>
-            </div>
-
-            <div className="contact-content">
-                <div className="contact-info">
-                    <div className="info-card">
-                        <div className="info-icon">
-                            <i className="fas fa-envelope"></i>
-                        </div>
-                        <div className="info-text">
-                            <h4>Email</h4>
-                            <a href="mailto:josephssfeir@gmail.com">josephssfeir@gmail.com</a>
-                        </div>
-                    </div>
-                    <div className="info-card">
-                        <div className="info-icon">
-                            <i className="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div className="info-text">
-                            <h4>Location</h4>
-                            <p>Lebanon</p>
-                        </div>
-                    </div>
-                    <div className="info-card">
-                        <div className="info-icon">
-                            <i className="fas fa-clock"></i>
-                        </div>
-                        <div className="info-text">
-                            <h4>Response Time</h4>
-                            <p>Within 24 hours</p>
-                        </div>
-                    </div>
+            <div className="footer-inner reveal" ref={revealRef}>
+                <div className="contact-header reveal-item" style={{ '--i': 0 }}>
+                    <span className="section-eyebrow">Contact</span>
+                    <h2 className="section-title">
+                        Let's work <em>together</em>
+                    </h2>
+                    <p className="contact-lede">
+                        Have a project in mind? Drop me a message and I'll get back to you.
+                    </p>
                 </div>
 
-                <form className="contact-form" onSubmit={sendEmail} noValidate>
-                    <div className="form-row">
-                        <div className={`form-field ${focused.name || formData.name ? 'focused' : ''} ${errors.name && touched.name ? 'error' : ''} ${formData.name && !errors.name ? 'valid' : ''}`}>
-                            <input
-                                type="text"
-                                name="name"
-                                id="name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                onFocus={handleFocus}
-                                onBlur={handleBlur}
-                                required
-                                autoComplete="name"
-                            />
-                            <label htmlFor="name">Full Name</label>
-                            {errors.name && touched.name && <span className="error-message">{errors.name}</span>}
-                            {formData.name && !errors.name && <i className="fas fa-check-circle field-valid-icon"></i>}
+                <div className="contact-content">
+                    <div className="contact-info reveal-item" style={{ '--i': 1 }}>
+                        {INFO.map(item => (
+                            <div className="info-card" key={item.id}>
+                                <span className="info-icon">
+                                    <FontAwesomeIcon icon={item.icon} aria-hidden="true" />
+                                </span>
+                                <div className="info-text">
+                                    <h4>{item.label}</h4>
+                                    {item.href
+                                        ? <a href={item.href}>{item.value}</a>
+                                        : <p>{item.value}</p>}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <form className="contact-form reveal-item" style={{ '--i': 2 }} onSubmit={sendEmail} noValidate>
+                        <div className="form-row">
+                            <div className={fieldClass('name')}>
+                                <input
+                                    type="text" name="name" id="name"
+                                    value={formData.name}
+                                    onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur}
+                                    required autoComplete="name"
+                                />
+                                <label htmlFor="name">Full Name</label>
+                                {errors.name && touched.name && <span className="error-message">{errors.name}</span>}
+                            </div>
+
+                            <div className={fieldClass('email')}>
+                                <input
+                                    type="email" name="email" id="email"
+                                    value={formData.email}
+                                    onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur}
+                                    required autoComplete="email"
+                                />
+                                <label htmlFor="email">Email Address</label>
+                                {errors.email && touched.email && <span className="error-message">{errors.email}</span>}
+                            </div>
                         </div>
 
-                        <div className={`form-field ${focused.email || formData.email ? 'focused' : ''} ${errors.email && touched.email ? 'error' : ''} ${formData.email && !errors.email ? 'valid' : ''}`}>
+                        <div className={fieldClass('subject')}>
                             <input
-                                type="email"
-                                name="email"
-                                id="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                onFocus={handleFocus}
-                                onBlur={handleBlur}
-                                required
-                                autoComplete="email"
+                                type="text" name="subject" id="subject"
+                                value={formData.subject}
+                                onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur}
+                                required autoComplete="off"
                             />
-                            <label htmlFor="email">Email Address</label>
-                            {errors.email && touched.email && <span className="error-message">{errors.email}</span>}
-                            {formData.email && !errors.email && <i className="fas fa-check-circle field-valid-icon"></i>}
+                            <label htmlFor="subject">Subject</label>
+                            {errors.subject && touched.subject && <span className="error-message">{errors.subject}</span>}
                         </div>
-                    </div>
 
-                    <div className={`form-field ${focused.subject || formData.subject ? 'focused' : ''} ${errors.subject && touched.subject ? 'error' : ''} ${formData.subject && !errors.subject ? 'valid' : ''}`}>
-                        <input
-                            type="text"
-                            name="subject"
-                            id="subject"
-                            value={formData.subject}
-                            onChange={handleChange}
-                            onFocus={handleFocus}
-                            onBlur={handleBlur}
-                            required
-                            autoComplete="off"
-                        />
-                        <label htmlFor="subject">Subject</label>
-                        {errors.subject && touched.subject && <span className="error-message">{errors.subject}</span>}
-                        {formData.subject && !errors.subject && <i className="fas fa-check-circle field-valid-icon"></i>}
-                    </div>
+                        <div className={fieldClass('message')}>
+                            <textarea
+                                name="message" id="message" rows="5"
+                                value={formData.message}
+                                onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur}
+                                required
+                            ></textarea>
+                            <label htmlFor="message">Your Message</label>
+                            {errors.message && touched.message && <span className="error-message">{errors.message}</span>}
+                        </div>
 
-                    <div className={`form-field ${focused.message || formData.message ? 'focused' : ''} ${errors.message && touched.message ? 'error' : ''} ${formData.message && !errors.message ? 'valid' : ''}`}>
-                        <textarea
-                            name="message"
-                            id="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                            onFocus={handleFocus}
-                            onBlur={handleBlur}
-                            required
-                            rows="5"
-                        ></textarea>
-                        <label htmlFor="message">Your Message</label>
-                        {errors.message && touched.message && <span className="error-message">{errors.message}</span>}
-                        {formData.message && !errors.message && <i className="fas fa-check-circle field-valid-icon"></i>}
-                    </div>
+                        <button
+                            type="submit"
+                            className={`submit-btn ${loading ? 'loading' : ''}`}
+                            disabled={loading || !isFormValid}
+                        >
+                            {loading ? (
+                                <>
+                                    <span className="spinner"></span>
+                                    <span>Sending...</span>
+                                </>
+                            ) : (
+                                <>
+                                    <span>Send Message</span>
+                                    <FontAwesomeIcon icon={faPaperPlane} aria-hidden="true" />
+                                </>
+                            )}
+                        </button>
+                    </form>
+                </div>
 
-                    <button
-                        type="submit"
-                        className={`submit-btn ${loading ? 'loading' : ''} ${!isFormValid ? 'disabled' : ''}`}
-                        disabled={loading || !isFormValid}
-                    >
-                        {loading ? (
-                            <>
-                                <span className="spinner"></span>
-                                <span>Sending...</span>
-                            </>
-                        ) : (
-                            <>
-                                <span>Send Message</span>
-                                <i className="fas fa-paper-plane"></i>
-                            </>
-                        )}
-                    </button>
-                </form>
+                <div className="footer-bottom">
+                    <span>© {new Date().getFullYear()} Joseph Sfeir</span>
+                    <span className="footer-built">Built with React</span>
+                </div>
             </div>
 
             {showPopup && (
-                <div className="popup-overlay" onClick={closePopup}>
-                    <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-                        {errors.submit ? (
-                            <>
-                                <div className="popup-icon error-icon">
-                                    <i className="fas fa-exclamation-circle"></i>
-                                </div>
-                                <h3>Oops!</h3>
-                                <p>{errors.submit}</p>
-                            </>
-                        ) : (
-                            <>
-                                <div className="popup-icon success-icon">
-                                    <i className="fas fa-check-circle"></i>
-                                </div>
-                                <h3>Message Sent!</h3>
-                                <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
-                            </>
-                        )}
-                        <button className="popup-close-btn" onClick={closePopup}>
-                            Close
-                        </button>
+                <div className="popup-overlay" onClick={closePopup} role="presentation">
+                    <div
+                        className="popup-content"
+                        onClick={e => e.stopPropagation()}
+                        role="alertdialog"
+                        aria-modal="true"
+                        aria-labelledby="popup-title"
+                    >
+                        <div className={`popup-icon ${errors.submit ? 'error-icon' : 'success-icon'}`}>
+                            <FontAwesomeIcon
+                                icon={errors.submit ? faCircleExclamation : faCircleCheck}
+                                aria-hidden="true"
+                            />
+                        </div>
+                        <h3 id="popup-title">{errors.submit ? 'Oops!' : 'Message Sent!'}</h3>
+                        <p>
+                            {errors.submit
+                                ? errors.submit
+                                : "Thank you for reaching out. I'll get back to you as soon as possible."}
+                        </p>
+                        <button className="popup-close-btn" onClick={closePopup}>Close</button>
                     </div>
                 </div>
             )}

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5" />
-  <meta name="theme-color" content="#000000" />
+  <meta name="theme-color" content="#0A0E12" />
   <meta name="description" content="Welcome to my portfolio!" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
@@ -22,19 +22,25 @@
       z-index: 99; /* Make sure it does not overlap */
       border: none; /* Remove borders */
       outline: none; /* Remove outline */
-      background-color: #333; /* Set background color */
-      color: white; /* Text color */
-      cursor: pointer; /* Add a mouse pointer on hover */
-      padding: 15px; /* Some padding */
-      border-radius: 50%; /* Circular shape */
-      font-size: 24px; /* Increase font size */
-      transition: opacity 0.4s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition */
-      width: 57px;
+      background-color: rgba(21, 28, 36, 0.9);
+      border: 1px solid #263341;
+      color: #00FF9C;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 12px;
+      font-size: 20px;
+      transition: opacity 0.4s ease-in-out, background-color 0.3s ease-in-out,
+                  border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      width: 52px;
+      height: 52px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       opacity: 0; /* Initial state is invisible */
     }
 
     #backToTop:hover {
-      background-color: #555; /* Add a lighter grey background on hover */
+      border-color: #00FF9C;
+      box-shadow: 0 0 20px rgba(0, 255, 156, 0.3);
     }
 
     #backToTop.show {

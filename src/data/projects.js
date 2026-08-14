@@ -1,0 +1,88 @@
+export const projects = [
+    {
+        id: 'sports-analysis',
+        title: 'Sports Analysis App',
+        image: 'saa.webp',
+        difficulty: 'Advanced',
+        stack: ['Python', 'Web Scraping', 'HTML/CSS'],
+        description: "Sports Analysis App, that utilizes web scraping, from Basketball and Football websites in order to fetch 'Stats' or 'Player Statistics' and calculates the number's GOAT (Greatest of All Time) written fully in Python, and stats visualized in HTML and CSS.",
+    },
+    {
+        id: 'election-analysis',
+        title: 'Election Analysis - Prediction',
+        image: 'election.webp',
+        difficulty: 'Advanced',
+        stack: ['Python', 'Data Viz', 'Prediction'],
+        description: 'Election Analysis for the latest municipal elections + a prediction for the next MP elections for the Lebanese Forces as a sample. Using Python, as well as several plotting, prediction and calculation frameworks!',
+    },
+    {
+        id: 'oop-job-portal',
+        title: 'OOP I: Project',
+        image: 'oop.webp',
+        difficulty: 'Advanced',
+        stack: ['Java', 'Spring Boot', 'MongoDB'],
+        description: 'Object Oriented Programming project that required to create a Job Portal Application using Java, MongoDB and Spring Boot. The project includes user authentication, job listings, and application management. And with SwaggerAPI as well as JavaDOC Documentation',
+        link: {
+            href: 'https://jobportal-952d.onrender.com/index.html',
+            label: 'View the JavaDoc',
+        },
+    },
+    {
+        id: 'agricrop',
+        title: 'AgriCrop: The Future of Farming',
+        image: 'agri.webp',
+        difficulty: 'Advanced',
+        stack: ['JavaScript', 'HTML/CSS'],
+        description: 'This farming website, AgriCrop, features a detailed homepage, a marketplace that includes various farming products, and a section for tutorials to help users with farming techniques and more.',
+        link: {
+            href: 'https://agricrop.netlify.app',
+            label: 'Visit AgriCrop',
+        },
+    },
+    {
+        id: 'ecommerce',
+        title: 'E-Commerce Website',
+        image: 'ecom.webp',
+        difficulty: 'Advanced',
+        stack: ['JavaScript', 'HTML/CSS'],
+        description: "One of my first very advanced projects I've done. This E-Commerce website contains a detailed home page, with a shopping page that contains all products, with the ability to check individual products.",
+        link: {
+            href: 'https://jarvis-ecom.netlify.app',
+            label: 'Visit Jarvis E-Com',
+        },
+    },
+    {
+        id: 'portfolio',
+        title: 'Portfolio Website',
+        image: 'port.webp',
+        difficulty: 'Intermediate',
+        stack: ['React', 'CSS'],
+        description: 'This website showcasing my skills, projects and resume as a programmer.',
+    },
+    {
+        id: 'math-menu',
+        title: 'Math Menu Operations',
+        image: 'math.webp',
+        difficulty: 'Beginner',
+        stack: ['C++'],
+        description: "This is a simple project that represents my first ever coding project. Even though it's extremely basic, it holds a special place as the foundation of my programming journey.",
+    },
+    {
+        id: 'water-level-sensor',
+        title: 'Water Level Sensor',
+        image: 'arduino.webp',
+        difficulty: 'Intermediate',
+        stack: ['Arduino', 'C++', 'Hardware'],
+        description: 'This is an introduction to engineering project. We were tasked, in any shape or form, to create a water level sensor that gave out signals when it reached certain levels. We opted for an Arduino, LCD, and sonic sensor, and found major success!',
+    },
+    {
+        id: 'car-renting',
+        title: 'Car Renting Program',
+        image: 'car.webp',
+        difficulty: 'Advanced',
+        stack: ['C++', 'Encryption'],
+        description: 'This is a Programming II project. We were tasked to create in C++, a car rental program that would save user credentials, provide encryption for passwords, save rental details, and alter a PDF file containing rental info.',
+    },
+];
+
+export default projects;
