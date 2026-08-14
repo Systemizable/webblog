@@ -109,8 +109,9 @@ const Footer = () => {
         });
     };
 
-    const isFormValid = Object.values(formData).every(val => val.trim().length > 0) &&
-                        Object.values(errors).every(err => !err);
+    const isFormValid = Object.keys(formData).every(
+        key => touched[key] && !validateField(key, formData[key])
+    );
 
     return (
         <footer className="footer" id="contact">

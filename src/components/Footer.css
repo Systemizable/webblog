@@ -1,16 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
-
-@font-face {
-  font-family: 'Stockport';
-  src: url('../fonts/Stockport - Serif Personal Use.otf') format('opentype');
-}
-
 .footer {
     padding: 80px 20px;
     text-align: center;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    color: #fff;
-    font-family: 'Stockport', serif;
+    background: var(--color-anchor);
+    color: var(--color-white);
+    font-family: var(--font-body);
     position: relative;
     overflow: hidden;
 }
@@ -22,7 +15,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, #adadac, transparent);
+    background: linear-gradient(90deg, transparent, var(--color-cool-gray), transparent);
 }
 
 /* Contact Header */
@@ -35,19 +28,16 @@
 .contact-header h2 {
     font-size: 3rem;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, #adadac, #fff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-white);
     font-weight: 700;
-    font-family: 'Stockport', serif;
+    font-family: var(--font-display);
 }
 
 .contact-header p {
     font-size: 1.1rem;
-    color: #b0b0b0;
+    color: var(--color-cool-gray);
     line-height: 1.6;
-    font-family: 'Stockport', serif;
+    font-family: var(--font-body);
     font-weight: 400;
 }
 
@@ -74,17 +64,17 @@
     align-items: center;
     gap: 20px;
     padding: 24px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(173, 173, 172, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(201, 209, 219, 0.15);
     border-radius: 16px;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
     text-align: left;
 }
 
 .info-card:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(173, 173, 172, 0.3);
-    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(201, 209, 219, 0.4);
+    transform: translateX(8px);
 }
 
 .info-icon {
@@ -93,34 +83,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #adadac, #8a8a8a);
+    background: var(--color-navy);
     border-radius: 12px;
     font-size: 1.5rem;
-    color: #1a1a1a;
+    color: var(--color-white);
     flex-shrink: 0;
 }
 
 .info-text h4 {
     margin: 0 0 8px 0;
     font-size: 1rem;
-    color: #adadac;
+    color: var(--color-white);
     font-weight: 600;
-    font-family: 'Stockport', serif;
+    font-family: var(--font-display);
 }
 
 .info-text p,
 .info-text a {
     margin: 0;
     font-size: 1rem;
-    color: #e0e0e0;
+    color: var(--color-cool-gray);
     text-decoration: none;
     transition: color 0.3s ease;
-    font-family: 'Stockport', serif;
+    font-family: var(--font-body);
     font-weight: 400;
 }
 
 .info-text a:hover {
-    color: #adadac;
+    color: var(--color-white);
 }
 
 /* Contact Form */
@@ -145,14 +135,14 @@
 .form-field textarea {
     width: 100%;
     padding: 18px 16px 10px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 2px solid rgba(173, 173, 172, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(201, 209, 219, 0.2);
     border-radius: 12px;
-    color: #fff;
+    color: var(--color-white);
     font-size: 1rem;
-    font-family: 'Stockport', serif;
+    font-family: var(--font-body);
     font-weight: 400;
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease, background 0.3s ease;
     outline: none;
     box-sizing: border-box;
 }
@@ -161,6 +151,7 @@
     resize: vertical;
     min-height: 140px;
     padding-top: 24px;
+    font-family: var(--font-body);
 }
 
 /* Floating Labels */
@@ -168,13 +159,13 @@
     position: absolute;
     left: 16px;
     top: 18px;
-    color: #888;
+    color: var(--color-cool-gray);
     font-size: 1rem;
-    transition: all 0.3s ease;
+    transition: top 0.3s ease, left 0.3s ease, font-size 0.3s ease, color 0.3s ease, background 0.3s ease;
     pointer-events: none;
     background: transparent;
     padding: 0 4px;
-    font-family: 'Stockport', serif;
+    font-family: var(--font-body);
     font-weight: 500;
 }
 
@@ -184,15 +175,15 @@
     top: -10px;
     left: 12px;
     font-size: 0.75rem;
-    color: #adadac;
-    background: #1a1a1a;
+    color: var(--color-white);
+    background: var(--color-anchor);
 }
 
 /* Focus State */
 .form-field.focused input,
 .form-field.focused textarea {
-    border-color: #adadac;
-    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-navy);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 /* Error State */
@@ -213,7 +204,7 @@
     margin-top: 6px;
     margin-left: 4px;
     animation: fadeIn 0.3s ease;
-    font-family: 'Stockport', serif;
+    font-family: var(--font-body);
     font-weight: 500;
 }
 
@@ -240,51 +231,36 @@
 .submit-btn {
     width: 100%;
     padding: 16px;
-    background: linear-gradient(135deg, #ffb825, #ff6b6b);
-    color: #000;
+    background: var(--color-navy);
+    color: var(--color-white);
     border: none;
     border-radius: 12px;
     font-size: 1.1rem;
     font-weight: 600;
-    font-family: 'Stockport', serif;
+    font-family: var(--font-display);
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(255, 184, 37, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(44, 62, 80, 0.4);
     position: relative;
     overflow: hidden;
 }
 
-.submit-btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-}
-
-.submit-btn:hover::before {
-    width: 300px;
-    height: 300px;
-}
-
-.submit-btn:hover {
+.submit-btn:hover:not(.disabled) {
+    background: var(--color-navy);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(173, 173, 172, 0.4);
+    box-shadow: 0 8px 24px rgba(44, 62, 80, 0.55);
+    filter: brightness(1.15);
 }
 
-.submit-btn:active {
+.submit-btn:active:not(.disabled) {
     transform: translateY(0);
 }
 
 .submit-btn.disabled {
-    background: rgba(173, 173, 172, 0.3);
+    background: rgba(201, 209, 219, 0.25);
+    color: rgba(255, 255, 255, 0.5);
     cursor: not-allowed;
-    color: #666;
+    box-shadow: none;
 }
 
 .submit-btn.disabled:hover {
@@ -302,8 +278,8 @@
 .spinner {
     width: 20px;
     height: 20px;
-    border: 3px solid rgba(0, 0, 0, 0.3);
-    border-top-color: #1a1a1a;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: var(--color-white);
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
 }
@@ -315,7 +291,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(26, 37, 47, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -325,12 +301,12 @@
 }
 
 .popup-content {
-    background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+    background: var(--color-anchor);
     padding: 48px;
     border-radius: 24px;
     text-align: center;
     max-width: 480px;
-    border: 1px solid rgba(173, 173, 172, 0.2);
+    border: 1px solid var(--color-navy);
     animation: slideUp 0.4s ease;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
@@ -360,35 +336,36 @@
 .popup-content h3 {
     margin: 0 0 16px 0;
     font-size: 2rem;
-    color: #fff;
-    font-family: 'Stockport', serif;
+    color: var(--color-white);
+    font-family: var(--font-display);
     font-weight: 700;
 }
 
 .popup-content p {
     margin: 0 0 32px 0;
-    color: #b0b0b0;
+    color: var(--color-cool-gray);
     line-height: 1.6;
     font-size: 1rem;
-    font-family: 'Stockport', serif;
+    font-family: var(--font-body);
     font-weight: 400;
 }
 
 .popup-close-btn {
     padding: 14px 40px;
-    background: #adadac;
-    color: #1a1a1a;
+    background: var(--color-navy);
+    color: var(--color-white);
     border: none;
     border-radius: 10px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Stockport', serif;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-family: var(--font-display);
 }
 
 .popup-close-btn:hover {
-    background: #fff;
+    background: var(--color-white);
+    color: var(--color-anchor);
     transform: translateY(-2px);
 }
 
@@ -501,7 +478,6 @@
         font-size: 1rem;
     }
 
-    /* Stack contact content vertically on tablets and mobile */
     .contact-content {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -517,7 +493,6 @@
         font-size: 1.3rem;
     }
 
-    /* Make form row single column on mobile */
     .form-row {
         grid-template-columns: 1fr;
         gap: 0;

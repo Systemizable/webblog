@@ -1,16 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
-
-@font-face {
-  font-family: 'Stockport';
-  src: url('../fonts/Stockport - Serif Personal Use.otf') format('opentype');
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .header {
     position: fixed;
     top: 0;
@@ -20,21 +7,22 @@
     justify-content: center;
     align-items: center;
     padding: 15px 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    color: #ffffff;
-    font-family: 'Stockport', serif;
+    color: var(--color-navy);
+    font-family: var(--font-display);
     z-index: 1000;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border-bottom: 1px solid rgba(173, 173, 172, 0.1);
+    transition: padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 1px solid var(--color-cool-gray);
 }
 
 .header.scrolled {
     padding: 10px 0;
-    background: rgba(0, 0, 0, 0.95);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid rgba(255, 184, 37, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 30px rgba(44, 62, 80, 0.12);
 }
 
 .header-content {
@@ -67,43 +55,27 @@
 
 .brand-initial {
     font-size: 2rem;
-    font-weight: bold;
-    background: linear-gradient(135deg, #ffb825, #ff6b6b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-family: 'Stockport', serif;
-    animation: gradientPulse 3s ease-in-out infinite;
+    font-weight: 700;
+    color: var(--color-navy);
+    font-family: var(--font-display);
 }
 
 .brand-name {
     font-size: 1.25rem;
-    color: #adadac;
-    font-family: 'Stockport', serif;
+    color: var(--color-navy);
+    font-family: var(--font-display);
     transition: color 0.3s ease;
 }
 
 .brand-name .brand-s {
     font-size: 2rem;
-    font-weight: bold;
-    background: linear-gradient(135deg, #ffb825, #ff6b6b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradientPulse 3s ease-in-out infinite;
+    font-weight: 700;
+    color: var(--color-navy);
+    font-family: var(--font-display);
 }
 
 .brand-logo a:hover .brand-name {
-    color: #ffffff;
-}
-
-@keyframes gradientPulse {
-    0%, 100% {
-        filter: brightness(1);
-    }
-    50% {
-        filter: brightness(1.3);
-    }
+    color: var(--color-anchor);
 }
 
 /* Social Icons */
@@ -114,10 +86,9 @@
 }
 
 .social-icons a {
-    color: #999999;
+    color: var(--color-navy);
     font-size: 1.5rem;
-    transition: all 0.3s ease;
-    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease, background 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -126,24 +97,10 @@
     border-radius: 50%;
 }
 
-.social-icons a::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: linear-gradient(135deg, rgba(255, 184, 37, 0.2), rgba(255, 107, 107, 0.2));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-}
-
 .social-icons a:hover {
-    color: #ffb825;
-    transform: translateY(-3px) scale(1.1);
-}
-
-.social-icons a:hover::before {
-    opacity: 1;
+    color: var(--color-anchor);
+    background: rgba(44, 62, 80, 0.08);
+    transform: translateY(-3px) scale(1.05);
 }
 
 /* Navigation Container */
@@ -163,13 +120,13 @@
 
 .nav-menu ul li a {
     text-decoration: none;
-    color: #adadac;
+    color: var(--color-navy);
     font-size: 1rem;
     padding: 10px 20px;
     border-radius: 8px;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease, background 0.3s ease;
     position: relative;
-    font-family: 'Stockport', serif;
+    font-family: var(--font-display);
     font-weight: 500;
     display: block;
 }
@@ -181,15 +138,15 @@
     left: 20px;
     right: 20px;
     height: 2px;
-    background: linear-gradient(90deg, #ffb825, #ff6b6b);
+    background: var(--color-navy);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
 
 .nav-menu ul li a:hover,
 .nav-menu ul li a.active {
-    color: #ffffff;
-    background: rgba(255, 184, 37, 0.1);
+    color: var(--color-anchor);
+    background: rgba(44, 62, 80, 0.08);
 }
 
 .nav-menu ul li a:hover::after,
@@ -197,29 +154,30 @@
     transform: scaleX(1);
 }
 
-/* Resume Button */
-.resume-btn {
-    background: linear-gradient(135deg, #ffb825, #ff6b6b) !important;
-    color: #000000 !important;
-    padding: 10px 24px !important;
-    border-radius: 25px !important;
+/* Resume Button — higher specificity removes the need for !important */
+.nav-menu ul li a.resume-btn {
+    background: var(--color-navy);
+    color: var(--color-white);
+    padding: 10px 24px;
+    border-radius: 25px;
     font-weight: 600;
-    font-family: 'Stockport', serif;
-    display: flex !important;
+    font-family: var(--font-display);
+    display: flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 4px 15px rgba(255, 184, 37, 0.3);
-    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(44, 62, 80, 0.25);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.resume-btn::after {
-    display: none !important;
+.nav-menu ul li a.resume-btn::after {
+    display: none;
 }
 
-.resume-btn:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: 0 6px 20px rgba(255, 184, 37, 0.5) !important;
-    background: linear-gradient(135deg, #ff6b6b, #ffb825) !important;
+.nav-menu ul li a.resume-btn:hover {
+    background: var(--color-anchor);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(44, 62, 80, 0.4);
 }
 
 .link-icon {
@@ -227,7 +185,7 @@
     transition: transform 0.3s ease;
 }
 
-.resume-btn:hover .link-icon {
+.nav-menu ul li a.resume-btn:hover .link-icon {
     transform: translateX(3px);
 }
 
@@ -241,7 +199,7 @@
 }
 
 .menu-icon span {
-    background: #ffffff;
+    background: var(--color-navy);
     border-radius: 2px;
     height: 3px;
     width: 25px;
@@ -305,12 +263,12 @@
         right: -100%;
         width: 280px;
         height: calc(100vh - 70px);
-        background: rgba(0, 0, 0, 0.98);
+        background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        border-left: 1px solid rgba(255, 184, 37, 0.2);
-        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+        border-left: 1px solid var(--color-cool-gray);
+        box-shadow: -5px 0 30px rgba(44, 62, 80, 0.15);
     }
 
     .nav-menu.open {
@@ -326,7 +284,7 @@
 
     .nav-menu ul li {
         width: 100%;
-        border-bottom: 1px solid rgba(255, 184, 37, 0.1);
+        border-bottom: 1px solid var(--color-cool-gray);
     }
 
     .nav-menu ul li a {
@@ -342,10 +300,10 @@
         bottom: 16px;
     }
 
-    .resume-btn {
-        justify-content: center !important;
-        margin: 10px 20px !important;
-        width: calc(100% - 40px) !important;
+    .nav-menu ul li a.resume-btn {
+        justify-content: center;
+        margin: 10px 20px;
+        width: calc(100% - 40px);
     }
 }
 
