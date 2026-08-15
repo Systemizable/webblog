@@ -19,7 +19,11 @@ const Stat = ({ value, label }) => {
 
 const Hero = () => {
     const revealRef = useReveal();
-    const { output, done } = useTypewriter("Hey, I'm Joseph");
+    const { output, done } = useTypewriter(
+        'Computer & Communications Engineering · Antonine University',
+        26,
+        500
+    );
     const cvRef = useMagnetic(0.22);
 
     const liveCount = projects.filter(project => project.link).length;
@@ -29,6 +33,10 @@ const Hero = () => {
             <div className="hero-inner reveal" ref={revealRef}>
                 <div className="hero-heading reveal-item" style={{ '--i': 0 }}>
                     <span className="section-eyebrow">About Me</span>
+                    <span className="hero-availability">
+                        <span className="hero-availability__dot" aria-hidden="true"></span>
+                        Available for part-time &amp; freelance work
+                    </span>
                 </div>
 
                 <div className="hero-content">
@@ -40,14 +48,15 @@ const Hero = () => {
                     </div>
 
                     <div className="hero-text">
-                        <h3 className="hero-name reveal-item" style={{ '--i': 2 }}>
-                            {output}
-                            <span className={`hero-caret ${done ? 'is-idle' : ''}`} aria-hidden="true"></span>
-                        </h3>
+                        <h1 className="hero-name reveal-item" style={{ '--i': 2 }}>
+                            <span className="hero-name__first">Joseph</span>
+                            <span className="hero-name__last">Sfeir.</span>
+                        </h1>
 
                         <p className="hero-role reveal-item" style={{ '--i': 3 }}>
                             <span className="hero-role__prompt">&gt;</span>
-                            Computer &amp; Communications Engineering &middot; Antonine University
+                            {output}
+                            <span className={`hero-caret ${done ? 'is-idle' : ''}`} aria-hidden="true"></span>
                         </p>
 
                         <p className="hero-bio reveal-item" style={{ '--i': 4 }}>

@@ -18,6 +18,13 @@
     margin-bottom: 48px;
 }
 
+.skills-lede {
+    margin-top: 14px;
+    max-width: 54ch;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
 .skills-groups {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -45,45 +52,43 @@
 }
 
 .skill-tile {
-    position: relative;
+    background-color: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    overflow: hidden;
+    transition: border-color 0.25s ease;
+}
+
+.skill-tile:hover,
+.skill-tile:focus-within {
+    border-color: var(--accent);
+}
+
+.skill-tile.is-open {
+    border-color: var(--accent);
+}
+
+/* Skill with no supporting project yet: same shell, no control, quieter. */
+.skill-tile--bare {
     display: flex;
     align-items: center;
     gap: 12px;
     padding: 13px 15px;
-    background-color: var(--surface-2);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s var(--ease-out);
+    color: var(--text-dim);
 }
 
-/* Scanline sweep */
-.skill-tile::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -60%;
-    width: 45%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(0, 255, 156, 0.16),
-        transparent
-    );
-    transform: skewX(-18deg);
-    transition: left 0.55s var(--ease-out);
-    pointer-events: none;
-}
-
-.skill-tile:hover {
-    border-color: var(--accent);
-    background-color: rgba(0, 255, 156, 0.05);
-    transform: translateX(4px);
-}
-
-.skill-tile:hover::before {
-    left: 125%;
+.skill-tile__toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 13px 15px;
+    background: transparent;
+    border: 0;
+    color: var(--text);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
 }
 
 .skill-tile__icon {
@@ -91,15 +96,96 @@
     color: var(--accent);
     width: 24px;
     flex-shrink: 0;
-    transition: color 0.25s ease;
+}
+
+.skill-tile--bare .skill-tile__icon {
+    color: var(--text-dim);
 }
 
 .skill-tile__name {
     font-family: var(--font-mono);
     font-size: 0.88rem;
     font-weight: 500;
-    color: var(--text);
     line-height: 1.3;
+    flex: 1;
+}
+
+/* The evidence count -- the whole point of the section */
+.skill-tile__count {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent);
+    background-color: var(--accent-soft);
+    border-radius: 999px;
+    min-width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.skill-tile__evidence {
+    border-top: 1px solid var(--line);
+    padding: 12px 15px 14px;
+}
+
+.skill-tile__evidence ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+.skill-tile__evidence a,
+.skill-tile__evidence span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.skill-tile__evidence a:hover,
+.skill-tile__evidence a:focus-visible {
+    color: var(--accent);
+}
+
+.skill-tile__jump {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+    width: 100%;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: var(--accent) !important;
+    text-decoration: none;
+}
+
+.skill-tile__jump:hover,
+.skill-tile__jump:focus-visible {
+    text-decoration: underline;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 @media (max-width: 768px) {
@@ -112,18 +198,14 @@
     }
 
     .skills-groups {
-        grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 24px;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
     .skill-tile,
-    .skill-tile::before {
+    .skill-tile__evidence a {
         transition: none;
-    }
-
-    .skill-tile:hover {
-        transform: none;
     }
 }

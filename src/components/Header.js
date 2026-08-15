@@ -4,8 +4,8 @@ import { FaInstagram, FaLinkedin, FaGithub, FaDownload } from 'react-icons/fa';
 
 const SECTIONS = [
     { id: 'hero', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
+    { id: 'skills', label: 'Toolbox' },
+    { id: 'projects', label: 'Build Log' },
     { id: 'services', label: 'Services' },
     { id: 'contact', label: 'Contact' },
 ];

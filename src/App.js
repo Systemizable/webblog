@@ -1,5 +1,5 @@
 // App.js
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import MatrixRain from './components/MatrixRain';
 import SectionDivider from './components/SectionDivider';
@@ -11,15 +11,19 @@ import Footer from './components/Footer';
 import './App.css';
 
 function App() {
+    // Which skill is currently being traced through the build log.
+    // Lives here because Skills sets it and Projects reads it.
+    const [activeSkill, setActiveSkill] = useState(null);
+
     return (
         <div className="App">
             <MatrixRain className="matrix-rain--page" fontSize={14} tickMs={70}/>
             <Header/>
             <Hero/>
             <SectionDivider label="> cd ~/skills"/>
-            <Skills/>
+            <Skills activeSkill={activeSkill} onSkillToggle={setActiveSkill}/>
             <SectionDivider label="> cd ~/projects"/>
-            <Projects/>
+            <Projects activeSkill={activeSkill} onClearSkill={() => setActiveSkill(null)}/>
             <SectionDivider label="> cd ~/services"/>
             <Services/>
             <SectionDivider label="> cd ~/contact"/>

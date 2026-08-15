@@ -14,7 +14,38 @@
 }
 
 .hero-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
     text-align: left;
+}
+
+.hero-availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    padding: 6px 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+}
+
+.hero-availability__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    box-shadow: 0 0 8px var(--accent-glow);
+    animation: availabilityPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes availabilityPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
 }
 
 .hero-content {
@@ -105,15 +136,26 @@
     min-width: 0;
 }
 
+/* Oversized display name: the biggest single lever on first-screen impact.
+   clamp() ties it to viewport width so it never overruns the column. */
 .hero-name {
-    font-size: 2.4rem;
-    font-family: var(--font-display);
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 10px;
-    min-height: 1.2em;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.6rem, 7vw, 5.2rem);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+}
+
+.hero-name__first {
+    color: var(--text);
+}
+
+.hero-name__last {
+    color: var(--accent);
+    align-self: flex-start;
 }
 
 .hero-caret {
@@ -143,6 +185,8 @@
     display: flex;
     align-items: baseline;
     gap: 8px;
+    min-height: 1.5em;
+    flex-wrap: wrap;
 }
 
 .hero-role__prompt {

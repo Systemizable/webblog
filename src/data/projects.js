@@ -1,88 +1,118 @@
+// Years are inferred from the last push on each GitHub repo -- close enough
+// for ordering, but worth correcting if a project was actually built earlier.
+
 export const projects = [
+    {
+        id: 'oop-job-portal',
+        title: 'Job Portal',
+        image: 'oop.webp',
+        year: '2025',
+        tagline: 'Auth, listings and documented endpoints, on Spring Boot.',
+        description: 'A job portal built on Spring Boot with MongoDB behind it. It handles user authentication, job listings and the full application lifecycle, with the REST layer documented in Swagger and the codebase in JavaDoc.',
+        stack: ['Java', 'Spring Boot', 'MongoDB', 'Swagger'],
+        links: [
+            { href: 'https://jobportal-952d.onrender.com/index.html', label: 'JavaDoc' },
+            { href: 'https://github.com/Systemizable/JobPortal', label: 'Code' },
+        ],
+    },
+    {
+        id: 'election-analysis',
+        title: 'Election Analysis & Prediction',
+        image: 'election.webp',
+        year: '2025',
+        tagline: 'Municipal results, turned into a forecast.',
+        description: "Analysis of Lebanon's latest municipal election results, extended into a forecast for the coming parliamentary race using the Lebanese Forces as a worked example. Built in Python, with plotting and prediction libraries doing the modelling.",
+        stack: ['Python', 'Data Viz', 'Prediction'],
+        links: [
+            { href: 'https://github.com/Systemizable/election-analysis-predictor', label: 'Code' },
+        ],
+    },
     {
         id: 'sports-analysis',
         title: 'Sports Analysis App',
         image: 'saa.webp',
-        difficulty: 'Advanced',
+        year: '2025',
+        tagline: 'Scraped stats, scored to settle the GOAT argument.',
+        description: 'Scrapes player statistics from basketball and football sources, then scores them against each other to settle the GOAT argument with numbers rather than opinions. Python end to end, with the results rendered out to HTML and CSS.',
         stack: ['Python', 'Web Scraping', 'HTML/CSS'],
-        description: "Sports Analysis App, that utilizes web scraping, from Basketball and Football websites in order to fetch 'Stats' or 'Player Statistics' and calculates the number's GOAT (Greatest of All Time) written fully in Python, and stats visualized in HTML and CSS.",
-    },
-    {
-        id: 'election-analysis',
-        title: 'Election Analysis - Prediction',
-        image: 'election.webp',
-        difficulty: 'Advanced',
-        stack: ['Python', 'Data Viz', 'Prediction'],
-        description: 'Election Analysis for the latest municipal elections + a prediction for the next MP elections for the Lebanese Forces as a sample. Using Python, as well as several plotting, prediction and calculation frameworks!',
-    },
-    {
-        id: 'oop-job-portal',
-        title: 'OOP I: Project',
-        image: 'oop.webp',
-        difficulty: 'Advanced',
-        stack: ['Java', 'Spring Boot', 'MongoDB'],
-        description: 'Object Oriented Programming project that required to create a Job Portal Application using Java, MongoDB and Spring Boot. The project includes user authentication, job listings, and application management. And with SwaggerAPI as well as JavaDOC Documentation',
-        link: {
-            href: 'https://jobportal-952d.onrender.com/index.html',
-            label: 'View the JavaDoc',
-        },
+        links: [
+            { href: 'https://github.com/Systemizable/SAA-Sports-Analysis-App', label: 'Code' },
+        ],
     },
     {
         id: 'agricrop',
-        title: 'AgriCrop: The Future of Farming',
+        title: 'AgriCrop',
         image: 'agri.webp',
-        difficulty: 'Advanced',
+        year: '2024',
+        tagline: 'A farm marketplace where the tutorials sit next to the products.',
+        description: 'A farming marketplace that keeps the products and the how-to content in the same place: a browsable catalogue of farming supplies alongside tutorials on the techniques they are used for.',
         stack: ['JavaScript', 'HTML/CSS'],
-        description: 'This farming website, AgriCrop, features a detailed homepage, a marketplace that includes various farming products, and a section for tutorials to help users with farming techniques and more.',
-        link: {
-            href: 'https://agricrop.netlify.app',
-            label: 'Visit AgriCrop',
-        },
+        links: [
+            { href: 'https://agricrop.netlify.app', label: 'Live site' },
+            { href: 'https://github.com/Systemizable/agricrop', label: 'Code' },
+        ],
     },
     {
         id: 'ecommerce',
-        title: 'E-Commerce Website',
+        title: 'Jarvis E-Com',
         image: 'ecom.webp',
-        difficulty: 'Advanced',
+        year: '2024',
+        tagline: 'A storefront taken from empty folder to deployed.',
+        description: 'A storefront built end to end: landing page, full product catalogue, and individual product views. One of the first larger builds I took all the way from an empty folder to a deployed site.',
         stack: ['JavaScript', 'HTML/CSS'],
-        description: "One of my first very advanced projects I've done. This E-Commerce website contains a detailed home page, with a shopping page that contains all products, with the ability to check individual products.",
-        link: {
-            href: 'https://jarvis-ecom.netlify.app',
-            label: 'Visit Jarvis E-Com',
-        },
+        links: [
+            { href: 'https://jarvis-ecom.netlify.app', label: 'Live site' },
+        ],
     },
+];
+
+// Earlier coursework, kept as a compact list so it does not compete with
+// the work above for attention.
+export const archive = [
     {
-        id: 'portfolio',
-        title: 'Portfolio Website',
-        image: 'port.webp',
-        difficulty: 'Intermediate',
-        stack: ['React', 'CSS'],
-        description: 'This website showcasing my skills, projects and resume as a programmer.',
-    },
-    {
-        id: 'math-menu',
-        title: 'Math Menu Operations',
-        image: 'math.webp',
-        difficulty: 'Beginner',
+        id: 'car-renting',
+        title: 'Car Renting Program',
+        note: 'C++ rental system with password encryption and PDF records',
+        href: 'https://github.com/Systemizable/carrentingprogram',
         stack: ['C++'],
-        description: "This is a simple project that represents my first ever coding project. Even though it's extremely basic, it holds a special place as the foundation of my programming journey.",
     },
     {
         id: 'water-level-sensor',
         title: 'Water Level Sensor',
-        image: 'arduino.webp',
-        difficulty: 'Intermediate',
-        stack: ['Arduino', 'C++', 'Hardware'],
-        description: 'This is an introduction to engineering project. We were tasked, in any shape or form, to create a water level sensor that gave out signals when it reached certain levels. We opted for an Arduino, LCD, and sonic sensor, and found major success!',
+        note: 'Arduino, LCD and ultrasonic sensor',
+        href: 'https://github.com/Systemizable/waterlevelsensor',
+        stack: ['C++', 'Arduino'],
     },
     {
-        id: 'car-renting',
-        title: 'Car Renting Program',
-        image: 'car.webp',
-        difficulty: 'Advanced',
-        stack: ['C++', 'Encryption'],
-        description: 'This is a Programming II project. We were tasked to create in C++, a car rental program that would save user credentials, provide encryption for passwords, save rental details, and alter a PDF file containing rental info.',
+        id: 'math-menu',
+        title: 'Math Menu Operations',
+        note: 'My first ever coding project',
+        href: 'https://github.com/Systemizable/math-operations-menu',
+        stack: ['C++'],
     },
+    {
+        id: 'portfolio',
+        title: 'This portfolio',
+        note: 'React, hand-rolled CSS',
+        href: 'https://github.com/Systemizable/webblog',
+        stack: ['React', 'JavaScript', 'CSS'],
+    },
+];
+
+// Everything that can act as evidence for a skill, in one list.
+export const allWork = [
+    ...projects.map(p => ({
+        id: p.id,
+        title: p.title,
+        stack: p.stack,
+        href: (p.links && p.links[0] && p.links[0].href) || null,
+    })),
+    ...archive.map(a => ({
+        id: a.id,
+        title: a.title,
+        stack: a.stack,
+        href: a.href,
+    })),
 ];
 
 export default projects;
