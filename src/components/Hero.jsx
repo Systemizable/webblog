@@ -17,16 +17,16 @@ const Stat = ({ value, label }) => {
     );
 };
 
+const ROLE = 'Full-Stack Software Engineer · Simly';
+
 const Hero = () => {
     const revealRef = useReveal();
-    const { output, done } = useTypewriter(
-        'Computer & Communications Engineering · Antonine University',
-        26,
-        500
-    );
+    const { output, done } = useTypewriter(ROLE, 26, 500);
     const cvRef = useMagnetic(0.22);
 
-    const liveCount = projects.filter(project => project.link).length;
+    const liveCount = projects.filter(project =>
+        project.links.some(link => link.label === 'Live site')
+    ).length;
 
     return (
         <section id="hero" className="hero">
@@ -42,29 +42,40 @@ const Hero = () => {
                 <div className="hero-content">
                     <div className="hero-image-container reveal-item" style={{ '--i': 1 }}>
                         <div className="hero-image-glow" aria-hidden="true"></div>
-                        <img src={`${process.env.PUBLIC_URL}/formalpicture.webp`} alt="Joseph Sfeir" />
+                        <img
+                            src="/formalpicture.webp"
+                            alt="Portrait of Joseph Sfeir"
+                            width="720"
+                            height="1280"
+                            fetchpriority="high"
+                        />
                         <span className="hero-image-corner hero-image-corner--tl" aria-hidden="true"></span>
                         <span className="hero-image-corner hero-image-corner--br" aria-hidden="true"></span>
                     </div>
 
                     <div className="hero-text">
                         <h1 className="hero-name reveal-item" style={{ '--i': 2 }}>
-                            <span className="hero-name__first">Joseph</span>
+                            {/* The space keeps the name two words in the HTML; flex drops it visually. */}
+                            <span className="hero-name__first">Joseph</span>{' '}
                             <span className="hero-name__last">Sfeir.</span>
                         </h1>
 
+                        {/* The typed copy starts empty, so the full role sits alongside it
+                            for screen readers and for crawlers reading the prerendered HTML. */}
                         <p className="hero-role reveal-item" style={{ '--i': 3 }}>
-                            <span className="hero-role__prompt">&gt;</span>
-                            {output}
+                            <span className="hero-role__prompt" aria-hidden="true">&gt;</span>
+                            <span className="visually-hidden">{ROLE}</span>
+                            <span aria-hidden="true">{output}</span>
                             <span className={`hero-caret ${done ? 'is-idle' : ''}`} aria-hidden="true"></span>
                         </p>
 
                         <p className="hero-bio reveal-item" style={{ '--i': 4 }}>
-                            I specialize in programming and software development, with a solid foundation in
-                            both the theoretical and practical aspects of engineering, and proficiency in game
-                            development, software engineering, and project management. My goal is to leverage my
-                            technical skills and passion for innovation to contribute to impactful projects in
-                            software development and engineering.
+                            I'm a full-stack software engineer at Simly, where I build the systems behind its
+                            eSIM business: a pipeline that ingests usage records from five eSIM providers and
+                            turns them into cost, margin and usage analytics, a rebuilt customer-care platform,
+                            and a real-time sync of WhatsApp support chats over webhooks and GraphQL. I'm also
+                            studying Computer &amp; Communications Engineering at Antonine University in Lebanon.
+                            Most of my work is in Java and Spring Boot on the backend and React on the frontend.
                         </p>
 
                         <div className="hero-stats reveal-item" style={{ '--i': 5 }}>
@@ -77,7 +88,7 @@ const Hero = () => {
                             <a
                                 ref={cvRef}
                                 className="hero-btn hero-btn--primary"
-                                href={`${process.env.PUBLIC_URL}/JosephSfeirCVLATEST.pdf`}
+                                href="/JosephSfeirCVLATEST.pdf"
                                 download="JosephSfeirCV.pdf"
                             >
                                 <FontAwesomeIcon icon={faDownload} aria-hidden="true" />

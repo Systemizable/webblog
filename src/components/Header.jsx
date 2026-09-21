@@ -99,7 +99,7 @@ const Header = () => {
                             ))}
                             <li className="resume-link">
                                 <a
-                                    href={`${process.env.PUBLIC_URL}/JosephSfeirCVLATEST.pdf`}
+                                    href="/JosephSfeirCVLATEST.pdf"
                                     download="JosephSfeirCV.pdf"
                                     onClick={handleLinkClick}
                                     className="resume-btn"

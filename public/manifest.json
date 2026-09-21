@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Joseph Sfeir",
+  "name": "Joseph Sfeir | Full-Stack Software Engineer",
+  "description": "Portfolio of Joseph Sfeir, full-stack software engineer in Lebanon.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +19,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0A0E12",
+  "background_color": "#0A0E12"
 }

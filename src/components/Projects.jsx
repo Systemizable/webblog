@@ -59,7 +59,7 @@ const Projects = ({ activeSkill, onClearSkill }) => {
                         >
                             <div className="project-card__media">
                                 <img
-                                    src={`${process.env.PUBLIC_URL}/${project.image}`}
+                                    src={`/${project.image}`}
                                     alt={`Screenshot of ${project.title}`}
                                     className="project-card__image"
                                     loading="lazy"

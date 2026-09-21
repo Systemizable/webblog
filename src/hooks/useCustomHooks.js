@@ -110,9 +110,12 @@ export const useMagnetic = (strength = 0.3) => {
     return ref;
 };
 
-/** Counts 0 -> target once the element enters the viewport. */
+/**
+ * Counts 0 -> target once the element enters the viewport. Starts at the
+ * target so the prerendered HTML carries the real number, not a 0.
+ */
 export const useCountUp = (target, duration = 1200) => {
-    const [value, setValue] = useState(0);
+    const [value, setValue] = useState(target);
     const ref = useRef(null);
 
     useEffect(() => {

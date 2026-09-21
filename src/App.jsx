@@ -1,5 +1,7 @@
-// App.js
+// App.jsx
 import React, { useState } from 'react';
+import { config as faConfig } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import Header from './components/Header';
 import MatrixRain from './components/MatrixRain';
 import SectionDivider from './components/SectionDivider';
@@ -9,6 +11,10 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 import './App.css';
+
+// Ship Font Awesome's CSS in the bundle instead of injecting it at runtime,
+// so prerendered icons are sized correctly before JavaScript loads.
+faConfig.autoAddCss = false;
 
 function App() {
     // Which skill is currently being traced through the build log.
